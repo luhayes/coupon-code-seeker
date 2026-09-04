@@ -22,7 +22,7 @@ ships_to:
   - Europe
 seo:
   title: "Les Cotons de Romane Deals & Info — September 2026"
-  description: "Reusable cotton pads, washable sanitary towels and zero-waste hygiene, hand-sewn in Rennes. What the brand offers, and what to check before ordering."
+  description: "Reusable cotton pads and washable sanitary towels hand-sewn in Rennes. Free delivery over €60 in France, and the return costs to know before ordering."
   keywords:
     - les cotons de romane
     - cotons lavables avis
@@ -34,7 +34,7 @@ verified_on: 2026-09-04
 
 # Les Cotons de Romane Deals & Info
 
-**Worth knowing first:** the only official shop is **[lescotonsderomane.com](/go/les-cotons-de-romane)**. Several near-identical `.shop` domains copy this brand — see the warning below before you order anywhere else.
+**Best offer right now:** free delivery in metropolitan France on orders over **€60**. And worth knowing first: the only official shop is **[lescotonsderomane.com](/go/les-cotons-de-romane)** — several near-identical `.shop` domains copy this brand, see the warning below.
 
 Les Cotons de Romane makes reusable, washable everyday products — cotton pads, kitchen roll, sanitary towels and pouches — hand-sewn in Rennes, alongside a range of low-waste hygiene items.
 
@@ -79,23 +79,29 @@ Positioning honestly: this is a small maker, not a retailer, and the economics f
 
 ## Current Les Cotons de Romane offers
 
-| # | Offer | Type | Status |
+| # | Offer | Type | Code |
 | --- | --- | --- | --- |
 | 1 | Hand-sewn in Rennes, sold direct with no reseller margin | Structural | Confirmed |
-| 2 | Shipping via GLS | Shipping | Terms unconfirmed |
-| 3 | Returns policy | Returns | Unconfirmed |
+| 2 | Free delivery in metropolitan France on orders over €60 | Automatic | No code needed |
+| 3 | Refunds processed within 14 days, return postage at your expense | Returns | Contact support |
 
 ### 1. Buying direct
 
 Products are made and sold by the brand itself, so there is no reseller margin in the price. There is **no discount programme, loyalty scheme or subscription** to unlock — a smaller operation than the other merchants on this site, and priced accordingly. The brand does run occasional promotions through its own social channels and has held in-person sales at the Rennes workshop, which is where any real discount tends to appear.
 
-### 2. Delivery — GLS, terms unconfirmed
+### 2. Free delivery over €60
 
-**GLS** is the brand's stated delivery partner. We could not confirm a free-shipping threshold or a delivery cost against a page the brand owns, so no figure is printed here. Check the total in the cart before committing.
+Orders over **€60** delivered within metropolitan France ship free, via **GLS**. Below that, delivery is charged at the rate shown in the cart.
 
-### 3. Returns — unconfirmed, and worth asking about
+One deadline worth noting because it is short: a complaint about a delivery — damage, a missing item — must be raised **by email within 14 days of receipt**, with supporting evidence such as photographs. After that the goods are treated as accepted. Open the parcel and check it promptly rather than leaving it a fortnight.
 
-No return window or condition could be confirmed on this pass. This one matters more than usual: **reusable hygiene products are very commonly excluded from returns entirely**, for obvious hygiene reasons, and that exclusion is normal and lawful rather than a red flag. Assume washable sanitary towels and cotton pads are non-returnable once opened unless the shop tells you otherwise, and ask before ordering if you are unsure about sizing or absorbency.
+### 3. Returns — 14 days to process, and you pay the postage
+
+Once a return is approved, the refund is **processed within 14 days** of the seller receiving it. Two costs sit with you: **return postage is at your expense**, and the **original delivery charge is not refunded**. So a change of mind on a small order can cost most of the item's value in postage — worth thinking about before ordering several sizes to compare.
+
+Faulty goods are treated differently and properly: where a defect is demonstrated, the item is refunded or replaced **at the seller's expense**.
+
+A practical note the policy does not spell out: reusable hygiene products are commonly excluded from change-of-mind returns once opened, for obvious reasons. If you are unsure about absorbency or sizing on washable sanitary towels, ask before ordering rather than after.
 
 ---
 
@@ -104,8 +110,9 @@ No return window or condition could be confirmed on this pass. This one matters 
 1. Confirm you are on **[lescotonsderomane.com](/go/les-cotons-de-romane)** — not a `.shop` look-alike.
 2. Add your items to the cart.
 3. Enter any code from the brand's own social channels in the discount field at checkout.
-4. **Check the delivery cost in the cart**, since no threshold could be confirmed here.
-5. If you are buying hygiene products and unsure about a choice, ask before ordering — returns on these are commonly excluded.
+4. Push the order over **€60** if you are close to it — that is the free-delivery line in metropolitan France.
+5. **Check the parcel within 14 days.** Delivery complaints must be raised by email inside that window, with evidence.
+6. If you are buying hygiene products and unsure about absorbency or sizing, ask before ordering — return postage is at your expense and opened hygiene items are commonly non-returnable.
 
 ---
 
@@ -119,8 +126,8 @@ No return window or condition could be confirmed on this pass. This one matters 
 | **Based in** | Rennes, Brittany, France |
 | **Category** | Reusable and washable hygiene, home and kitchen products |
 | **Manufacture** | Sewn range made in-house in Rennes |
-| **Delivery** | GLS; threshold and cost unconfirmed |
-| **Returns** | Unconfirmed; assume hygiene items are excluded |
+| **Delivery** | GLS; free over €60 in metropolitan France |
+| **Returns** | Refund within 14 days of receipt; return postage paid by you |
 | **Also sold** | Wholesale to independent retailers via Ankorstore |
 | **Contact** | lescotonsderomane@gmail.com |
 
@@ -138,7 +145,7 @@ Because of the copies. Automated reputation scanners return conflicting scores f
 There is no standing discount programme. Occasional promotions are announced through the brand's own social channels, which is the only place we would trust a code for it to come from.
 
 **Can I return washable sanitary towels?**
-Assume not. Reusable hygiene products are routinely excluded from returns, and the brand's specific policy could not be confirmed on this pass — ask before ordering.
+Approved returns are refunded within 14 days, but **you pay the return postage** and the original delivery charge is not refunded. Reusable hygiene products are also commonly excluded from change-of-mind returns once opened, so ask before ordering if you are unsure. Genuinely faulty items are refunded or replaced at the seller's expense.
 
 **Where are the products made?**
 The sewn range is made by the brand in Rennes, France.

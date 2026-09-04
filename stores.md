@@ -3,16 +3,16 @@ slug: stores
 layout: directory
 seo:
   title: "All Stores — Verified Coupons & Deals"
-  description: "Browse all 17 stores tracked on Coupon Code Seeker, with 56 verified offers. Every deal is checked against the merchant's own pages."
+  description: "Browse all 17 stores tracked on Coupon Code Seeker, with 58 verified offers. Every deal is checked against the merchant's own pages."
 merchant_count: 17
-offer_count: 56
+offer_count: 58
 generated_on: 2026-09-04
 generated_by: scripts/build_directory.py
 ---
 
 # All Stores
 
-Every store we track, with 56 currently active offers between them. Offers are verified against each merchant's own pages — we do not list a code we have not been able to confirm.
+Every store we track, with 58 currently active offers between them. Offers are verified against each merchant's own pages — we do not list a code we have not been able to confirm.
 
 ## Browse by category
 
@@ -39,7 +39,7 @@ Every store we track, with 56 currently active offers between them. Offers are v
 | [Beauty Success](/stores/beauty-success) | Free delivery to a Beauty Success store | 5 | 2026-09-04 |
 | [Feniko](/stores/feniko) | First loan at 0% RRSO — repay exactly what you borrowed | 3 | 2026-09-04 |
 | [Four Sigmatic](/stores/four-sigmatic) | 30% off your first subscription order | 4 | 2026-09-04 |
-| [Les Cotons de Romane](/stores/les-cotons-de-romane) | Hand-sewn in Rennes, sold direct with no reseller margin | 1 | 2026-09-04 |
+| [Les Cotons de Romane](/stores/les-cotons-de-romane) | Hand-sewn in Rennes, sold direct with no reseller margin | 3 | 2026-09-04 |
 | [LMNT](/stores/lmnt) | Insider Bundle — buy 3 boxes, get 1 free | 5 | 2026-09-04 |
 | [MiniCredit](/stores/minicredit) | Representative example: 2,500 zł over 30 days costs 300.34 zł — 297.61% RRSO | 2 | 2026-09-04 |
 | [Moon Juice](/stores/moon-juice) | Subscribe & Save 10% with free contiguous US shipping | 3 | 2026-09-04 |

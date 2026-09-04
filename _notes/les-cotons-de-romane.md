@@ -30,15 +30,25 @@ Romane Gautret, founded 2019, formerly a paediatric nurse, based in Rennes
 in-house. Also sells wholesale via Ankorstore. Contact
 lescotonsderomane@gmail.com. GLS is the stated delivery partner.
 
-## Unverified — deliberately
+## Resolved 2026-09-04 — shipping and returns
 
-Shipping threshold and cost, and the return policy. Neither could be confirmed
-against a brand-owned page, so both offers carry status: unverified and the page
-tells the reader to check the cart. The returns gap is flagged in the copy with
-the note that reusable hygiene products are commonly excluded from returns —
-that is normal and lawful, not a red flag, and the page says so.
+Both offers that shipped as `unverified` are now confirmed and active, from the
+shop's own policy pages:
 
-## Next pass
+- **Delivery** — free over €60 within metropolitan France, via GLS. Delivery
+  complaints must be raised by email within **14 days** of receipt with
+  evidence; after that the goods are treated as accepted.
+- **Returns** — approved refunds processed within **14 days** of the seller
+  receiving the return. **Return postage is at the buyer's expense** and the
+  original delivery charge is not refunded. Proven defects are refunded or
+  replaced at the seller's expense.
 
-Settle shipping and returns from the shop's own policy pages and promote or drop
-those two offers. Capture prices.
+How this surfaced is worth recording: the monitoring repo's first run failed to
+fetch the two Les Cotons URLs, because they were paths I had guessed rather than
+looked up. Finding the correct Shopify `/policies/` paths turned up the policy
+content itself. **The lesson is the general one — do not guess a URL** — and the
+monitoring caught it within a day of shipping.
+
+## Still open
+
+Prices were not captured. The page says so rather than estimating.
