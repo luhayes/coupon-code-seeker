@@ -95,3 +95,54 @@ merchants:
       Deep links used: /go/vahdam-teas, ?to=/collections/black-tea
       Vahdam runs separate US/UK/DE/IN storefronts — confirm the tracking link
       targets the US store before setting status: active.
+  seed:
+    status: unconfigured
+    network: ""
+    url: ""
+    fallback: https://seed.com
+    notes: |
+      Deep links used: /go/seed, ?to=/daily-synbiotic, ?to=/daily-synbiotic-refill
+  trade-coffee:
+    status: unconfigured
+    network: ""
+    url: ""
+    fallback: https://www.drinktrade.com
+    notes: |
+      Deep links used: /go/trade-coffee, ?to=/pages/30-off, ?to=/pages/subscribe,
+      ?to=/products/coffee-maker-collection
+  vital-proteins:
+    status: unconfigured
+    network: ""
+    url: ""
+    fallback: https://www.vitalproteins.com
+    notes: |
+      Deep links used: /go/vital-proteins, ?to=/products/collagen-peptides,
+      ?to=/products/skin-complex, ?to=/products/collagen-peptides-360-capsules
+  moon-juice:
+    status: unconfigured
+    network: ""
+    url: ""
+    fallback: https://moonjuice.com
+    notes: |
+      Deep links used: /go/moon-juice, ?to=/pages/subscriptions,
+      ?to=/products/superyou, ?to=/products/magnesi-om-magnesium-supplement,
+      ?to=/collections/superyou-magnesi-om
+  ag1:
+    status: unconfigured
+    network: ""
+    url: ""
+    fallback: https://drinkag1.com
+    notes: |
+      Deep links used: /go/ag1, ?to=/ag1-membership
+      AG1's affiliate programme is selective and its promotions bundle extra
+      items with a first subscription order rather than discounting price — if
+      our link carries a specific Welcome Kit bundle, the page's kit contents
+      need to match it.
+  sakara-life:
+    status: unconfigured
+    network: ""
+    url: ""
+    fallback: https://www.sakara.com
+    notes: |
+      Deep links used: /go/sakara-life,
+      ?to=/nutrition/signature-nutrition-program
