@@ -146,3 +146,52 @@ merchants:
     notes: |
       Deep links used: /go/sakara-life,
       ?to=/nutrition/signature-nutrition-program
+  american-leather-co:
+    status: unconfigured
+    network: ""
+    url: ""
+    fallback: https://www.americanleatherco.com
+    notes: |
+      Deep links used: /go/american-leather-co, ?to=/collections/bags,
+      ?to=/collections/sale
+  beauty-success:
+    status: unconfigured
+    network: ""
+    url: ""
+    fallback: https://www.beautysuccess.fr
+    notes: |
+      Deep links used: /go/beauty-success
+      French market, EUR. Confirm the link targets beautysuccess.fr and not a
+      Groupe NOVI corporate domain.
+  les-cotons-de-romane:
+    status: unconfigured
+    network: ""
+    url: ""
+    fallback: https://lescotonsderomane.com
+    notes: |
+      Deep links used: /go/les-cotons-de-romane
+      CRITICAL: several .shop look-alike domains copy this brand. The fallback
+      above is the domain the brand promotes from its own Instagram and TikTok.
+      Verify any tracking link resolves to lescotonsderomane.com and nowhere
+      else before setting status: active.
+  feniko:
+    status: unconfigured
+    network: ""
+    url: ""
+    fallback: https://feniko.pl
+    notes: |
+      CONSUMER CREDIT, Poland, PLN. Deep links used: /go/feniko
+      Lending affiliate programmes carry compliance obligations on how the
+      product may be advertised — check the network's creative rules before
+      setting status: active, and make sure the page's cost disclosures satisfy
+      them.
+  minicredit:
+    status: unconfigured
+    network: ""
+    url: ""
+    fallback: https://www.minicredit.pl
+    notes: |
+      CONSUMER CREDIT, Poland, PLN. Deep links used: /go/minicredit
+      Same compliance caveat as Feniko. Also re-check the representative example
+      (2,500 zl / 30 days / 297.61% RRSO) on each verification pass — lenders
+      update these and a stale figure is a compliance problem, not just a typo.

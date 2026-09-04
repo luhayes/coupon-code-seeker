@@ -1,0 +1,27 @@
+# Offers for feniko — structured data consumed by the site.
+# CONSUMER CREDIT. The only genuine promotion here is the 0% first loan; every
+# terms field must carry the cost of borrowing beyond it. Never present a loan
+# as a saving.
+# type: code | deal   status: active | unverified | expired
+offers:
+  - id: feniko-first-loan-free
+    title: "First loan at 0% RRSO — repay exactly what you borrowed"
+    type: deal
+    discount: "0% RRSO"
+    code: null
+    status: active
+    terms: "New customers only, for 30 or 61 days, with no commission, interest or fees if repaid on time. Published caps for the free amount differ by source (3,000-5,000 zl) — confirm on Feniko's own page. Every subsequent loan is charged at roughly 299% RRSO."
+  - id: feniko-loan-range
+    title: "Loans up to 7,000 zl, paid out in about 15 minutes"
+    type: deal
+    discount: "Availability"
+    code: null
+    status: active
+    terms: "Online application with funds transferred in as little as 15 minutes. Speed is a feature of the product, not a discount — the cost of borrowing is unchanged by how fast it arrives."
+  - id: feniko-repeat-cost
+    title: "Repeat borrowing costs roughly 299% RRSO"
+    type: deal
+    discount: "Cost disclosure"
+    code: null
+    status: active
+    terms: "After the free first loan, commission and interest apply at approximately 299% RRSO. This is listed as an offer entry so the cost is visible wherever the offers are rendered, not buried in the page body."

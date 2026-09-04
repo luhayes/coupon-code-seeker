@@ -1,0 +1,26 @@
+# Offers for minicredit — structured data consumed by the site.
+# CONSUMER CREDIT. There is no standing free-loan promotion here. Every terms
+# field must carry the cost of borrowing. Never present a loan as a saving.
+# type: code | deal   status: active | unverified | expired
+offers:
+  - id: minicredit-representative-example
+    title: "Representative example: 2,500 zl over 30 days costs 300.34 zl — 297.61% RRSO"
+    type: deal
+    discount: "Cost disclosure"
+    code: null
+    status: active
+    terms: "Total cost of 300.34 zl comprises a 250 zl commission, a 20.55 zl service fee and 29.79 zl interest. No additional charge applies if repaid on time."
+  - id: minicredit-loan-range
+    title: "Loans from 500 to 9,600 zl, decision in about 15 minutes"
+    type: deal
+    discount: "Availability"
+    code: null
+    status: active
+    terms: "Single-repayment short-term loan, typically over 30 days. The application is entirely online. Availability and speed are product features, not discounts."
+  - id: minicredit-zero-promo
+    title: "Occasional 0 zl first-loan promotion"
+    type: deal
+    discount: "0% when offered"
+    code: null
+    status: unverified
+    terms: "MiniCredit does not run a standing free-first-loan offer. A '0 zl' promotion appears periodically and is conditional on repaying on time; miss the date and standard charges apply. Confirm on MiniCredit's own page before relying on it."

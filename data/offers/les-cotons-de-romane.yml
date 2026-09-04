@@ -1,0 +1,24 @@
+# Offers for les-cotons-de-romane — structured data consumed by the site.
+# type: code | deal   status: active | unverified | expired
+offers:
+  - id: lcdr-made-in-france
+    title: "Hand-sewn in Rennes, sold direct with no reseller margin"
+    type: deal
+    discount: "Direct pricing"
+    code: null
+    status: active
+    terms: "Products are made by the brand in Rennes and sold direct on its own site. There is no separate discount programme; the direct price is the price."
+  - id: lcdr-shipping
+    title: "Shipping via GLS"
+    type: deal
+    discount: "Shipping"
+    code: null
+    status: unverified
+    terms: "GLS is the brand's stated delivery partner, but no free-shipping threshold or delivery cost could be confirmed against a page the brand owns. Check the cart before ordering."
+  - id: lcdr-returns
+    title: "Returns policy"
+    type: deal
+    discount: "Returns"
+    code: null
+    status: unverified
+    terms: "No return window or condition could be confirmed against a brand-owned page on this pass. Reusable hygiene products are frequently excluded from returns for hygiene reasons — confirm before buying."

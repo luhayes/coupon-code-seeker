@@ -1,0 +1,24 @@
+# Offers for american-leather-co — structured data consumed by the site.
+# type: code | deal   status: active | unverified | expired
+offers:
+  - id: alc-free-shipping
+    title: "Free FedEx ground shipping on every US order, no minimum"
+    type: deal
+    discount: "Free shipping"
+    code: null
+    status: active
+    terms: "Applies to all US orders with no threshold to reach. The brand also ships to Canada and Australia under separate rates."
+  - id: alc-sale-collection
+    title: "Year-round sale section"
+    type: deal
+    discount: "Varies"
+    code: null
+    status: active
+    terms: "A standing sale collection rather than a seasonal event. Stock and discount depth rotate, so the section is worth checking before paying full price."
+  - id: alc-returns
+    title: "Returns accepted on unused items, $5 deducted"
+    type: deal
+    discount: "Returns"
+    code: null
+    status: active
+    terms: "Items must be new and unused. For US orders placed on or after 15 March 2023 a $5 return charge is deducted automatically from the credit issued."

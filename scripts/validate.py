@@ -135,8 +135,20 @@ def check(path, affiliates):
     # Support destinations stay as direct external links; shopping paths must go
     # through /go/. The marker can be in the host (help.example.com) or in the
     # path (example.com/pages/help-center), so test the whole URL.
-    SUPPORT = ("help", "support", "return", "faq", "contact", "policy", "terms",
-               "track", "status")
+    # Support destinations stay direct. The markers are multilingual because the
+    # site covers merchants outside the English-speaking market — a French
+    # help centre lives at /aide, a Polish one at /pomoc.
+    SUPPORT = (
+        # English
+        "help", "support", "return", "faq", "contact", "policy", "terms",
+        "track", "status",
+        # French
+        "aide", "retour", "livraison", "conditions", "mentions", "service-client",
+        # Polish
+        "pomoc", "kontakt", "regulamin", "zwrot", "reklamacj", "dostawa",
+        # German / Spanish, for when the directory reaches them
+        "hilfe", "versand", "ruckgabe", "ayuda", "envio", "devolucion",
+    )
 
     def registrable(url):
         """Last two labels of the host — good enough to tell one brand's

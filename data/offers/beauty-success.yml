@@ -1,0 +1,38 @@
+# Offers for beauty-success — structured data consumed by the site.
+# type: code | deal   status: active | unverified | expired
+offers:
+  - id: bs-free-delivery-60
+    title: "Free Colissimo delivery on orders over €60"
+    type: deal
+    discount: "Free shipping"
+    code: null
+    status: active
+    terms: "Free Colissimo delivery to an address of your choice from €60 of purchase. Below that, standard delivery charges apply."
+  - id: bs-click-collect
+    title: "Free delivery to a Beauty Success store"
+    type: deal
+    discount: "Free shipping"
+    code: null
+    status: active
+    terms: "Click and collect to any store in the network is free with no minimum order, which undercuts the €60 home-delivery threshold."
+  - id: bs-loyalty
+    title: "Loyalty card — a voucher every 200 points"
+    type: deal
+    discount: "Loyalty"
+    code: null
+    status: active
+    terms: "Free card, obtainable online or in store. Points accrue on every purchase across the perfumery and institute network and on beautysuccess.fr; each 200 points issues a loyalty cheque."
+  - id: bs-returns
+    title: "Returns processed within 14 working days"
+    type: deal
+    discount: "Returns"
+    code: null
+    status: active
+    terms: "Once the returns department receives your parcel it is processed within 14 working days. Exchanges and returns are also handled in store."
+  - id: bs-authenticity
+    title: "Approved distributor — authenticity guaranteed"
+    type: deal
+    discount: "Guarantee"
+    code: null
+    status: active
+    terms: "Beauty Success has been an approved distributor for selective perfumery brands for 40 years and guarantees the authenticity of everything it sells."
