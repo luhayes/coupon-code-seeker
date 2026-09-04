@@ -209,29 +209,3 @@ US orders generally arrive in 3–10 business days via USPS First Class. Canadia
 It's a premium product priced accordingly. The 90-day guarantee with free return shipping means a first order can be tested without financial risk, which is the sensible way to find out.
 
 ---
-
-<!--
-EDITORIAL NOTES — not rendered.
-
-Verified 2026-09-04 against: piquelife.com product/collection pages, help.piquelife.com
-(shipping policy, discounts & deals, Pique Rewards, 90-day guarantee) and the Pique
-referral pages.
-
-Deliberately excluded: codes such as PIQUESPECIAL10, SPRINGSPREE20 and MISSYOU672838
-circulating on coupon aggregators. None could be confirmed against a Pique-owned page,
-and several sites advertise implausible 45–100% off claims. Do not publish a specific
-code until it has been tested in a live cart — a dead code on the page costs more trust
-than an empty code slot.
-
-Before publishing:
-  - set the Pique tracking link in affiliates.yml and flip status to `active`
-    (commercial anchors already point at /go/pique-life; until then the redirect
-    resolves untracked to piquelife.com, so nothing on the page is broken)
-  - add the logo asset at /assets/merchants/pique-life.png
-  - re-check prices in the product table; they move with promotions
-
-Help center and returns-portal links are intentionally left as direct external
-links. They are support destinations, not conversion paths, and routing them
-through /go/ would be user-hostile for no revenue.
-Re-verify cadence: monthly, and refresh `last_updated` / `verified_on` each time.
--->

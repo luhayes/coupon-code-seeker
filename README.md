@@ -8,6 +8,7 @@ render, plus a long-form body written for search and for shoppers deciding wheth
 
 ```
 merchants/           one file per merchant, named <slug>.md
+_notes/              internal working notes, never published
 _templates/          merchant.md — copy this to start a new page
 affiliates.yml       slug -> tracking link map, resolved by /go/<slug>
 scripts/validate.py  pre-publish checks
@@ -24,7 +25,8 @@ problem, so it also works as a pre-commit or CI gate.
 2. Research against **merchant-owned pages only** — the store itself, its help center,
    its policy and rewards pages. Coupon aggregators are not sources.
 3. Fill in the frontmatter, then the body. Keep the section order in the template so
-   pages are comparable across merchants.
+   pages are comparable across merchants. Record your sources, rejected offers and
+   open tasks in `_notes/<slug>.md`.
 4. Set `last_updated` and `verified_on` to the date you actually checked.
 5. Add an entry to `affiliates.yml` and the logo before the page goes live.
 
@@ -45,7 +47,11 @@ separate sections instead of blank lines. `scripts/validate.py` fails on this.
   more reader trust than an empty code slot. Prefer code-free offers — subscription
   discounts, shipping thresholds, loyalty and referral programs — which are durable and
   verifiable.
-- Ignore the 45–100%-off claims that circulate on scraper sites. They are noise.
+- Discount claims on third-party aggregators are frequently unverifiable. They are
+  not sources, whatever figure they advertise.
+- Keep HTML comments out of `merchants/*.md`. Renderers pass them through into the
+  published page, where visitors can read them in the page source. Internal notes
+  go in `_notes/<slug>.md`.
 - State exclusions, minimums and new-customer restrictions in the offer `terms`.
 - Prices change. Label them with the month captured and re-check on each pass.
 - Write the positioning honestly, including where a brand is expensive. The page should

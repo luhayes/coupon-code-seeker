@@ -42,16 +42,6 @@ positioned on price.
 *We may earn a commission when you buy through links on this page. It never
 changes the price you pay or which offers we list.*
 
-<!--
-Monetized anchors point at /go/<slug>, resolved through affiliates.yml — never
-paste a raw tracking URL into the copy. Deep link with
-/go/<slug>?to=/path/on/merchant/site. Put the link on meaningful anchor text in
-the flow of a sentence; a bare URL in a metadata row earns nothing. Leave
-support destinations (help center, returns portal, status pages) as direct
-external links.
--->
-
-
 ---
 
 ## About Merchant Name
@@ -128,12 +118,5 @@ flagging. One subsection per offer, in the same order as the table.
 
 ---
 
-<!--
-EDITORIAL NOTES — not rendered.
-
-Verified YYYY-MM-DD against: <merchant-owned URLs used>.
-Excluded: <codes or claims rejected, and why>.
-Before publishing: add the tracking link to affiliates.yml and set status:
-active, add the logo asset, re-check prices.
-Re-verify cadence: monthly; refresh last_updated / verified_on each time.
--->
+Internal notes for this merchant go in _notes/<slug>.md, never in an HTML
+comment here — comments are passed through into the published page source.

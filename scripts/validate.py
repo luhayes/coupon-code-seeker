@@ -106,6 +106,14 @@ def check(path, affiliates):
         if dest and not dest.startswith("/"):
             err(f"/go/{link_slug}?to={dest} is not a same-site absolute path")
 
+    # Markdown renderers pass HTML comments straight through into the published
+    # page, where any visitor can read them via View Source. Internal reasoning
+    # belongs in _notes/<slug>.md instead.
+    if "<!--" in body:
+        line = body[:body.index("<!--")].count("\n") + raw.count("\n") + 3
+        err(f"HTML comment in page body near line {line} — it ships to the "
+            "published page source; move it to _notes/")
+
     for url in re.findall(r"\]\((https?://[^)]+)\)", body):
         host = re.sub(r"^https?://", "", url).split("/")[0]
         if not is_template and slug and host.replace("www.", "").startswith(
