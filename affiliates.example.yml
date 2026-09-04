@@ -1,4 +1,13 @@
-# Monetization map for couponcodeseeker.com
+# Monetization map for couponcodeseeker.com — PUBLIC TEMPLATE
+#
+# This repository is public, so this file carries the schema and the merchant
+# slugs only. It must never contain a real tracking URL or network name.
+#
+# Real values live in `affiliates.yml`, which is gitignored. Copy this file to
+# that name and fill it in, or supply the links at runtime through environment
+# variables (AFFILIATE_<SLUG_UPPER_SNAKE>) if your host prefers secrets over a
+# file. scripts/validate.py fails the build if a committed affiliates file has
+# a non-empty `url`.
 #
 # Merchant pages never contain a raw tracking URL. Body anchors point at the
 # internal path /go/<slug>, and the site resolves that here at redirect time.

@@ -1,0 +1,12 @@
+# Real affiliate tracking links. This repository is public — only the schema in
+# affiliates.example.yml is committed. See README "Affiliate links".
+affiliates.yml
+
+# Local env overrides for the redirect endpoint
+.env
+.env.*
+!.env.example
+
+__pycache__/
+*.pyc
+.DS_Store

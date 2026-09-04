@@ -7,13 +7,18 @@ render, plus a long-form body written for search and for shoppers deciding wheth
 ## Layout
 
 ```
-merchants/           one file per merchant, named <slug>.md
-_notes/              internal working notes, never published
-_templates/          merchant.md — copy this to start a new page
-affiliates.yml       slug -> tracking link map, resolved by /go/<slug>
-scripts/validate.py  pre-publish checks
-assets/merchants/    logos, <slug>.png
+merchants/             one file per merchant, named <slug>.md
+_notes/                internal working notes, never published
+_templates/            merchant.md — copy this to start a new page
+affiliates.example.yml public schema for the /go/<slug> tracking map
+affiliates.yml         real tracking links — gitignored, never committed
+scripts/validate.py    pre-publish checks
+assets/merchants/      logos, <slug>.png
 ```
+
+**This repository is public.** The merchant pages are the product, so they belong
+in the open, but nothing that would be handed to a competitor or a scraper goes
+in with them — see "Affiliate links" below.
 
 Run `python3 scripts/validate.py` before committing. It exits non-zero on a
 problem, so it also works as a pre-commit or CI gate.
@@ -28,7 +33,8 @@ problem, so it also works as a pre-commit or CI gate.
    pages are comparable across merchants. Record your sources, rejected offers and
    open tasks in `_notes/<slug>.md`.
 4. Set `last_updated` and `verified_on` to the date you actually checked.
-5. Add an entry to `affiliates.yml` and the logo before the page goes live.
+5. Add the slug to `affiliates.example.yml`, put the real link in your local
+   `affiliates.yml`, and add the logo before the page goes live.
 
 ## Frontmatter gotcha
 
@@ -59,9 +65,25 @@ separate sections instead of blank lines. `scripts/validate.py` fails on this.
 
 ## Affiliate links
 
-Tracking links never appear in page copy. Monetized anchors point at the internal
-path **`/go/<slug>`**, which the site resolves through `affiliates.yml` at redirect
-time. Deep link with `/go/<slug>?to=/path/on/merchant/site`.
+Tracking links never appear in page copy, and never in the repository either.
+Monetized anchors point at the internal path **`/go/<slug>`**, which the site
+resolves to a real tracking URL at redirect time. Deep link with
+`/go/<slug>?to=/path/on/merchant/site`.
+
+Because this repository is public, the map is split in two:
+
+| File | Committed? | Contents |
+| --- | --- | --- |
+| `affiliates.example.yml` | yes | schema and merchant slugs, empty `url`/`network` |
+| `affiliates.yml` | **no**, gitignored | the real tracking URLs |
+
+Copy the example to `affiliates.yml` and fill it in locally, or supply the links
+to the redirect endpoint through environment variables if your host prefers
+secrets over a file. The merchant slugs stay public deliberately — each one is
+already a live page on the site — but a committed tracking URL would hand
+competitors your entire merchant-to-network mapping in one file, and some
+affiliate agreements prohibit disclosing terms at all. `scripts/validate.py`
+fails if a committed affiliates file has a non-empty `url` or `network`.
 
 ```markdown
 Add your items to the cart at [piquelife.com](/go/pique-life), choosing
@@ -104,7 +126,7 @@ stale should be treated as unpublished until rechecked.
 | `name` | display name |
 | `aliases` | other names shoppers search for |
 | `website` | canonical storefront URL |
-| — | no tracking link here; see `affiliates.yml` |
+| — | no tracking link here; see `affiliates.example.yml` |
 | `logo` | `/assets/merchants/<slug>.png` |
 | `categories`, `tags` | taxonomy for browse and related-merchant modules |
 | `ships_to`, `currency` | shipping scope |

@@ -121,10 +121,53 @@ def check(path, affiliates):
             err(f"raw storefront link {url} — monetized anchors use /go/{slug}")
 
 
+def load_affiliates():
+    """Real map if it exists locally, otherwise the committed schema.
+
+    Only slugs are read here, and slugs are public anyway — every one of them is
+    a live page on the site. The tracking URLs are the sensitive part, and this
+    repository is public, so they must never reach a committed file.
+    """
+    real = os.path.join(ROOT, "affiliates.yml")
+    example = os.path.join(ROOT, "affiliates.example.yml")
+    path = real if os.path.exists(real) else example
+    if not os.path.exists(path):
+        errors.append("affiliates.example.yml is missing")
+        return {}
+
+    merchants = (yaml.safe_load(open(path, encoding="utf-8")) or {}).get("merchants") or {}
+
+    # A tracking link in a committed file is published to the world the moment it
+    # is pushed. Catch it here rather than in someone's scraper.
+    try:
+        import subprocess
+        tracked = subprocess.run(
+            ["git", "ls-files", "affiliates.yml", "affiliates.example.yml"],
+            cwd=ROOT, capture_output=True, text=True, timeout=10,
+        ).stdout.split()
+    except Exception:
+        tracked = ["affiliates.example.yml"]
+
+    for name in tracked:
+        full = os.path.join(ROOT, name)
+        if not os.path.exists(full):
+            continue
+        data = (yaml.safe_load(open(full, encoding="utf-8")) or {}).get("merchants") or {}
+        for slug, cfg in (data or {}).items():
+            cfg = cfg or {}
+            if (cfg.get("url") or "").strip():
+                errors.append(
+                    f"{name}: merchant '{slug}' has a tracking url in a committed "
+                    "file — this repository is public; move it to the gitignored "
+                    "affiliates.yml")
+            if (cfg.get("network") or "").strip():
+                errors.append(
+                    f"{name}: merchant '{slug}' names a network in a committed file")
+    return merchants
+
+
 def main():
-    affiliates = (yaml.safe_load(
-        open(os.path.join(ROOT, "affiliates.yml"), encoding="utf-8")
-    ) or {}).get("merchants") or {}
+    affiliates = load_affiliates()
 
     paths = sorted(glob.glob(os.path.join(ROOT, "merchants", "*.md")) +
                    glob.glob(os.path.join(ROOT, "_templates", "*.md")))

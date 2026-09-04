@@ -24,7 +24,9 @@ cart. A dead code costs more reader trust than an empty code slot.
 
 ## Pre-publish checklist
 
-- [ ] Add the Pique tracking link to `affiliates.yml` and set `status: active`.
+- [ ] Add the Pique tracking link to the local (gitignored) `affiliates.yml`
+      and set `status: active`. Never put it in `affiliates.example.yml` — that
+      file is committed to a public repository.
       Commercial anchors already point at `/go/pique-life`; until the link is set
       the redirect resolves untracked to piquelife.com, so no link is broken.
 - [ ] Add the logo asset at `/assets/merchants/pique-life.png`.
