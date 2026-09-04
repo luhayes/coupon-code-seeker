@@ -6,9 +6,9 @@ aliases:
   - ALC handbags
 website: https://www.americanleatherco.com
 logo: /assets/merchants/american-leather-co.png
+primary_category: bags-luggage
 categories:
-  - Fashion & Accessories
-  - Bags & Luggage
+  - bags-luggage
 tags:
   - handbags
   - leather

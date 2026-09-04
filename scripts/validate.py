@@ -25,6 +25,26 @@ TYPES = {"code", "deal"}
 STATUSES = {"active", "unverified", "expired"}
 
 errors = []
+_taxonomy = None
+
+
+def load_taxonomy():
+    """The controlled vocabulary of category slugs, keyed by slug."""
+    global _taxonomy
+    if _taxonomy is None:
+        path = os.path.join(ROOT, "taxonomy.yml")
+        if not os.path.exists(path):
+            errors.append("taxonomy.yml is missing")
+            _taxonomy = {}
+        else:
+            _taxonomy = (yaml.safe_load(open(path, encoding="utf-8"))
+                         or {}).get("categories") or {}
+            for slug, cfg in _taxonomy.items():
+                parent = (cfg or {}).get("parent")
+                if parent and parent not in _taxonomy:
+                    errors.append(
+                        f"taxonomy.yml: '{slug}' has unknown parent '{parent}'")
+    return _taxonomy
 
 
 def check(path, affiliates):
@@ -68,6 +88,26 @@ def check(path, affiliates):
 
     if "affiliate_url" in data:
         err("`affiliate_url` is not used — put the tracking link in affiliates.yml")
+
+    # Categories must come from taxonomy.yml. A free-text category field is how
+    # a directory ends up with both "Tea & Coffee" and "Coffee & Tea".
+    taxonomy = load_taxonomy()
+    cats = data.get("categories") or []
+    primary = data.get("primary_category")
+    if not is_template:
+        if not cats:
+            err("no categories")
+        for c in cats:
+            if c not in taxonomy:
+                err(f"category '{c}' is not defined in taxonomy.yml")
+        if len(cats) > 3:
+            err(f"{len(cats)} categories — cap is 3, or browsing stops meaning anything")
+        if not primary:
+            err("missing `primary_category`")
+        elif primary not in taxonomy:
+            err(f"primary_category '{primary}' is not defined in taxonomy.yml")
+        elif primary not in cats:
+            err(f"primary_category '{primary}' must also appear in `categories`")
 
     seo = data.get("seo") or {}
     desc = seo.get("description", "")

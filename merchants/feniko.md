@@ -6,9 +6,9 @@ aliases:
   - Feniko pożyczka
 website: https://feniko.pl
 logo: /assets/merchants/feniko.png
+primary_category: loans
 categories:
-  - Finance
-  - Loans
+  - loans
 tags:
   - short-term loan
   - chwilowka

@@ -6,9 +6,9 @@ aliases:
   - Ritual Essential
 website: https://ritual.com
 logo: /assets/merchants/ritual.png
+primary_category: supplements
 categories:
-  - Health & Wellness
-  - Supplements
+  - supplements
 tags:
   - multivitamin
   - prenatal

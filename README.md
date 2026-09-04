@@ -10,6 +10,8 @@ holding its structured deals.
 ```
 merchants/             one file per merchant, named <slug>.md
 data/offers/           <slug>.yml — the offers for each merchant
+taxonomy.yml           the controlled vocabulary of categories
+categories/            generated category pages — do not hand-edit
 stores.md              generated directory page — do not hand-edit
 _notes/                internal working notes, never published
 _templates/            merchant.md and offers.yml — copy these to start
@@ -41,6 +43,47 @@ problem, so it also works as a pre-commit or CI gate.
 5. Set `last_updated` and `verified_on` to the date you actually checked.
 6. Add the slug to `affiliates.example.yml`, put the real link in your local
    `affiliates.yml`, and add the logo before the page goes live.
+
+## Categories
+
+Categories are a **controlled vocabulary** defined in `taxonomy.yml`. A merchant
+may only use slugs defined there — `scripts/validate.py` rejects anything else,
+which is what stops `Tea & Coffee` and `Coffee & Tea` from both existing a year
+from now.
+
+Two levels, no more. A flat list puts a category holding ten merchants beside
+one holding a single merchant; a third level splits the inventory too thin to
+fill a page.
+
+Every merchant declares:
+
+| Field | Meaning |
+| --- | --- |
+| `primary_category` | Exactly one slug — where the merchant lives, and what the directory groups it under |
+| `categories` | The primary plus at most two secondaries, for cross-listing |
+
+**The primary is what keeps browsing useful.** Before it existed, the directory
+grouped by every category a merchant carried, so Four Sigmatic appeared in four
+of five sections and no section told a reader anything. Related to that: resist
+filing a merchant under a broad umbrella like `health-wellness` as its primary.
+A category holding 60% of the inventory is not a category, it is a synonym for
+the site.
+
+`scripts/build_categories.py` generates a page per category. Two rules keep the
+output clean, both enforced in the generator:
+
+- A category with **no merchants** is skipped rather than published empty. Seed
+  a category in `taxonomy.yml` ahead of its content and nothing renders until a
+  merchant lands in it.
+- A parent whose whole member list comes from a **single child** is skipped too:
+  it would be the same table at a second URL, which is thin duplicate content
+  and makes a reader click through two levels for nothing. The child is
+  canonical. A parent that genuinely aggregates several children — `food-drink`
+  over tea, coffee and meal delivery — is published.
+
+Adding a category: define it in `taxonomy.yml` first, with real `seo` fields,
+then assign merchants. Tags are separate and deliberately uncontrolled — they
+describe attributes, not structure, and nothing navigates by them.
 
 ## Where offers live
 
@@ -166,8 +209,10 @@ stale should be treated as unpublished until rechecked.
 files. Never hand-edit it — add or edit a merchant, then rebuild:
 
 ```
-python3 scripts/build_directory.py            # rebuild stores.md
-python3 scripts/build_directory.py --check    # CI: fail if stale
+python3 scripts/build_directory.py             # rebuild stores.md
+python3 scripts/build_categories.py            # rebuild categories/*.md
+python3 scripts/build_directory.py --check     # CI: fail if stale
+python3 scripts/build_categories.py --check    # CI: fail if stale
 ```
 
 It groups merchants by category, lists them A–Z with their headline offer, and

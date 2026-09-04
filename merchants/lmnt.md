@@ -7,10 +7,9 @@ aliases:
   - LMNT Recharge
 website: https://drinklmnt.com
 logo: /assets/merchants/lmnt.png
+primary_category: supplements
 categories:
-  - Health & Wellness
-  - Food & Drink
-  - Supplements
+  - supplements
 tags:
   - electrolytes
   - hydration

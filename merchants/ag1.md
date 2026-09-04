@@ -7,9 +7,9 @@ aliases:
   - AG1 Greens
 website: https://drinkag1.com
 logo: /assets/merchants/ag1.png
+primary_category: supplements
 categories:
-  - Health & Wellness
-  - Supplements
+  - supplements
 tags:
   - greens powder
   - daily nutrition

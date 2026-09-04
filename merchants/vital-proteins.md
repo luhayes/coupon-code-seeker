@@ -6,9 +6,10 @@ aliases:
   - Vital Proteins Collagen
 website: https://www.vitalproteins.com
 logo: /assets/merchants/vital-proteins.png
+primary_category: supplements
 categories:
-  - Health & Wellness
-  - Supplements
+  - supplements
+  - beauty
 tags:
   - collagen
   - beauty from within

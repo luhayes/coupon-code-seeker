@@ -16,27 +16,19 @@ Every store we track, with 56 currently active offers between them. Offers are v
 
 ## Browse by category
 
-**Bags & Luggage** — [American Leather Co.](/stores/american-leather-co)
+**[Bags & Luggage](/categories/bags-luggage)** — [American Leather Co.](/stores/american-leather-co)
 
-**Beauty** — [Beauty Success](/stores/beauty-success), [Les Cotons de Romane](/stores/les-cotons-de-romane), [Moon Juice](/stores/moon-juice)
+**[Beauty](/categories/beauty)** — [Les Cotons de Romane](/stores/les-cotons-de-romane)
 
-**Fashion & Accessories** — [American Leather Co.](/stores/american-leather-co)
+**[Fragrance](/categories/fragrance)** — [Beauty Success](/stores/beauty-success)
 
-**Finance** — [Feniko](/stores/feniko), [MiniCredit](/stores/minicredit)
+**[Loans](/categories/loans)** — [Feniko](/stores/feniko), [MiniCredit](/stores/minicredit)
 
-**Food & Drink** — [Four Sigmatic](/stores/four-sigmatic), [LMNT](/stores/lmnt), [MUD\WTR](/stores/mudwtr), [Pique Life](/stores/pique-life), [Sakara Life](/stores/sakara-life), [Trade Coffee](/stores/trade-coffee), [Vahdam Teas](/stores/vahdam-teas)
+**[Meal Delivery](/categories/meal-delivery)** — [Sakara Life](/stores/sakara-life)
 
-**Fragrance** — [Beauty Success](/stores/beauty-success)
+**[Supplements](/categories/supplements)** — [AG1](/stores/ag1), [LMNT](/stores/lmnt), [Moon Juice](/stores/moon-juice), [Ritual](/stores/ritual), [Seed](/stores/seed), [Vital Proteins](/stores/vital-proteins)
 
-**Health & Wellness** — [AG1](/stores/ag1), [Four Sigmatic](/stores/four-sigmatic), [LMNT](/stores/lmnt), [Moon Juice](/stores/moon-juice), [MUD\WTR](/stores/mudwtr), [Pique Life](/stores/pique-life), [Ritual](/stores/ritual), [Sakara Life](/stores/sakara-life), [Seed](/stores/seed), [Vital Proteins](/stores/vital-proteins)
-
-**Home & Living** — [Les Cotons de Romane](/stores/les-cotons-de-romane)
-
-**Loans** — [Feniko](/stores/feniko), [MiniCredit](/stores/minicredit)
-
-**Supplements** — [AG1](/stores/ag1), [Four Sigmatic](/stores/four-sigmatic), [LMNT](/stores/lmnt), [Moon Juice](/stores/moon-juice), [Pique Life](/stores/pique-life), [Ritual](/stores/ritual), [Seed](/stores/seed), [Vital Proteins](/stores/vital-proteins)
-
-**Tea & Coffee** — [Four Sigmatic](/stores/four-sigmatic), [MUD\WTR](/stores/mudwtr), [Pique Life](/stores/pique-life), [Trade Coffee](/stores/trade-coffee), [Vahdam Teas](/stores/vahdam-teas)
+**[Tea & Coffee](/categories/tea-coffee)** — [Four Sigmatic](/stores/four-sigmatic), [MUD\WTR](/stores/mudwtr), [Pique Life](/stores/pique-life), [Trade Coffee](/stores/trade-coffee), [Vahdam Teas](/stores/vahdam-teas)
 
 ## All stores A–Z
 

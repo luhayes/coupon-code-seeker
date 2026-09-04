@@ -7,9 +7,9 @@ aliases:
   - Minicredit pożyczka
 website: https://www.minicredit.pl
 logo: /assets/merchants/minicredit.png
+primary_category: loans
 categories:
-  - Finance
-  - Loans
+  - loans
 tags:
   - short-term loan
   - chwilowka

@@ -6,11 +6,10 @@ aliases:
   - Four Sigmatic Mushroom Coffee
 website: https://us.foursigmatic.com
 logo: /assets/merchants/four-sigmatic.png
+primary_category: tea-coffee
 categories:
-  - Food & Drink
-  - Tea & Coffee
-  - Health & Wellness
-  - Supplements
+  - tea-coffee
+  - supplements
 tags:
   - mushroom coffee
   - lion's mane

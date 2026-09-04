@@ -6,9 +6,9 @@ aliases:
   - Sakara Life Meal Delivery
 website: https://www.sakara.com
 logo: /assets/merchants/sakara-life.png
+primary_category: meal-delivery
 categories:
-  - Food & Drink
-  - Health & Wellness
+  - meal-delivery
 tags:
   - meal delivery
   - plant based

@@ -6,10 +6,10 @@ aliases:
   - Moon Juice Shop
 website: https://moonjuice.com
 logo: /assets/merchants/moon-juice.png
+primary_category: supplements
 categories:
-  - Health & Wellness
-  - Supplements
-  - Beauty
+  - supplements
+  - beauty
 tags:
   - adaptogens
   - magnesium

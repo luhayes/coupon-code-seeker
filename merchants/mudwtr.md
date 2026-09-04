@@ -7,10 +7,9 @@ aliases:
   - Mud Water
 website: https://mudwtr.com
 logo: /assets/merchants/mudwtr.png
+primary_category: tea-coffee
 categories:
-  - Food & Drink
-  - Tea & Coffee
-  - Health & Wellness
+  - tea-coffee
 tags:
   - coffee alternative
   - mushroom coffee

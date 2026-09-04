@@ -6,9 +6,10 @@ aliases:
   - lescotonsderomane
 website: https://lescotonsderomane.com
 logo: /assets/merchants/les-cotons-de-romane.png
+primary_category: beauty
 categories:
-  - Beauty
-  - Home & Living
+  - beauty
+  - home-living
 tags:
   - reusable
   - zero waste

@@ -7,9 +7,9 @@ aliases:
   - DS-01
 website: https://seed.com
 logo: /assets/merchants/seed.png
+primary_category: supplements
 categories:
-  - Health & Wellness
-  - Supplements
+  - supplements
 tags:
   - probiotics
   - synbiotic

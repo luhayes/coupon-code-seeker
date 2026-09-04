@@ -6,9 +6,10 @@ aliases:
   - Beauty Success Parfumerie
 website: https://www.beautysuccess.fr
 logo: /assets/merchants/beauty-success.png
+primary_category: fragrance
 categories:
-  - Beauty
-  - Fragrance
+  - fragrance
+  - beauty
 tags:
   - perfume
   - skincare

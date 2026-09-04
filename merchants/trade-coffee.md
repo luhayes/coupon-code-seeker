@@ -6,9 +6,9 @@ aliases:
   - Drink Trade
 website: https://www.drinktrade.com
 logo: /assets/merchants/trade-coffee.png
+primary_category: tea-coffee
 categories:
-  - Food & Drink
-  - Tea & Coffee
+  - tea-coffee
 tags:
   - coffee
   - subscription

@@ -51,6 +51,7 @@ def load_merchants():
             "slug": d["slug"],
             "name": d.get("name") or d["slug"],
             "categories": d.get("categories") or [],
+            "primary": d.get("primary_category"),
             "offer_count": len(offers),
             "best": (best or {}).get("title", ""),
             "verified": str(d.get("verified_on") or ""),
@@ -58,13 +59,23 @@ def load_merchants():
     return out
 
 
+def load_taxonomy():
+    path = os.path.join(ROOT, "taxonomy.yml")
+    if not os.path.exists(path):
+        return {}
+    return (yaml.safe_load(open(path, encoding="utf-8")) or {}).get("categories") or {}
+
+
 def render(ms):
     today = date.today().isoformat()
     total_offers = sum(m["offer_count"] for m in ms)
+    tax = load_taxonomy()
+    # Group by primary category only. Grouping by every category a merchant
+    # carries put some brands in four of five sections, which made the browse
+    # tell a reader nothing.
     by_cat = {}
     for m in ms:
-        for c in m["categories"]:
-            by_cat.setdefault(c, []).append(m)
+        by_cat.setdefault(m["primary"] or "uncategorised", []).append(m)
 
     s = "" if len(ms) == 1 else "s"
     desc = (f"Browse all {len(ms)} store{s} tracked on Coupon Code Seeker, with "
@@ -98,10 +109,13 @@ def render(ms):
 
     L.append("## Browse by category")
     L.append("")
-    for cat in sorted(by_cat):
+    def label(slug):
+        return (tax.get(slug) or {}).get("name", slug)
+    for cat in sorted(by_cat, key=label):
         names = ", ".join(
-            f"[{m['name']}](/stores/{m['slug']})" for m in sorted(by_cat[cat], key=lambda x: x["name"].lower()))
-        L.append(f"**{cat}** — {names}")
+            f"[{m['name']}](/stores/{m['slug']})"
+            for m in sorted(by_cat[cat], key=lambda x: x["name"].lower()))
+        L.append(f"**[{label(cat)}](/categories/{cat})** — {names}")
         L.append("")
 
     L.append("## All stores A–Z")

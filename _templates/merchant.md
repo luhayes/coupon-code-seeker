@@ -8,7 +8,8 @@ name: Merchant Name
 aliases: []                          # other names shoppers search for
 website: https://www.example.com     # canonical storefront, for reference only
 logo: /assets/merchants/merchant-slug.png
-categories: []                       # e.g. Health & Wellness, Apparel
+primary_category: ""                 # exactly one slug from taxonomy.yml
+categories: []                       # the primary plus at most 2 secondaries
 tags: []
 currency: USD
 ships_to: []

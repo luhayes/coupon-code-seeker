@@ -7,11 +7,10 @@ aliases:
   - Piquelife
 website: https://www.piquelife.com
 logo: /assets/merchants/pique-life.png
+primary_category: tea-coffee
 categories:
-  - Health & Wellness
-  - Food & Drink
-  - Tea & Coffee
-  - Supplements
+  - tea-coffee
+  - supplements
 tags:
   - matcha
   - tea crystals

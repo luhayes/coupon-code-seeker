@@ -1,0 +1,140 @@
+# Category taxonomy for couponcodeseeker.com
+#
+# The controlled vocabulary for merchant categories. A merchant may only use
+# slugs defined here — scripts/validate.py rejects anything else, which is what
+# stops "Tea & Coffee" and "Coffee & Tea" from both existing six months from now.
+#
+# Two levels, and that is deliberate: a flat list puts a category holding ten
+# merchants next to one holding a single merchant, and a third level would split
+# the inventory too thin to fill a page.
+#
+# Every merchant declares:
+#   primary_category  exactly one slug — where the merchant lives, and what
+#                     drives its breadcrumb and canonical category page
+#   categories        the primary plus at most two secondaries, for cross-listing
+#
+# The primary is what keeps browsing useful. Before it existed, Four Sigmatic
+# appeared in four of five sections of the directory, so no section told a
+# reader anything.
+#
+# Adding a category: add it here first, with real seo fields, then assign
+# merchants to it. A category with no merchants renders nothing and is fine to
+# seed ahead of the content.
+
+version: 1
+
+categories:
+  # ---- Food & Drink --------------------------------------------------------
+  food-drink:
+    name: Food & Drink
+    parent: null
+    description: >-
+      Everything consumable that is not a supplement — coffee, tea, groceries
+      and prepared meals.
+    seo:
+      title: "Food & Drink Coupons & Deals"
+      description: "Verified deals on coffee, tea and food delivery brands. Subscription rates, shipping thresholds and guarantees, checked against each merchant's own pages."
+  tea-coffee:
+    name: Tea & Coffee
+    parent: food-drink
+    description: >-
+      Tea, coffee and the coffee-alternative brands that compete with them —
+      matcha, mushroom coffee, tea crystals and roasted coffee subscriptions.
+    seo:
+      title: "Tea & Coffee Coupons & Deals"
+      description: "Verified deals on tea, matcha, coffee and coffee-alternative brands. Subscribe & Save rates, free-shipping thresholds and money-back guarantees."
+  meal-delivery:
+    name: Meal Delivery
+    parent: food-drink
+    description: >-
+      Prepared-meal and meal-kit services delivered on a recurring schedule.
+    seo:
+      title: "Meal Delivery Coupons & Deals"
+      description: "Verified deals on prepared-meal and meal-kit delivery services, including the subscription-versus-one-time pricing differences that matter most."
+
+  # ---- Health & Wellness ---------------------------------------------------
+  health-wellness:
+    name: Health & Wellness
+    parent: null
+    description: >-
+      The umbrella for supplements and functional health products. Rarely used
+      as a primary category — it is too broad to be useful on its own.
+    seo:
+      title: "Health & Wellness Coupons & Deals"
+      description: "Verified deals on supplements, vitamins, probiotics and functional health brands, with the subscription rates and guarantees stated in full."
+  supplements:
+    name: Supplements
+    parent: health-wellness
+    description: >-
+      Vitamins, probiotics, protein, collagen, greens powders and electrolytes.
+    seo:
+      title: "Supplement Coupons & Deals"
+      description: "Verified deals on vitamins, probiotics, collagen, greens powders and electrolytes. Subscription pricing, refund windows and what each actually costs."
+
+  # ---- Beauty --------------------------------------------------------------
+  beauty:
+    name: Beauty
+    parent: null
+    description: >-
+      Skincare, cosmetics and personal care, including reusable and low-waste
+      alternatives.
+    seo:
+      title: "Beauty Coupons & Deals"
+      description: "Verified deals on skincare, cosmetics and personal care brands, with delivery thresholds, loyalty schemes and return windows checked at source."
+  fragrance:
+    name: Fragrance
+    parent: beauty
+    description: >-
+      Perfumery, including the approved-distributor retailers where authenticity
+      is the reason to buy.
+    seo:
+      title: "Fragrance & Perfume Coupons & Deals"
+      description: "Verified deals from approved perfumery retailers, where authenticity is guaranteed — plus their delivery thresholds and loyalty programmes."
+
+  # ---- Fashion & Accessories ----------------------------------------------
+  fashion:
+    name: Fashion & Accessories
+    parent: null
+    description: >-
+      Clothing, footwear and accessories.
+    seo:
+      title: "Fashion & Accessories Coupons & Deals"
+      description: "Verified deals on clothing, footwear and accessories, including shipping and returns terms that are easy to miss before you order."
+  bags-luggage:
+    name: Bags & Luggage
+    parent: fashion
+    description: >-
+      Handbags, backpacks, luggage and small leather goods.
+    seo:
+      title: "Bags & Luggage Coupons & Deals"
+      description: "Verified deals on handbags, backpacks and leather goods — free-shipping terms, return fees and where the same bag sells cheaper elsewhere."
+
+  # ---- Home & Living -------------------------------------------------------
+  home-living:
+    name: Home & Living
+    parent: null
+    description: >-
+      Household goods, kitchen and low-waste home products.
+    seo:
+      title: "Home & Living Coupons & Deals"
+      description: "Verified deals on household, kitchen and zero-waste home brands, with delivery and returns terms confirmed against each merchant's own pages."
+
+  # ---- Finance -------------------------------------------------------------
+  finance:
+    name: Finance
+    parent: null
+    description: >-
+      Financial products. Pages in this branch follow different editorial rules
+      from retail: cost disclosure comes before any promotion.
+    seo:
+      title: "Finance Deals & Cost Comparisons"
+      description: "Financial products with their real costs stated first. We publish the APR before the promotion, because a loan is not a saving."
+  loans:
+    name: Loans
+    parent: finance
+    description: >-
+      Consumer credit, including short-term lenders. Every page here leads with
+      the representative example and the APR, never with a promotional rate.
+    seo:
+      title: "Loan Costs, APR and Terms Compared"
+      description: "Short-term and consumer loans with the representative example and APR stated up front, plus the borrowing traps each product creates."

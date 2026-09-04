@@ -7,9 +7,9 @@ aliases:
   - Vahdam Tea
 website: https://www.vahdam.com
 logo: /assets/merchants/vahdam-teas.png
+primary_category: tea-coffee
 categories:
-  - Food & Drink
-  - Tea & Coffee
+  - tea-coffee
 tags:
   - tea
   - single origin
