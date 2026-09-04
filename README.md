@@ -10,8 +10,12 @@ render, plus a long-form body written for search and for shoppers deciding wheth
 merchants/           one file per merchant, named <slug>.md
 _templates/          merchant.md — copy this to start a new page
 affiliates.yml       slug -> tracking link map, resolved by /go/<slug>
+scripts/validate.py  pre-publish checks
 assets/merchants/    logos, <slug>.png
 ```
+
+Run `python3 scripts/validate.py` before committing. It exits non-zero on a
+problem, so it also works as a pre-commit or CI gate.
 
 ## Adding a merchant
 
@@ -23,6 +27,15 @@ assets/merchants/    logos, <slug>.png
    pages are comparable across merchants.
 4. Set `last_updated` and `verified_on` to the date you actually checked.
 5. Add an entry to `affiliates.yml` and the logo before the page goes live.
+
+## Frontmatter gotcha
+
+**Never leave a blank line anywhere inside the frontmatter block.** YAML allows
+it, but parsers that end frontmatter at the first blank line will silently
+truncate there — every key below it, `offers` included, drops into the page body
+as plain text, where markdown collapses the lines into one run-on paragraph. The
+page still builds, which is what makes it easy to miss. Use comment lines to
+separate sections instead of blank lines. `scripts/validate.py` fails on this.
 
 ## Content rules
 

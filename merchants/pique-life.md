@@ -33,9 +33,9 @@ seo:
     - nandaka coupon
 last_updated: 2026-09-04
 verified_on: 2026-09-04
-
 # Structured offers — rendered as the deal list at the top of the page.
 # type: code | deal   status: active | unverified | expired
+# Keep this block free of blank lines; see scripts/validate.py.
 offers:
   - id: pique-subscribe-save
     title: "Subscribe & Save 10–20% on every recurring order"

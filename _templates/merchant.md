@@ -18,8 +18,10 @@ seo:
   keywords: []
 last_updated: YYYY-MM-DD
 verified_on: YYYY-MM-DD
-
 # type: code | deal        status: active | unverified | expired
+# Never leave a blank line anywhere inside this frontmatter block: parsers that
+# end frontmatter at the first blank line will drop everything below it into the
+# page body, where markdown collapses it into one run-on paragraph.
 offers:
   - id: merchant-slug-offer-1
     title: ""
