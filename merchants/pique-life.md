@@ -6,7 +6,6 @@ aliases:
   - Pique Tea
   - Piquelife
 website: https://www.piquelife.com
-affiliate_url: "" # TODO: paste the tracked affiliate link before publishing
 logo: /assets/merchants/pique-life.png
 categories:
   - Health & Wellness
@@ -84,9 +83,11 @@ offers:
 
 # Pique Life Coupons & Promo Codes
 
-**Best offer right now:** Subscribe & Save takes 10–20% off automatically — no code needed — and US orders over $100 ship free.
+**Best offer right now:** [Subscribe & Save](/go/pique-life?to=/collections/subs-collection) takes 10–20% off automatically — no code needed — and US orders over $100 ship free.
 
-Pique Life (usually just called *Pique*) is a wellness brand built around **cold-extracted tea crystals**: single-serve sachets of concentrated tea and botanicals that dissolve in hot or cold water without brewing. Alongside the teas, the range now covers ceremonial matcha, a coffee alternative and a line of flavored electrolytes, all sold direct-to-consumer at piquelife.com with an optional subscription.
+Pique Life (usually just called *Pique*) is a wellness brand built around **cold-extracted tea crystals**: single-serve sachets of concentrated tea and botanicals that dissolve in hot or cold water without brewing. Alongside the teas, the range now covers ceremonial matcha, a coffee alternative and a line of flavored electrolytes, all sold direct-to-consumer at [piquelife.com](/go/pique-life) with an optional subscription.
+
+*We may earn a commission when you buy through links on this page. It never changes the price you pay or which offers we list.*
 
 ---
 
@@ -102,10 +103,10 @@ Pique sits at the premium end of the category — cartons generally run $50–$9
 
 | Line | Notable products | Typical price (Sept 2026) |
 | --- | --- | --- |
-| Matcha | Sun Goddess Matcha (organic, ceremonial grade) | ~$58 / 28 servings |
+| Matcha | [Sun Goddess Matcha](/go/pique-life?to=/products/matcha-green-tea) (organic, ceremonial grade) | ~$58 / 28 servings |
 | Coffee alternative | Nandaka Longevity Coffee Alternative | ~$88 / 14 servings |
 | Electrolytes | B•T Fountain (beauty), R•E Fountain (calming), X•E Fountain (energizing) | ~$68 each |
-| Tea crystals | Pu'er, green, herbal and fermented tea crystals | ~$30–$60 per carton |
+| Tea crystals | [Pu'er, green, herbal and fermented tea crystals](/go/pique-life?to=/collections/teas) | ~$30–$60 per carton |
 | Bundles & protocols | Radiant Skin Duo (Sun Goddess Matcha + B•T Fountain), Daily Radiance | Varies |
 
 > Prices are list prices captured in September 2026 and move with promotions — always confirm on the product page. Subscription pricing knocks 10–20% off the figures above.
@@ -125,7 +126,7 @@ Pique sits at the premium end of the category — cartons generally run $50–$9
 
 ### 1. Subscribe & Save — up to 20% off, applied automatically
 
-The single largest recurring discount at Pique. Choosing "Subscribe & Save" on a product page discounts that item on every delivery: most teas and standalone products save **10%**, while supplements and bundles typically save **15–20%**. There is no minimum order, the discount is applied before checkout without a code, and deliveries can be skipped, rescheduled or cancelled from your account. Because Pique's list prices are high, this is worth more on a single carton than most codes floating around coupon aggregators.
+The single largest recurring discount at Pique. Choosing ["Subscribe & Save"](/go/pique-life?to=/collections/subs-collection) on a product page discounts that item on every delivery: most teas and standalone products save **10%**, while supplements and bundles typically save **15–20%**. There is no minimum order, the discount is applied before checkout without a code, and deliveries can be skipped, rescheduled or cancelled from your account. Because Pique's list prices are high, this is worth more on a single carton than most codes floating around coupon aggregators.
 
 One thing to know: the **first** subscription order carries a $9 shipping and handling charge on some subscription bundles even when the cart clears $100, because several subscription SKUs are excluded from the free-shipping promotion.
 
@@ -143,7 +144,7 @@ Pique runs two referral tracks. On the points track, your friend gets **$10 off*
 
 ### 5. Pique Rewards loyalty program
 
-Free to join with a customer account, Pique Rewards earns **5 points per $1 spent**. Points redeem for cash vouchers, tea accessories and product rewards, and they accrue on top of subscription pricing — so subscribing and staying enrolled compounds. Create the account *before* your first order so the opening purchase earns points.
+Free to join with a customer account, [Pique Rewards](/go/pique-life?to=/pages/piquerewards) earns **5 points per $1 spent**. Points redeem for cash vouchers, tea accessories and product rewards, and they accrue on top of subscription pricing — so subscribing and staying enrolled compounds. Create the account *before* your first order so the opening purchase earns points.
 
 ### 6. 90-Day Happiness Guarantee
 
@@ -153,7 +154,7 @@ Pique will refund any purchase returned within **90 days**, and supplies a **fre
 
 ## How to use a Pique Life promo code
 
-1. Add your items to the cart at [piquelife.com](https://www.piquelife.com), choosing **Subscribe & Save** on each product page if you want the recurring discount.
+1. Add your items to the cart at [piquelife.com](/go/pique-life), choosing **Subscribe & Save** on each product page if you want the recurring discount.
 2. Click the cart icon and continue to checkout.
 3. Enter your code in the **Discount code** field and apply it before entering payment details.
 4. Confirm the discount appears in the order summary. If the code is rejected, check that your cart meets any minimum, that the products aren't already discounted, and that you qualify as a new customer where required.
@@ -167,7 +168,7 @@ Pique will refund any purchase returned within **90 days**, and supplies a **fre
 
 | | |
 | --- | --- |
-| **Website** | [piquelife.com](https://www.piquelife.com) |
+| **Website** | [piquelife.com](/go/pique-life) |
 | **Founded** | 2014 |
 | **Founder** | Simon Cheng |
 | **Category** | Tea, matcha, functional beverages and supplements |
@@ -223,8 +224,14 @@ code until it has been tested in a live cart — a dead code on the page costs m
 than an empty code slot.
 
 Before publishing:
-  - fill in `affiliate_url` in the frontmatter with the tracked link
+  - set the Pique tracking link in affiliates.yml and flip status to `active`
+    (commercial anchors already point at /go/pique-life; until then the redirect
+    resolves untracked to piquelife.com, so nothing on the page is broken)
   - add the logo asset at /assets/merchants/pique-life.png
   - re-check prices in the product table; they move with promotions
+
+Help center and returns-portal links are intentionally left as direct external
+links. They are support destinations, not conversion paths, and routing them
+through /go/ would be user-hostile for no revenue.
 Re-verify cadence: monthly, and refresh `last_updated` / `verified_on` each time.
 -->

@@ -6,8 +6,7 @@
 slug: merchant-slug                  # kebab-case, must match the filename
 name: Merchant Name
 aliases: []                          # other names shoppers search for
-website: https://www.example.com
-affiliate_url: ""                    # tracked link; fill before publishing
+website: https://www.example.com     # canonical storefront, for reference only
 logo: /assets/merchants/merchant-slug.png
 categories: []                       # e.g. Health & Wellness, Apparel
 tags: []
@@ -37,6 +36,19 @@ offers:
 
 Two or three sentences: what the merchant sells, who it is for, how it is
 positioned on price.
+
+*We may earn a commission when you buy through links on this page. It never
+changes the price you pay or which offers we list.*
+
+<!--
+Monetized anchors point at /go/<slug>, resolved through affiliates.yml — never
+paste a raw tracking URL into the copy. Deep link with
+/go/<slug>?to=/path/on/merchant/site. Put the link on meaningful anchor text in
+the flow of a sentence; a bare URL in a metadata row earns nothing. Leave
+support destinations (help center, returns portal, status pages) as direct
+external links.
+-->
+
 
 ---
 
@@ -72,7 +84,7 @@ flagging. One subsection per offer, in the same order as the table.
 
 ## How to use a Merchant Name promo code
 
-1. Add items to the cart at [example.com](https://www.example.com).
+1. Add items to the cart at [example.com](/go/merchant-slug).
 2. Continue to checkout.
 3. Enter the code in the discount field before payment.
 4. Confirm the discount shows in the order summary.
@@ -119,6 +131,7 @@ EDITORIAL NOTES — not rendered.
 
 Verified YYYY-MM-DD against: <merchant-owned URLs used>.
 Excluded: <codes or claims rejected, and why>.
-Before publishing: affiliate_url, logo asset, price re-check.
+Before publishing: add the tracking link to affiliates.yml and set status:
+active, add the logo asset, re-check prices.
 Re-verify cadence: monthly; refresh last_updated / verified_on each time.
 -->

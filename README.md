@@ -9,6 +9,7 @@ render, plus a long-form body written for search and for shoppers deciding wheth
 ```
 merchants/           one file per merchant, named <slug>.md
 _templates/          merchant.md — copy this to start a new page
+affiliates.yml       slug -> tracking link map, resolved by /go/<slug>
 assets/merchants/    logos, <slug>.png
 ```
 
@@ -21,7 +22,7 @@ assets/merchants/    logos, <slug>.png
 3. Fill in the frontmatter, then the body. Keep the section order in the template so
    pages are comparable across merchants.
 4. Set `last_updated` and `verified_on` to the date you actually checked.
-5. Fill in `affiliate_url` and add the logo before the page goes live.
+5. Add an entry to `affiliates.yml` and the logo before the page goes live.
 
 ## Content rules
 
@@ -37,6 +38,39 @@ assets/merchants/    logos, <slug>.png
 - Write the positioning honestly, including where a brand is expensive. The page should
   be useful to someone who ends up not buying.
 
+## Affiliate links
+
+Tracking links never appear in page copy. Monetized anchors point at the internal
+path **`/go/<slug>`**, which the site resolves through `affiliates.yml` at redirect
+time. Deep link with `/go/<slug>?to=/path/on/merchant/site`.
+
+```markdown
+Add your items to the cart at [piquelife.com](/go/pique-life), choosing
+["Subscribe & Save"](/go/pique-life?to=/collections/subs-collection) as you go.
+```
+
+Why the indirection rather than pasting the network URL into each link:
+
+- A network switch or a tracking-parameter change is one line in `affiliates.yml`,
+  not a find-and-replace across every page that mentions the merchant.
+- Pages stay readable in the repo, and reviewers can see what a link means.
+- The redirect is the natural place to count clicks per merchant and per anchor.
+- Before a link exists, `/go/<slug>` falls back to the plain storefront, so a page
+  can ship un-monetized without a single broken link.
+
+Placement matters more than the URL: put the link on meaningful anchor text inside
+a sentence people are already reading — the offer name, the product, the CTA — not
+on a bare URL in a metadata row. Leave support destinations (help centers, returns
+portals) as direct external links.
+
+The redirect endpoint must: send `rel="sponsored nofollow noopener"` on rendered
+anchors, return **302** and not 301 so a network change is not cached in browsers,
+reject any `?to=` value that is not a same-site absolute path, and be disallowed in
+`robots.txt` so `/go/` is never crawled.
+
+Every monetized page carries the one-line commission disclosure near the top. It is
+in the template — keep it.
+
 ## Maintenance
 
 Re-verify each page monthly: confirm live offers, drop expired ones, refresh prices, and
@@ -51,7 +85,7 @@ stale should be treated as unpublished until rechecked.
 | `name` | display name |
 | `aliases` | other names shoppers search for |
 | `website` | canonical storefront URL |
-| `affiliate_url` | tracked link; required before publishing |
+| — | no tracking link here; see `affiliates.yml` |
 | `logo` | `/assets/merchants/<slug>.png` |
 | `categories`, `tags` | taxonomy for browse and related-merchant modules |
 | `ships_to`, `currency` | shipping scope |
