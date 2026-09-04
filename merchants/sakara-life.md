@@ -64,7 +64,7 @@ Because the price is what it is, the 20% subscription differential is not a mino
 
 | # | Offer | Type | Code |
 | --- | --- | --- | --- |
-| 1 | 20% lower per-meal price on subscription | Automatic | No code needed |
+| 1 | Subscribe and pay 20% less per meal than a one-time order | Automatic | No code needed |
 | 2 | Free shipping on all subscription orders | Automatic | No code needed |
 
 ### 1. Subscribe and pay 20% less per meal

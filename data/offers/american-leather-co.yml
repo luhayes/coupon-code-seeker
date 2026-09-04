@@ -3,6 +3,8 @@
 offers:
   - id: alc-free-shipping
     title: "Free FedEx ground shipping on every US order, no minimum"
+    label: "Automatic"
+    access: "No code needed"
     type: deal
     discount: "Free shipping"
     code: null
@@ -10,6 +12,8 @@ offers:
     terms: "Applies to all US orders with no threshold to reach. The brand also ships to Canada and Australia under separate rates."
   - id: alc-sale-collection
     title: "Year-round sale section"
+    label: "Sale"
+    access: "No code needed"
     type: deal
     discount: "Varies"
     code: null
@@ -17,6 +21,8 @@ offers:
     terms: "A standing sale collection rather than a seasonal event. Stock and discount depth rotate, so the section is worth checking before paying full price."
   - id: alc-returns
     title: "Returns accepted on unused items, $5 deducted"
+    label: "Returns"
+    access: "Returns portal"
     type: deal
     discount: "Returns"
     code: null

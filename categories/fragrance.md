@@ -20,6 +20,6 @@ Perfumery, including the approved-distributor retailers where authenticity is th
 
 | Store | Best current offer | Offers | Verified |
 | --- | --- | --- | --- |
-| [Beauty Success](/stores/beauty-success) | Free Colissimo delivery on orders over €60 | 5 | 2026-09-04 |
+| [Beauty Success](/stores/beauty-success) | Free delivery to a Beauty Success store | 5 | 2026-09-04 |
 
 [All stores](/stores) · [Beauty](/categories/beauty)

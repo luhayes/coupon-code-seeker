@@ -6,13 +6,15 @@
 offers:
   - id: feniko-first-loan-free
     title: "First loan at 0% RRSO — repay exactly what you borrowed"
+    label: "Genuine promotion"
     type: deal
     discount: "0% RRSO"
     code: null
     status: active
-    terms: "New customers only, for 30 or 61 days, with no commission, interest or fees if repaid on time. Published caps for the free amount differ by source (3,000-5,000 zl) — confirm on Feniko's own page. Every subsequent loan is charged at roughly 299% RRSO."
+    terms: "New customers only, for 30 or 61 days, with no commission, interest or fees if repaid on time. Published caps for the free amount differ by source (3,000-5,000 zł) — confirm on Feniko's own page. Every subsequent loan is charged at roughly 299% RRSO."
   - id: feniko-loan-range
-    title: "Loans up to 7,000 zl, paid out in about 15 minutes"
+    title: "Loans up to 7,000 zł, paid out in about 15 minutes"
+    label: "Product feature"
     type: deal
     discount: "Availability"
     code: null
@@ -20,6 +22,7 @@ offers:
     terms: "Online application with funds transferred in as little as 15 minutes. Speed is a feature of the product, not a discount — the cost of borrowing is unchanged by how fast it arrives."
   - id: feniko-repeat-cost
     title: "Repeat borrowing costs roughly 299% RRSO"
+    label: "**Cost**"
     type: deal
     discount: "Cost disclosure"
     code: null

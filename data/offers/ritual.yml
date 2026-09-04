@@ -5,6 +5,8 @@
 offers:
   - id: ritual-referral
     title: "Refer a friend: they get $15 off, you get $30 off"
+    label: "Referral"
+    access: "Personal link"
     type: deal
     discount: "$15 / $30"
     code: null
@@ -12,6 +14,8 @@ offers:
     terms: "New customers only. Referral links are generated in the Ritual app under 'Refer a friend & earn'. The referred friend's discount applies to their first subscription order."
   - id: ritual-free-shipping
     title: "Free shipping on every order"
+    label: "Automatic"
+    access: "No code needed"
     type: deal
     discount: "Free shipping"
     code: null
@@ -19,6 +23,8 @@ offers:
     terms: "Applies to all orders shipping within the United States, Canada and the United Kingdom, with no minimum."
   - id: ritual-first-order-refund
     title: "30-day money-back guarantee on your first order"
+    label: "Guarantee"
+    access: "Automatic"
     type: deal
     discount: "Risk-free"
     code: null
@@ -26,6 +32,8 @@ offers:
     terms: "Full refund of the first order within 30 days of purchase from ritual.com, with proof of purchase. No return of the product is required."
   - id: ritual-subscription
     title: "Subscription pricing from about $33 a month, cancel anytime"
+    label: "Automatic"
+    access: "No code needed"
     type: deal
     discount: "Subscription"
     code: null

@@ -65,8 +65,8 @@ Positioning honestly: selective perfumery is price-controlled by the brands, so 
 
 | # | Offer | Type | Code |
 | --- | --- | --- | --- |
-| 1 | Free click and collect to any store, no minimum | Automatic | No code needed |
-| 2 | Free Colissimo home delivery from €60 | Automatic | No code needed |
+| 1 | Free delivery to a Beauty Success store | Automatic | No code needed |
+| 2 | Free Colissimo delivery on orders over €60 | Automatic | No code needed |
 | 3 | Loyalty card — a voucher every 200 points | Loyalty | Free card |
 | 4 | Returns processed within 14 working days | Returns | Contact support |
 | 5 | Approved distributor — authenticity guaranteed | Guarantee | Automatic |

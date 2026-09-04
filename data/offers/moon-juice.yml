@@ -5,6 +5,8 @@
 offers:
   - id: moon-juice-subscribe
     title: "Subscribe & Save 10% with free contiguous US shipping"
+    label: "Automatic"
+    access: "No code needed"
     type: deal
     discount: "10%"
     code: null
@@ -12,6 +14,8 @@ offers:
     terms: "Selected items ship monthly at 10% off with free shipping in the contiguous US. Adjust, pause or cancel anytime from your account."
   - id: moon-juice-free-shipping
     title: "Free shipping on orders over $65"
+    label: "Automatic"
+    access: "No code needed"
     type: deal
     discount: "Free shipping"
     code: null
@@ -19,6 +23,8 @@ offers:
     terms: "Applied automatically to contiguous US orders over $65, calculated before taxes and after discounts. Shipped via FedEx."
   - id: moon-juice-returns
     title: "45-day returns with a prepaid label"
+    label: "Guarantee"
+    access: "Contact support"
     type: deal
     discount: "Risk-free"
     code: null

@@ -65,7 +65,7 @@ Positioning honestly: adaptogens remain a category where the clinical literature
 
 | # | Offer | Type | Code |
 | --- | --- | --- | --- |
-| 1 | Subscribe & Save 10% plus free shipping | Automatic | No code needed |
+| 1 | Subscribe & Save 10% with free contiguous US shipping | Automatic | No code needed |
 | 2 | Free shipping on orders over $65 | Automatic | No code needed |
 | 3 | 45-day returns with a prepaid label | Guarantee | Contact support |
 

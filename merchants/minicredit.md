@@ -70,8 +70,8 @@ Assessed honestly: MiniCredit is a legitimate, functioning lender and the proces
 
 | # | Item | Type |
 | --- | --- | --- |
-| 1 | 2,500 zł / 30 days = 300.34 zł, 297.61% RRSO | **Cost** |
-| 2 | 500–9,600 zł, decision in ~15 minutes | Product feature |
+| 1 | Representative example: 2,500 zł over 30 days costs 300.34 zł — 297.61% RRSO | **Cost** |
+| 2 | Loans from 500 to 9,600 zł, decision in about 15 minutes | Product feature |
 | 3 | Occasional 0 zł first-loan promotion | Not standing — verify |
 
 ### 1. The representative example

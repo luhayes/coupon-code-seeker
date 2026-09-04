@@ -63,9 +63,9 @@ The packaging is also part of the pitch. The first month ships as a **Welcome Ki
 
 | # | Offer | Type | Code |
 | --- | --- | --- | --- |
-| 1 | 30-day no-questions-asked refund on the first order | Guarantee | Automatic |
-| 2 | Welcome Kit included with the first month | Automatic | No code needed |
-| 3 | $49.99/month subscription, cancel anytime | Automatic | No code needed |
+| 1 | 30-day no-questions-asked refund on your first order | Guarantee | Automatic |
+| 2 | Welcome Kit included with your first month | Automatic | No code needed |
+| 3 | DS-01 Daily Synbiotic at $49.99 a month, cancel anytime | Automatic | No code needed |
 
 ### 1. 30-day refund on your first order
 

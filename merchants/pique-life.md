@@ -72,10 +72,10 @@ Pique sits at the premium end of the category — cartons generally run $50–$9
 | --- | --- | --- | --- |
 | 1 | Subscribe & Save 10–20% on every recurring order | Automatic | No code needed |
 | 2 | Free US shipping on orders over $100 | Automatic | No code needed |
-| 3 | 10% off your first order for new email subscribers | Code | Emailed after signup |
-| 4 | Refer a friend — they save $10 or get a free sample pack | Referral | Personal link |
-| 5 | Pique Rewards — 5 points per $1 spent | Loyalty | Free account |
-| 6 | 90-Day Happiness Guarantee, free return shipping | Guarantee | Automatic |
+| 3 | 10% off your first order when you join the email list | Code | Emailed after signup |
+| 4 | Refer a friend: they get $10 off or a free sample pack, you get credit | Referral | Personal link |
+| 5 | Pique Rewards: 5 points per $1 spent | Loyalty | Free account |
+| 6 | 90-Day Happiness Guarantee with free return shipping | Guarantee | Automatic |
 
 ### 1. Subscribe & Save — up to 20% off, applied automatically
 

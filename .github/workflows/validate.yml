@@ -1,0 +1,49 @@
+name: Validate content
+
+# Runs on every push and pull request. Once a scheduled job starts proposing
+# offer changes as pull requests, this is the gate those proposals pass through
+# before a human sees them — so it must fail loudly rather than warn.
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install --quiet pyyaml
+
+      - name: Validate pages, offers and taxonomy
+        run: python3 scripts/validate.py
+
+      # The three generated artefacts must match their sources. Checking rather
+      # than regenerating is deliberate: CI reports the drift, the author fixes
+      # it in a commit, and the diff stays reviewable.
+      - name: Check the deals tables match the offers files
+        run: python3 scripts/build_pages.py --check
+
+      - name: Check the store directory is current
+        run: python3 scripts/build_directory.py --check
+
+      - name: Check the category pages are current
+        run: python3 scripts/build_categories.py --check
+
+      - name: Confirm no tracking links were committed
+        run: |
+          if git ls-files --error-unmatch affiliates.yml 2>/dev/null; then
+            echo "::error::affiliates.yml is tracked — it holds real tracking links and must stay gitignored"
+            exit 1
+          fi
+          echo "affiliates.yml is not tracked"

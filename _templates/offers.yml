@@ -8,8 +8,11 @@
 offers:
   - id: merchant-slug-offer-1
     title: ""
+    label: ""                         # the table's Type column, e.g. Automatic, Guarantee, Referral
     type: deal
     discount: ""
     code: null                       # null when no code is required
     status: active
+    access: "No code needed"           # how to get it when there is no code: Personal link, Free card...
     terms: ""                        # exclusions, minimums, new-customer limits
+    # expires_on: YYYY-MM-DD           # optional; an active offer past this date fails validation

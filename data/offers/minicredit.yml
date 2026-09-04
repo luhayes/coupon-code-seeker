@@ -4,23 +4,26 @@
 # type: code | deal   status: active | unverified | expired
 offers:
   - id: minicredit-representative-example
-    title: "Representative example: 2,500 zl over 30 days costs 300.34 zl — 297.61% RRSO"
+    title: "Representative example: 2,500 zł over 30 days costs 300.34 zł — 297.61% RRSO"
+    label: "**Cost**"
     type: deal
     discount: "Cost disclosure"
     code: null
     status: active
-    terms: "Total cost of 300.34 zl comprises a 250 zl commission, a 20.55 zl service fee and 29.79 zl interest. No additional charge applies if repaid on time."
+    terms: "Total cost of 300.34 zł comprises a 250 zł commission, a 20.55 zł service fee and 29.79 zł interest. No additional charge applies if repaid on time."
   - id: minicredit-loan-range
-    title: "Loans from 500 to 9,600 zl, decision in about 15 minutes"
+    title: "Loans from 500 to 9,600 zł, decision in about 15 minutes"
+    label: "Product feature"
     type: deal
     discount: "Availability"
     code: null
     status: active
     terms: "Single-repayment short-term loan, typically over 30 days. The application is entirely online. Availability and speed are product features, not discounts."
   - id: minicredit-zero-promo
-    title: "Occasional 0 zl first-loan promotion"
+    title: "Occasional 0 zł first-loan promotion"
+    label: "Not standing — verify"
     type: deal
     discount: "0% when offered"
     code: null
     status: unverified
-    terms: "MiniCredit does not run a standing free-first-loan offer. A '0 zl' promotion appears periodically and is conditional on repaying on time; miss the date and standard charges apply. Confirm on MiniCredit's own page before relying on it."
+    terms: "MiniCredit does not run a standing free-first-loan offer. A '0 zł' promotion appears periodically and is conditional on repaying on time; miss the date and standard charges apply. Confirm on MiniCredit's own page before relying on it."

@@ -24,6 +24,7 @@ _templates/            merchant.md and offers.yml — copy these to start
 affiliates.example.yml public schema for the /go/<slug> tracking map
 affiliates.yml         real tracking links — gitignored, never committed
 scripts/validate.py    pre-publish checks
+scripts/build_pages.py generates the deals table inside each page
 scripts/affiliates.py  manage the local tracking links
 assets/merchants/      logos, <slug>.png
 ```
@@ -91,6 +92,42 @@ output clean, both enforced in the generator:
 Adding a category: define it in `taxonomy.yml` first, with real `seo` fields,
 then assign merchants. Tags are separate and deliberately uncontrolled — they
 describe attributes, not structure, and nothing navigates by them.
+
+## What is generated, and what is written by hand
+
+| Generated — never hand-edit | Written by hand |
+| --- | --- |
+| The deals table inside each merchant page | Everything else on the page |
+| `stores.md` | `data/offers/<slug>.yml` |
+| `categories/*.md` | `taxonomy.yml`, `_notes/*` |
+
+The deals table used to be typed by hand next to the same facts in the offers
+file, and the two had already drifted before anyone noticed — different wording
+for the same offer on more than a dozen pages. `scripts/build_pages.py` derives
+it from the offers file instead, matching on the `## Current <name> deals`
+heading and the run of table rows beneath it. No marker is needed in the page,
+and HTML comment markers are deliberately not used because renderers pass them
+into the published page source.
+
+**The prose stays hand-written.** The per-offer subsections, the honest
+positioning, the FAQ — that is the part a scraper cannot produce and the reason
+to read this site rather than an aggregator. Only the table is machine-owned.
+
+Three offer fields exist for the table:
+
+| Field | Column | Example |
+| --- | --- | --- |
+| `label` | Type | `Automatic`, `Guarantee`, `Referral`, `**Cost**` |
+| `access` | Code, when no code exists | `Personal link`, `Free card`, `Partner link` |
+| `expires_on` | — | Optional ISO date; an active offer past it fails validation |
+
+`access` is not decoration: LMNT's free Sample Pack attaches through a partner
+link specifically, and a referral needs a personal one. Collapsing those into
+"No code needed" would tell a reader the wrong thing.
+
+Finance pages render `Item | Type` instead of `Offer | Type | Code`, decided
+from the merchant's primary category. A loan is not an offer and its cost is not
+a discount — the distinction is editorial, not cosmetic.
 
 ## Where offers live
 
@@ -238,11 +275,17 @@ stale should be treated as unpublished until rechecked.
 files. Never hand-edit it — add or edit a merchant, then rebuild:
 
 ```
+python3 scripts/build_pages.py                 # rebuild the in-page deals tables
 python3 scripts/build_directory.py             # rebuild stores.md
 python3 scripts/build_categories.py            # rebuild categories/*.md
-python3 scripts/build_directory.py --check     # CI: fail if stale
-python3 scripts/build_categories.py --check    # CI: fail if stale
+python3 scripts/build_pages.py --check         # CI: fail if stale
+python3 scripts/build_directory.py --check
+python3 scripts/build_categories.py --check
 ```
+
+All three run in CI on every push and pull request
+(`.github/workflows/validate.yml`), alongside `validate.py` and a check that
+`affiliates.yml` never became tracked.
 
 It groups merchants by category, lists them A–Z with their headline offer, and
 picks that offer as the highest active percentage discount. Run it as part of

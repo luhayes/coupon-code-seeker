@@ -5,6 +5,8 @@
 offers:
   - id: seed-first-order-refund
     title: "30-day no-questions-asked refund on your first order"
+    label: "Guarantee"
+    access: "Automatic"
     type: deal
     discount: "Risk-free"
     code: null
@@ -12,6 +14,8 @@ offers:
     terms: "Full product cost refunded within 30 days of delivery of the first order, less shipping, VAT and duties. First subscription order only — refills are not refundable."
   - id: seed-welcome-kit
     title: "Welcome Kit included with your first month"
+    label: "Automatic"
+    access: "No code needed"
     type: deal
     discount: "Free with first order"
     code: null
@@ -19,6 +23,8 @@ offers:
     terms: "The first shipment includes a reusable glass jar, a complimentary week-long travel vial and the brand's reading materials. Later refills arrive in compostable packaging."
   - id: seed-subscription
     title: "DS-01 Daily Synbiotic at $49.99 a month, cancel anytime"
+    label: "Automatic"
+    access: "No code needed"
     type: deal
     discount: "Subscription"
     code: null

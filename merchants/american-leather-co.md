@@ -67,9 +67,9 @@ Positioning honestly: this is soft, unstructured leather, so bags slouch rather 
 
 | # | Offer | Type | Code |
 | --- | --- | --- | --- |
-| 1 | Free FedEx ground shipping on every US order | Automatic | No code needed |
+| 1 | Free FedEx ground shipping on every US order, no minimum | Automatic | No code needed |
 | 2 | Year-round sale section | Sale | No code needed |
-| 3 | Returns on unused items, $5 deducted | Returns | Returns portal |
+| 3 | Returns accepted on unused items, $5 deducted | Returns | Returns portal |
 
 ### 1. Free shipping on every US order, no minimum
 

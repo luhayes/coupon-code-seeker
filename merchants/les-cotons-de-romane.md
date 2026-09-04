@@ -81,8 +81,8 @@ Positioning honestly: this is a small maker, not a retailer, and the economics f
 
 | # | Offer | Type | Status |
 | --- | --- | --- | --- |
-| 1 | Direct-from-maker pricing, no reseller margin | Structural | Confirmed |
-| 2 | Delivery via GLS | Shipping | Terms unconfirmed |
+| 1 | Hand-sewn in Rennes, sold direct with no reseller margin | Structural | Confirmed |
+| 2 | Shipping via GLS | Shipping | Terms unconfirmed |
 | 3 | Returns policy | Returns | Unconfirmed |
 
 ### 1. Buying direct

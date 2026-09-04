@@ -5,6 +5,8 @@
 offers:
   - id: mudwtr-subscribe-save
     title: "Subscribe & Save up to 33% on recurring orders"
+    label: "Automatic"
+    access: "No code needed"
     type: deal
     discount: "Up to 33%"
     code: null
@@ -12,6 +14,8 @@ offers:
     terms: "Applied automatically when you choose a subscription. The exact saving varies by product and cadence. Skip, reschedule or cancel from your account."
   - id: mudwtr-free-shipping
     title: "Free US shipping on every subscription order, or on orders over $50"
+    label: "Automatic"
+    access: "No code needed"
     type: deal
     discount: "Free shipping"
     code: null
@@ -19,6 +23,8 @@ offers:
     terms: "All US subscription orders ship free regardless of size. One-time US orders ship free over $50; below that, standard shipping is $5, 3-day $10 and 2-day $15."
   - id: mudwtr-guarantee
     title: "30-day money-back guarantee, even if you have opened it"
+    label: "Guarantee"
+    access: "Automatic"
     type: deal
     discount: "Risk-free"
     code: null
@@ -26,6 +32,8 @@ offers:
     terms: "Full refund for first-time customers who bought within the past 30 days, and the product does not need to be unopened."
   - id: mudwtr-referral
     title: "Refer a friend: 20% off their first subscription order"
+    label: "Referral"
+    access: "Personal link"
     type: deal
     discount: "20%"
     code: null

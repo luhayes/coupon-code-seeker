@@ -66,7 +66,7 @@ Positioning honestly: the evidence for collagen supplementation is meaningfully 
 
 | # | Offer | Type | Code |
 | --- | --- | --- | --- |
-| 1 | Subscribe & Save 15% plus free shipping on future orders | Automatic | No code needed |
+| 1 | Subscribe & Save 15% with free shipping on future orders | Automatic | No code needed |
 | 2 | Free shipping on orders over $50 | Automatic | No code needed |
 | 3 | 30-day return window | Returns | Contact support |
 

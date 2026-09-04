@@ -69,9 +69,9 @@ Positioning honestly: this is a premium product in a category where instant coff
 | # | Offer | Type | Code |
 | --- | --- | --- | --- |
 | 1 | Subscribe & Save up to 33% on recurring orders | Automatic | No code needed |
-| 2 | Free US shipping on subscriptions, or orders over $50 | Automatic | No code needed |
-| 3 | 30-day money-back guarantee, opened product included | Guarantee | Automatic |
-| 4 | Refer a friend — 20% off their first subscription | Referral | Personal link |
+| 2 | Free US shipping on every subscription order, or on orders over $50 | Automatic | No code needed |
+| 3 | 30-day money-back guarantee, even if you have opened it | Guarantee | Automatic |
+| 4 | Refer a friend: 20% off their first subscription order | Referral | Personal link |
 
 ### 1. Subscribe & Save — up to 33% off
 

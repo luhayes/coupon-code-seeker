@@ -65,9 +65,9 @@ Positioning honestly: you are paying specialty prices, and the matching is only 
 | # | Offer | Type | Code |
 | --- | --- | --- | --- |
 | 1 | Up to 30% off your first coffee order | New customer | No code needed |
-| 2 | 15% off plus free shipping on subscriptions | Automatic | No code needed |
+| 2 | 15% off plus free shipping on a subscription | Automatic | No code needed |
 | 3 | Free shipping on orders over $30 | Automatic | No code needed |
-| 4 | First-Bag Guarantee — free replacement | Guarantee | Contact support |
+| 4 | First-Bag Guarantee — free replacement if you don't like it | Guarantee | Contact support |
 
 ### 1. Up to 30% off your first order
 

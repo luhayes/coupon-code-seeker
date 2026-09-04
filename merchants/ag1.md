@@ -64,7 +64,7 @@ The **90-day money-back guarantee** is unusually long and is the right way to se
 
 | # | Offer | Type | Code |
 | --- | --- | --- | --- |
-| 1 | ~$79/month on subscription vs ~$99 one-time | Automatic | No code needed |
+| 1 | About $79 a month on subscription, against $99 one-time | Automatic | No code needed |
 | 2 | Welcome Kit free for first-time subscribers | Automatic | No code needed |
 | 3 | 90-day money-back guarantee | Guarantee | Automatic |
 

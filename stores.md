@@ -36,12 +36,12 @@ Every store we track, with 56 currently active offers between them. Offers are v
 | --- | --- | --- | --- |
 | [AG1](/stores/ag1) | About $79 a month on subscription, against $99 one-time | 3 | 2026-09-04 |
 | [American Leather Co.](/stores/american-leather-co) | Free FedEx ground shipping on every US order, no minimum | 3 | 2026-09-04 |
-| [Beauty Success](/stores/beauty-success) | Free Colissimo delivery on orders over €60 | 5 | 2026-09-04 |
+| [Beauty Success](/stores/beauty-success) | Free delivery to a Beauty Success store | 5 | 2026-09-04 |
 | [Feniko](/stores/feniko) | First loan at 0% RRSO — repay exactly what you borrowed | 3 | 2026-09-04 |
 | [Four Sigmatic](/stores/four-sigmatic) | 30% off your first subscription order | 4 | 2026-09-04 |
 | [Les Cotons de Romane](/stores/les-cotons-de-romane) | Hand-sewn in Rennes, sold direct with no reseller margin | 1 | 2026-09-04 |
 | [LMNT](/stores/lmnt) | Insider Bundle — buy 3 boxes, get 1 free | 5 | 2026-09-04 |
-| [MiniCredit](/stores/minicredit) | Representative example: 2,500 zl over 30 days costs 300.34 zl — 297.61% RRSO | 2 | 2026-09-04 |
+| [MiniCredit](/stores/minicredit) | Representative example: 2,500 zł over 30 days costs 300.34 zł — 297.61% RRSO | 2 | 2026-09-04 |
 | [Moon Juice](/stores/moon-juice) | Subscribe & Save 10% with free contiguous US shipping | 3 | 2026-09-04 |
 | [MUD\WTR](/stores/mudwtr) | Subscribe & Save up to 33% on recurring orders | 4 | 2026-09-04 |
 | [Pique Life](/stores/pique-life) | Subscribe & Save 10–20% on every recurring order | 6 | 2026-09-04 |

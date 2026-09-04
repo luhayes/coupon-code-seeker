@@ -68,11 +68,11 @@ Pricing is straightforward: roughly **$45 for a box of 30 sticks**, around $1.50
 
 | # | Offer | Type | Code |
 | --- | --- | --- | --- |
-| 1 | Free 8-flavour Sample Pack with any drink mix order | Automatic | Partner link |
-| 2 | Free US shipping, no minimum | Automatic | No code needed |
+| 1 | Free 8-flavour Sample Pack with any drink mix purchase | Automatic | Partner link |
+| 2 | Free US shipping, included in the product price | Automatic | No code needed |
 | 3 | 12% off every subscription order | Automatic | No code needed |
 | 4 | Insider Bundle — buy 3 boxes, get 1 free | Bundle | No code needed |
-| 5 | No-questions-asked refund | Guarantee | Automatic |
+| 5 | No-questions-asked refund policy | Guarantee | Automatic |
 
 ### 1. Free Sample Pack with any purchase
 

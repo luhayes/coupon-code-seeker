@@ -72,8 +72,8 @@ Positioning honestly: Vahdam is the value option among the brands on this site â
 | --- | --- | --- | --- |
 | 1 | First-time buyer refund guarantee, up to $35 | Guarantee | Confirmed |
 | 2 | Subscribe & Save 15% | Automatic | Unconfirmed detail |
-| 3 | Free shipping over a regional threshold | Automatic | Varies by country |
-| 4 | Refer a friend | Referral | US terms unconfirmed |
+| 3 | Free shipping over a regional order threshold | Automatic | Varies by country |
+| 4 | Refer a friend for a discount on both orders | Referral | US terms unconfirmed |
 
 ### 1. First-time buyer refund, up to $35
 

@@ -7,6 +7,7 @@ Checks frontmatter integrity, the offer schema, and that every monetized anchor
 resolves against affiliates.yml. Exits non-zero on the first failing file so it
 can gate a commit or CI run.
 """
+import datetime
 import glob
 import os
 import re
@@ -20,7 +21,8 @@ except ImportError:
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 FRONTMATTER = re.compile(r"^---\n(.*?)\n---\n", re.S)
 GO_LINK = re.compile(r"\]\(/go/([a-z0-9-]+)(?:\?to=([^)]*))?\)")
-OFFER_FIELDS = {"id", "title", "type", "discount", "code", "status", "terms"}
+OFFER_FIELDS = {"id", "title", "label", "type", "discount", "code", "status", "terms"}
+# Optional: access (how to get it when there is no code), expires_on (ISO date)
 TYPES = {"code", "deal"}
 STATUSES = {"active", "unverified", "expired"}
 
@@ -157,6 +159,20 @@ def check(path, affiliates):
         if oid in seen:
             err(f"duplicate offer id '{oid}'")
         seen.add(oid)
+
+        # expires_on gives an offer an end date, so a scheduled job can retire
+        # it instead of a person having to remember. An active offer whose date
+        # has passed is the failure this catches: a dead deal still on the page.
+        exp = o.get("expires_on")
+        if exp is not None:
+            try:
+                when = datetime.date.fromisoformat(str(exp))
+            except ValueError:
+                err(f"offer '{oid}' has expires_on '{exp}' — must be YYYY-MM-DD")
+            else:
+                if when < datetime.date.today() and o.get("status") == "active":
+                    err(f"offer '{oid}' expired on {when} but is still marked "
+                        "active — set status: expired or refresh the offer")
 
     for link_slug, dest in GO_LINK.findall(body):
         if not is_template and link_slug not in affiliates:

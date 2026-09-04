@@ -21,7 +21,7 @@ Skincare, cosmetics and personal care, including reusable and low-waste alternat
 
 | Store | Best current offer | Offers | Verified |
 | --- | --- | --- | --- |
-| [Beauty Success](/stores/beauty-success) | Free Colissimo delivery on orders over €60 | 5 | 2026-09-04 |
+| [Beauty Success](/stores/beauty-success) | Free delivery to a Beauty Success store | 5 | 2026-09-04 |
 | [Les Cotons de Romane](/stores/les-cotons-de-romane) | Hand-sewn in Rennes, sold direct with no reseller margin | 1 | 2026-09-04 |
 | [Moon Juice](/stores/moon-juice) | Subscribe & Save 10% with free contiguous US shipping | 3 | 2026-09-04 |
 | [Vital Proteins](/stores/vital-proteins) | Subscribe & Save 15% with free shipping on future orders | 3 | 2026-09-04 |

@@ -5,6 +5,8 @@
 offers:
   - id: four-sigmatic-subscribe-first
     title: "30% off your first subscription order"
+    label: "Automatic"
+    access: "No code needed"
     type: deal
     discount: "30%"
     code: null
@@ -12,6 +14,8 @@ offers:
     terms: "Applied when you choose a subscription rather than a one-time purchase. Applies to the first delivery; recurring orders then save 20%."
   - id: four-sigmatic-subscribe-recurring
     title: "20% off every recurring subscription order"
+    label: "Automatic"
+    access: "No code needed"
     type: deal
     discount: "20%"
     code: null
@@ -19,6 +23,8 @@ offers:
     terms: "Standing discount on deliveries after the first. Skip, reschedule or cancel anytime from your account."
   - id: four-sigmatic-guarantee
     title: "120-day 100% money-back guarantee"
+    label: "Guarantee"
+    access: "Automatic"
     type: deal
     discount: "Risk-free"
     code: null
@@ -26,6 +32,8 @@ offers:
     terms: "No questions asked within 120 days of purchase. The refund does not include shipping costs."
   - id: four-sigmatic-returns
     title: "30-day returns on unopened product"
+    label: "Returns"
+    access: "Automatic"
     type: deal
     discount: "Returns"
     code: null

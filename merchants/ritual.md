@@ -67,10 +67,10 @@ Positioning honestly: at roughly **$30–$35 a bottle**, Ritual costs several ti
 
 | # | Offer | Type | Code |
 | --- | --- | --- | --- |
-| 1 | Refer a friend — $15 off for them, $30 for you | Referral | Personal link |
+| 1 | Refer a friend: they get $15 off, you get $30 off | Referral | Personal link |
 | 2 | Free shipping on every order | Automatic | No code needed |
-| 3 | 30-day money-back guarantee on the first order | Guarantee | Automatic |
-| 4 | Subscription pricing from ~$33/month, cancel anytime | Automatic | No code needed |
+| 3 | 30-day money-back guarantee on your first order | Guarantee | Automatic |
+| 4 | Subscription pricing from about $33 a month, cancel anytime | Automatic | No code needed |
 
 ### 1. Refer a friend — $15 off
 

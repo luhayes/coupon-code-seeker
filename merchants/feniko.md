@@ -75,9 +75,9 @@ Assessed honestly: as a one-off, a genuinely 0% loan repaid on the due date is a
 
 | # | Item | Type |
 | --- | --- | --- |
-| 1 | First loan at 0% RRSO | Genuine promotion |
-| 2 | Loans to 7,000 zł, ~15 minute payout | Product feature |
-| 3 | Repeat borrowing at ≈299% RRSO | **Cost** |
+| 1 | First loan at 0% RRSO — repay exactly what you borrowed | Genuine promotion |
+| 2 | Loans up to 7,000 zł, paid out in about 15 minutes | Product feature |
+| 3 | Repeat borrowing costs roughly 299% RRSO | **Cost** |
 
 ### 1. The first loan is genuinely free
 

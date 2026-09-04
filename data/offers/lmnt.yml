@@ -5,6 +5,8 @@
 offers:
   - id: lmnt-sample-pack
     title: "Free 8-flavour Sample Pack with any drink mix purchase"
+    label: "Automatic"
+    access: "Partner link"
     type: deal
     discount: "Free gift"
     code: null
@@ -12,6 +14,8 @@ offers:
     terms: "Added automatically when you order through a partner link. One Sample Pack per drink mix order. Applies to drink mix and Sparkling purchases."
   - id: lmnt-free-shipping
     title: "Free US shipping, included in the product price"
+    label: "Automatic"
+    access: "No code needed"
     type: deal
     discount: "Free shipping"
     code: null
@@ -19,6 +23,8 @@ offers:
     terms: "US standard shipping is built into the price with no minimum order. Canadian orders ship free over $100 USD; below that, rates vary by destination and speed."
   - id: lmnt-subscription
     title: "12% off every subscription order"
+    label: "Automatic"
+    access: "No code needed"
     type: deal
     discount: "12%"
     code: null
@@ -26,6 +32,8 @@ offers:
     terms: "Applied automatically to subscription orders, which also include free US standard shipping. Skip or cancel anytime."
   - id: lmnt-insider-bundle
     title: "Insider Bundle — buy 3 boxes, get 1 free"
+    label: "Bundle"
+    access: "No code needed"
     type: deal
     discount: "25% effective"
     code: null
@@ -33,6 +41,8 @@ offers:
     terms: "Four boxes for the price of three, and flavours can be mixed across the bundle."
   - id: lmnt-refund
     title: "No-questions-asked refund policy"
+    label: "Guarantee"
+    access: "Automatic"
     type: deal
     discount: "Risk-free"
     code: null

@@ -68,7 +68,7 @@ Where it is weaker: the functional dosing has drawn criticism over the years for
 | # | Offer | Type | Code |
 | --- | --- | --- | --- |
 | 1 | 30% off your first subscription order | Automatic | No code needed |
-| 2 | 20% off every recurring order after that | Automatic | No code needed |
+| 2 | 20% off every recurring subscription order | Automatic | No code needed |
 | 3 | 120-day 100% money-back guarantee | Guarantee | Automatic |
 | 4 | 30-day returns on unopened product | Returns | Automatic |
 

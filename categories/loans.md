@@ -21,6 +21,6 @@ Consumer credit, including short-term lenders. Every page here leads with the re
 | Store | Best current offer | Offers | Verified |
 | --- | --- | --- | --- |
 | [Feniko](/stores/feniko) | First loan at 0% RRSO — repay exactly what you borrowed | 3 | 2026-09-04 |
-| [MiniCredit](/stores/minicredit) | Representative example: 2,500 zl over 30 days costs 300.34 zl — 297.61% RRSO | 2 | 2026-09-04 |
+| [MiniCredit](/stores/minicredit) | Representative example: 2,500 zł over 30 days costs 300.34 zł — 297.61% RRSO | 2 | 2026-09-04 |
 
 [All stores](/stores) · [Finance](/categories/finance)
