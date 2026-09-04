@@ -114,10 +114,25 @@ def check(path, affiliates):
         err(f"HTML comment in page body near line {line} — it ships to the "
             "published page source; move it to _notes/")
 
+    # Support destinations stay as direct external links; shopping paths must go
+    # through /go/. The marker can be in the host (help.example.com) or in the
+    # path (example.com/pages/help-center), so test the whole URL.
+    SUPPORT = ("help", "support", "return", "faq", "contact", "policy", "terms",
+               "track", "status")
+
+    def registrable(url):
+        """Last two labels of the host — good enough to tell one brand's
+        storefront from an unrelated domain."""
+        host = re.sub(r"^https?://", "", url).split("/")[0].lower()
+        return ".".join(host.split(":")[0].split(".")[-2:])
+
+    storefront = registrable(data.get("website") or "") if data.get("website") else ""
     for url in re.findall(r"\]\((https?://[^)]+)\)", body):
-        host = re.sub(r"^https?://", "", url).split("/")[0]
-        if not is_template and slug and host.replace("www.", "").startswith(
-                slug.split("-")[0]) and "help" not in host and "return" not in host:
+        if is_template or not storefront:
+            continue
+        if any(marker in url.lower() for marker in SUPPORT):
+            continue
+        if registrable(url) == storefront:
             err(f"raw storefront link {url} — monetized anchors use /go/{slug}")
 
 

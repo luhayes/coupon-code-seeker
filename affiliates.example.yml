@@ -55,3 +55,43 @@ merchants:
       Confirm the network permits deep linking before setting status: active.
       If it does not, the redirect still resolves — every ?to= simply lands on
       the tracked homepage.
+  mudwtr:
+    status: unconfigured
+    network: ""
+    url: ""
+    fallback: https://mudwtr.com
+    notes: |
+      Deep links used: /go/mudwtr, ?to=/products/mud-starter-kit
+  four-sigmatic:
+    status: unconfigured
+    network: ""
+    url: ""
+    fallback: https://us.foursigmatic.com
+    notes: |
+      Deep links used: /go/four-sigmatic, ?to=/collections/coffee
+  lmnt:
+    status: unconfigured
+    network: ""
+    url: ""
+    fallback: https://drinklmnt.com
+    notes: |
+      Deep links used: /go/lmnt, ?to=/products/lmnt-recharge-electrolyte-drink,
+      ?to=/products/lmnt-recharge-variety-pack
+      LMNT's free Sample Pack offer attaches via partner links specifically, so
+      confirm the tracking link preserves it before setting status: active.
+  ritual:
+    status: unconfigured
+    network: ""
+    url: ""
+    fallback: https://ritual.com
+    notes: |
+      Deep links used: /go/ritual, ?to=/products
+  vahdam-teas:
+    status: unconfigured
+    network: ""
+    url: ""
+    fallback: https://www.vahdam.com
+    notes: |
+      Deep links used: /go/vahdam-teas, ?to=/collections/black-tea
+      Vahdam runs separate US/UK/DE/IN storefronts — confirm the tracking link
+      targets the US store before setting status: active.
