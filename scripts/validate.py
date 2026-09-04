@@ -251,7 +251,27 @@ def load_affiliates():
     return merchants
 
 
+def check_doc_links():
+    """Local links in the docs must resolve.
+
+    README.md links by hand to generated category pages, and a category whose
+    merchants all move away stops being generated — so the link would rot
+    silently. Code fences are skipped: they contain illustrative /go/ paths.
+    """
+    for name in ("README.md", "CONTRIBUTING.md"):
+        path = os.path.join(ROOT, name)
+        if not os.path.exists(path):
+            continue
+        text = re.sub(r"```.*?```", "", open(path, encoding="utf-8").read(), flags=re.S)
+        for label, target in re.findall(r"\[([^\]]+)\]\(([^)]+)\)", text):
+            if target.startswith(("http://", "https://", "#", "mailto:", "../../")):
+                continue
+            if not os.path.exists(os.path.join(ROOT, target.split("#")[0])):
+                errors.append(f"{name}: link [{label}]({target}) does not resolve")
+
+
 def main():
+    check_doc_links()
     affiliates = load_affiliates()
 
     paths = sorted(glob.glob(os.path.join(ROOT, "merchants", "*.md")) +

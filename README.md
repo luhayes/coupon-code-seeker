@@ -1,220 +1,112 @@
-# coupon-code-seeker
+# Coupon Code Seeker
 
-Merchant landing page content for **couponcodeseeker.com**. Each merchant gets a
-Markdown page — short YAML frontmatter plus a long-form body written for search and
-for shoppers deciding whether to buy — and a companion `data/offers/<slug>.yml`
-holding its structured deals.
+Verified coupons, discounts and deals for the stores we track — with the terms
+that actually decide whether you save anything.
 
-## Layout
+**[Browse all stores →](stores.md)**
 
-```
-merchants/             one file per merchant, named <slug>.md
-data/offers/           <slug>.yml — the offers for each merchant
-taxonomy.yml           the controlled vocabulary of categories
-categories/            generated category pages — do not hand-edit
-stores.md              generated directory page — do not hand-edit
-_notes/                internal working notes, never published
-_templates/            merchant.md and offers.yml — copy these to start
-affiliates.example.yml public schema for the /go/<slug> tracking map
-affiliates.yml         real tracking links — gitignored, never committed
-scripts/validate.py    pre-publish checks
-assets/merchants/      logos, <slug>.png
-```
+---
 
-**This repository is public.** The merchant pages are the product, so they belong
-in the open, but nothing that would be handed to a competitor or a scraper goes
-in with them — see "Affiliate links" below.
+## What makes this different
 
-Run `python3 scripts/validate.py` before committing. It exits non-zero on a
-problem, so it also works as a pre-commit or CI gate.
+Most coupon sites are full of codes that do not work. They are scraped, never
+tested, and left up because an expired code still earns a click. You have
+probably typed six of them into a checkout and had every one rejected.
 
-## Adding a merchant
+We do it the other way around.
 
-1. Copy `_templates/merchant.md` to `merchants/<slug>.md`. The slug is kebab-case and
-   must match both the filename and the `slug` field.
-2. Research against **merchant-owned pages only** — the store itself, its help center,
-   its policy and rewards pages. Coupon aggregators are not sources.
-3. Fill in the frontmatter, then the body. Keep the section order in the template so
-   pages are comparable across merchants. Record your sources, rejected offers and
-   open tasks in `_notes/<slug>.md`.
-4. Copy `_templates/offers.yml` to `data/offers/<slug>.yml` and fill in the offers:
-   `id`, `title`, `type` (`code`/`deal`), `discount`, `code`, `status`
-   (`active`/`unverified`/`expired`) and `terms` on each.
-5. Set `last_updated` and `verified_on` to the date you actually checked.
-6. Add the slug to `affiliates.example.yml`, put the real link in your local
-   `affiliates.yml`, and add the logo before the page goes live.
+**Every offer here is checked against the merchant's own pages** — their
+storefront, their help centre, their shipping and returns policies. If we cannot
+confirm an offer at the source, it does not go on the page. That means:
 
-## Categories
+- **No invented codes.** We never publish a code we have not been able to verify.
+  Where you see no code listed for a store, that usually means the store does not
+  currently run one — not that we are hiding it behind a click.
+- **No "up to 70% off" theatre.** If a competing site advertises a huge discount
+  for a store and we list something smaller, it is because the smaller number is
+  the one we could stand behind.
+- **We tell you when we are not sure.** An offer we could not fully confirm is
+  labelled `unverified` and says what is missing, rather than being presented as
+  fact.
+- **Every page is dated.** Each store page carries the date it was last checked,
+  so you can see for yourself whether it is current.
 
-Categories are a **controlled vocabulary** defined in `taxonomy.yml`. A merchant
-may only use slugs defined there — `scripts/validate.py` rejects anything else,
-which is what stops `Tea & Coffee` and `Coffee & Tea` from both existing a year
-from now.
+## The savings that are not codes
 
-Two levels, no more. A flat list puts a category holding ten merchants beside
-one holding a single merchant; a third level splits the inventory too thin to
-fill a page.
+The most useful discovery from checking these stores properly: **for a lot of
+brands, the biggest saving has no code at all.**
 
-Every merchant declares:
+Subscription pricing, free-shipping thresholds, loyalty points, referral links
+and money-back guarantees are usually worth far more than any code floating
+around — and unlike codes, they do not expire next Tuesday. A brand that offers
+10% off for subscribing and free shipping over $100 is giving you a better deal
+than a "20% off" code that turns out to be dead.
 
-| Field | Meaning |
+So our store pages lead with whatever actually saves you the most, whether or not
+it involves typing something into a box.
+
+## What is on each store page
+
+| Section | What you get |
 | --- | --- |
-| `primary_category` | Exactly one slug — where the merchant lives, and what the directory groups it under |
-| `categories` | The primary plus at most two secondaries, for cross-listing |
+| **Best offer right now** | The single most valuable thing available, in one line |
+| **About the store** | What they sell, what they are good at, and where they are expensive |
+| **Current deals** | Every confirmed offer, with the exclusions and minimums |
+| **How to use a code** | Where the discount box is, and what will not stack |
+| **At a glance** | Shipping, returns, subscription and loyalty terms in one table |
+| **FAQ** | The questions people actually ask before buying |
 
-**The primary is what keeps browsing useful.** Before it existed, the directory
-grouped by every category a merchant carried, so Four Sigmatic appeared in four
-of five sections and no section told a reader anything. Related to that: resist
-filing a merchant under a broad umbrella like `health-wellness` as its primary.
-A category holding 60% of the inventory is not a category, it is a synonym for
-the site.
+We also write honestly about price. If a brand is expensive, or a product is not
+worth it unless you already spend that money elsewhere, the page says so. A page
+that talks you out of a purchase you would have regretted has done its job.
 
-`scripts/build_categories.py` generates a page per category. Two rules keep the
-output clean, both enforced in the generator:
+## Browse
 
-- A category with **no merchants** is skipped rather than published empty. Seed
-  a category in `taxonomy.yml` ahead of its content and nothing renders until a
-  merchant lands in it.
-- A parent whose whole member list comes from a **single child** is skipped too:
-  it would be the same table at a second URL, which is thin duplicate content
-  and makes a reader click through two levels for nothing. The child is
-  canonical. A parent that genuinely aggregates several children — `food-drink`
-  over tea, coffee and meal delivery — is published.
+**[All stores →](stores.md)**
 
-Adding a category: define it in `taxonomy.yml` first, with real `seo` fields,
-then assign merchants. Tags are separate and deliberately uncontrolled — they
-describe attributes, not structure, and nothing navigates by them.
+By category:
 
-## Where offers live
+- [Tea & Coffee](categories/tea-coffee.md) — tea, matcha, coffee and coffee alternatives
+- [Supplements](categories/supplements.md) — vitamins, probiotics, collagen, greens and electrolytes
+- [Food & Drink](categories/food-drink.md) — everything consumable, including meal delivery
+- [Beauty](categories/beauty.md) — skincare, cosmetics and personal care
+- [Fragrance](categories/fragrance.md) — perfumery from approved distributors
+- [Bags & Luggage](categories/bags-luggage.md) — handbags and leather goods
+- [Home & Living](categories/home-living.md) — household and low-waste home products
+- [Meal Delivery](categories/meal-delivery.md) — prepared meals on a schedule
+- [Loans](categories/loans.md) — consumer credit, with the APR stated first
 
-Offers go in **`data/offers/<slug>.yml`**, never in the page's frontmatter.
+### A note on the Loans section
 
-GitHub renders a Markdown file's YAML frontmatter as a table, and an array of
-objects inside it collapses into a nested table that is effectively unreadable —
-wide, clipped, and impossible to scan. Since this repository is public and people
-read the pages here directly, that matters. As its own `.yml` file the identical
-data renders as plain highlighted source: one offer per block, one field per
-line, diffs that are legible in review.
+Financial products are held to a different standard here. A loan is not a
+saving, so those pages lead with what the borrowing **costs** — the
+representative example and the APR — before any promotion, and they say plainly
+where the product becomes a trap. If a page in that section ever reads like an
+advert, we have got it wrong.
 
-The site reads the two files together — the page for its metadata and copy, the
-offers file for the structured deals. `scripts/validate.py` fails if a merchant
-has no offers file, or if `offers` reappears in a frontmatter block.
+## How we make money
 
-The frontmatter that remains is deliberately short: identity, taxonomy, SEO and
-dates. That keeps the table GitHub draws at the top of each page small enough to
-be worth reading.
+We earn a commission when you buy through some of the links on this site.
 
-## Frontmatter gotcha
+It never changes the price you pay, and it does not decide what we list or how we
+rank it. Two things follow from that, and we would rather state them than have you
+wonder:
 
-**Never leave a blank line anywhere inside the frontmatter block.** YAML allows
-it, but parsers that end frontmatter at the first blank line will silently
-truncate there — every key below it, `offers` included, drops into the page body
-as plain text, where markdown collapses the lines into one run-on paragraph. The
-page still builds, which is what makes it easy to miss. Use comment lines to
-separate sections instead of blank lines. `scripts/validate.py` fails on this.
+- We list offers we earn nothing from, including free returns policies and
+  loyalty schemes, because they are the ones that save you money.
+- Where a store's own site is not the cheapest place to buy, our page says so —
+  even though saying so costs us the sale.
 
-## Content rules
+## Found a dead offer?
 
-- **Never invent an offer, a code, a price or a policy.** Anything not traceable to a
-  merchant-owned page is either omitted or carries `status: unverified`.
-- **Do not publish a code you have not seen work in a live cart.** A dead code costs
-  more reader trust than an empty code slot. Prefer code-free offers — subscription
-  discounts, shipping thresholds, loyalty and referral programs — which are durable and
-  verifiable.
-- Discount claims on third-party aggregators are frequently unverifiable. They are
-  not sources, whatever figure they advertise.
-- Keep HTML comments out of `merchants/*.md`. Renderers pass them through into the
-  published page, where visitors can read them in the page source. Internal notes
-  go in `_notes/<slug>.md`.
-- State exclusions, minimums and new-customer restrictions in the offer `terms`.
-- Prices change. Label them with the month captured and re-check on each pass.
-- Write the positioning honestly, including where a brand is expensive. The page should
-  be useful to someone who ends up not buying.
+Offers change and merchants do not announce it. If something here did not work at
+checkout, **[open an issue](../../issues)** with the store name and what happened,
+and we will re-check it. That is the fastest way to fix a page, and it helps the
+next person too.
 
-## Affiliate links
+The same goes for a store you would like to see added.
 
-Tracking links never appear in page copy, and never in the repository either.
-Monetized anchors point at the internal path **`/go/<slug>`**, which the site
-resolves to a real tracking URL at redirect time. Deep link with
-`/go/<slug>?to=/path/on/merchant/site`.
+---
 
-Because this repository is public, the map is split in two:
-
-| File | Committed? | Contents |
-| --- | --- | --- |
-| `affiliates.example.yml` | yes | schema and merchant slugs, empty `url`/`network` |
-| `affiliates.yml` | **no**, gitignored | the real tracking URLs |
-
-Copy the example to `affiliates.yml` and fill it in locally, or supply the links
-to the redirect endpoint through environment variables if your host prefers
-secrets over a file. The merchant slugs stay public deliberately — each one is
-already a live page on the site — but a committed tracking URL would hand
-competitors your entire merchant-to-network mapping in one file, and some
-affiliate agreements prohibit disclosing terms at all. `scripts/validate.py`
-fails if a committed affiliates file has a non-empty `url` or `network`.
-
-```markdown
-Add your items to the cart at [piquelife.com](/go/pique-life), choosing
-["Subscribe & Save"](/go/pique-life?to=/collections/subs-collection) as you go.
-```
-
-Why the indirection rather than pasting the network URL into each link:
-
-- A network switch or a tracking-parameter change is one line in `affiliates.yml`,
-  not a find-and-replace across every page that mentions the merchant.
-- Pages stay readable in the repo, and reviewers can see what a link means.
-- The redirect is the natural place to count clicks per merchant and per anchor.
-- Before a link exists, `/go/<slug>` falls back to the plain storefront, so a page
-  can ship un-monetized without a single broken link.
-
-Placement matters more than the URL: put the link on meaningful anchor text inside
-a sentence people are already reading — the offer name, the product, the CTA — not
-on a bare URL in a metadata row. Leave support destinations (help centers, returns
-portals) as direct external links.
-
-The redirect endpoint must: send `rel="sponsored nofollow noopener"` on rendered
-anchors, return **302** and not 301 so a network change is not cached in browsers,
-reject any `?to=` value that is not a same-site absolute path, and be disallowed in
-`robots.txt` so `/go/` is never crawled.
-
-Every monetized page carries the one-line commission disclosure near the top. It is
-in the template — keep it.
-
-## Maintenance
-
-Re-verify each page monthly: confirm live offers, drop expired ones, refresh prices, and
-bump `last_updated` / `verified_on`. A page whose `verified_on` is more than a quarter
-stale should be treated as unpublished until rechecked.
-
-## Frontmatter reference
-
-| Field | Notes |
-| --- | --- |
-| `slug` | kebab-case, matches the filename |
-| `name` | display name |
-| `aliases` | other names shoppers search for |
-| `website` | canonical storefront URL |
-| — | no tracking link here; see `affiliates.example.yml` |
-| `logo` | `/assets/merchants/<slug>.png` |
-| `categories`, `tags` | taxonomy for browse and related-merchant modules |
-| `ships_to`, `currency` | shipping scope |
-| `seo.title` | ~60 characters, ends with the current month and year |
-| `seo.description` | 150–160 characters, leads with the best offer |
-| — | offers are not in the frontmatter; see `data/offers/<slug>.yml` |
-| `last_updated`, `verified_on` | ISO dates from the last real check |
-
-## Store directory
-
-`stores.md` is the public directory page, generated in full from the merchant
-files. Never hand-edit it — add or edit a merchant, then rebuild:
-
-```
-python3 scripts/build_directory.py             # rebuild stores.md
-python3 scripts/build_categories.py            # rebuild categories/*.md
-python3 scripts/build_directory.py --check     # CI: fail if stale
-python3 scripts/build_categories.py --check    # CI: fail if stale
-```
-
-It groups merchants by category, lists them A–Z with their headline offer, and
-picks that offer as the highest active percentage discount. Run it as part of
-every content change so the directory never drifts from the pages.
+*Contributing to the content? See [CONTRIBUTING.md](CONTRIBUTING.md) for how pages
+are researched, verified and built.*

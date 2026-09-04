@@ -1,5 +1,7 @@
 # Internal notes
 
+*Editorial and build rules live in [CONTRIBUTING.md](../CONTRIBUTING.md).*
+
 Working notes for the content team, one file per merchant, named `<slug>.md`.
 
 **Nothing in this directory is published.** It exists because these notes used to
