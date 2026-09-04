@@ -28,29 +28,6 @@ seo:
     - vital proteins subscribe and save
 last_updated: 2026-09-04
 verified_on: 2026-09-04
-# type: code | deal   status: active | unverified | expired
-offers:
-  - id: vital-proteins-subscribe
-    title: "Subscribe & Save 15% with free shipping on future orders"
-    type: deal
-    discount: "15%"
-    code: null
-    status: active
-    terms: "Applied automatically to subscribed products, and future subscription orders ship free regardless of size. Adjust or cancel from your account."
-  - id: vital-proteins-free-shipping
-    title: "Free shipping on orders over $50"
-    type: deal
-    discount: "Free shipping"
-    code: null
-    status: active
-    terms: "Applies to one-time orders shipping within the United States. Subscription orders ship free without needing to reach the threshold."
-  - id: vital-proteins-returns
-    title: "30-day return window"
-    type: deal
-    discount: "Returns"
-    code: null
-    status: active
-    terms: "Problems must be reported within 30 days of receiving an order placed on vitalproteins.com. Some returns may be subject to a restocking fee."
 ---
 
 # Vital Proteins Coupons & Promo Codes

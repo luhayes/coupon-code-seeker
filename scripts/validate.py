@@ -76,7 +76,25 @@ def check(path, affiliates):
     if not seo.get("title"):
         err("missing `seo.title`")
 
-    offers = data.get("offers") or []
+    # Offers live in data/offers/<slug>.yml, not in the frontmatter. GitHub
+    # renders anything inside the frontmatter block as a table and collapses a
+    # nested array of objects into an unreadable one; as its own YAML file the
+    # same data renders as plain source, one offer per line.
+    if "offers" in data:
+        err("`offers` belongs in data/offers/<slug>.yml, not in the frontmatter")
+    offers_path = os.path.join(
+        ROOT, "_templates" if is_template else "data/offers",
+        "offers.yml" if is_template else f"{slug}.yml")
+    offers = []
+    if not os.path.exists(offers_path):
+        if not is_template:
+            err(f"missing offers file: data/offers/{slug}.yml")
+    else:
+        try:
+            offers = (yaml.safe_load(open(offers_path, encoding="utf-8"))
+                      or {}).get("offers") or []
+        except yaml.YAMLError as e:
+            err(f"invalid YAML in {os.path.relpath(offers_path, ROOT)}: {e}")
     if not offers and not is_template:
         err("no offers defined")
     seen = set()

@@ -31,36 +31,6 @@ seo:
     - coffee alternative discount
 last_updated: 2026-09-04
 verified_on: 2026-09-04
-# type: code | deal   status: active | unverified | expired
-offers:
-  - id: mudwtr-subscribe-save
-    title: "Subscribe & Save up to 33% on recurring orders"
-    type: deal
-    discount: "Up to 33%"
-    code: null
-    status: active
-    terms: "Applied automatically when you choose a subscription. The exact saving varies by product and cadence. Skip, reschedule or cancel from your account."
-  - id: mudwtr-free-shipping
-    title: "Free US shipping on every subscription order, or on orders over $50"
-    type: deal
-    discount: "Free shipping"
-    code: null
-    status: active
-    terms: "All US subscription orders ship free regardless of size. One-time US orders ship free over $50; below that, standard shipping is $5, 3-day $10 and 2-day $15."
-  - id: mudwtr-guarantee
-    title: "30-day money-back guarantee, even if you have opened it"
-    type: deal
-    discount: "Risk-free"
-    code: null
-    status: active
-    terms: "Full refund for first-time customers who bought within the past 30 days, and the product does not need to be unopened."
-  - id: mudwtr-referral
-    title: "Refer a friend: 20% off their first subscription order"
-    type: deal
-    discount: "20%"
-    code: null
-    status: active
-    terms: "Referral applies to a friend's first subscription order. New customers only."
 ---
 
 # MUD\WTR Coupons & Promo Codes

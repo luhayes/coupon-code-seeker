@@ -32,43 +32,6 @@ seo:
     - electrolyte discount code
 last_updated: 2026-09-04
 verified_on: 2026-09-04
-# type: code | deal   status: active | unverified | expired
-offers:
-  - id: lmnt-sample-pack
-    title: "Free 8-flavour Sample Pack with any drink mix purchase"
-    type: deal
-    discount: "Free gift"
-    code: null
-    status: active
-    terms: "Added automatically when you order through a partner link. One Sample Pack per drink mix order. Applies to drink mix and Sparkling purchases."
-  - id: lmnt-free-shipping
-    title: "Free US shipping, included in the product price"
-    type: deal
-    discount: "Free shipping"
-    code: null
-    status: active
-    terms: "US standard shipping is built into the price with no minimum order. Canadian orders ship free over $100 USD; below that, rates vary by destination and speed."
-  - id: lmnt-subscription
-    title: "12% off every subscription order"
-    type: deal
-    discount: "12%"
-    code: null
-    status: active
-    terms: "Applied automatically to subscription orders, which also include free US standard shipping. Skip or cancel anytime."
-  - id: lmnt-insider-bundle
-    title: "Insider Bundle — buy 3 boxes, get 1 free"
-    type: deal
-    discount: "25% effective"
-    code: null
-    status: active
-    terms: "Four boxes for the price of three, and flavours can be mixed across the bundle."
-  - id: lmnt-refund
-    title: "No-questions-asked refund policy"
-    type: deal
-    discount: "Risk-free"
-    code: null
-    status: active
-    terms: "Refund or replacement if you are not satisfied. Covers direct website purchases and the brand's Amazon storefront."
 ---
 
 # LMNT Coupons & Deals

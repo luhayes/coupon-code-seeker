@@ -28,29 +28,6 @@ seo:
     - magnesi-om deal
 last_updated: 2026-09-04
 verified_on: 2026-09-04
-# type: code | deal   status: active | unverified | expired
-offers:
-  - id: moon-juice-subscribe
-    title: "Subscribe & Save 10% with free contiguous US shipping"
-    type: deal
-    discount: "10%"
-    code: null
-    status: active
-    terms: "Selected items ship monthly at 10% off with free shipping in the contiguous US. Adjust, pause or cancel anytime from your account."
-  - id: moon-juice-free-shipping
-    title: "Free shipping on orders over $65"
-    type: deal
-    discount: "Free shipping"
-    code: null
-    status: active
-    terms: "Applied automatically to contiguous US orders over $65, calculated before taxes and after discounts. Shipped via FedEx."
-  - id: moon-juice-returns
-    title: "45-day returns with a prepaid label"
-    type: deal
-    discount: "Risk-free"
-    code: null
-    status: active
-    terms: "100% satisfaction policy. Returns accepted within 45 days of delivery; once authorised you receive a prepaid label, and refunds are processed within 48 hours of inspection."
 ---
 
 # Moon Juice Coupons & Promo Codes

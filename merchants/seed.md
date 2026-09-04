@@ -29,29 +29,6 @@ seo:
     - daily synbiotic deal
 last_updated: 2026-09-04
 verified_on: 2026-09-04
-# type: code | deal   status: active | unverified | expired
-offers:
-  - id: seed-first-order-refund
-    title: "30-day no-questions-asked refund on your first order"
-    type: deal
-    discount: "Risk-free"
-    code: null
-    status: active
-    terms: "Full product cost refunded within 30 days of delivery of the first order, less shipping, VAT and duties. First subscription order only — refills are not refundable."
-  - id: seed-welcome-kit
-    title: "Welcome Kit included with your first month"
-    type: deal
-    discount: "Free with first order"
-    code: null
-    status: active
-    terms: "The first shipment includes a reusable glass jar, a complimentary week-long travel vial and the brand's reading materials. Later refills arrive in compostable packaging."
-  - id: seed-subscription
-    title: "DS-01 Daily Synbiotic at $49.99 a month, cancel anytime"
-    type: deal
-    discount: "Subscription"
-    code: null
-    status: active
-    terms: "Seed sells DS-01 on subscription rather than as a one-time purchase. Renews automatically at your chosen frequency; adjust or cancel from your account."
 ---
 
 # Seed Coupons & Deals

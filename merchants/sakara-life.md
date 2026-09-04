@@ -27,22 +27,6 @@ seo:
     - plant based meal delivery deal
 last_updated: 2026-09-04
 verified_on: 2026-09-04
-# type: code | deal   status: active | unverified | expired
-offers:
-  - id: sakara-subscription-saving
-    title: "Subscribe and pay 20% less per meal than a one-time order"
-    type: deal
-    discount: "20%"
-    code: null
-    status: active
-    terms: "One-time orders cost 20% more per meal than the same programme bought on subscription. Shipping is included either way."
-  - id: sakara-free-shipping
-    title: "Free shipping on all subscription orders"
-    type: deal
-    discount: "Free shipping"
-    code: null
-    status: active
-    terms: "Shipping is included on every subscription order with no minimum and no delivery fees. Sakara delivers to the 48 contiguous states."
 ---
 
 # Sakara Life Coupons & Deals

@@ -30,36 +30,6 @@ seo:
     - lion's mane coffee coupon
 last_updated: 2026-09-04
 verified_on: 2026-09-04
-# type: code | deal   status: active | unverified | expired
-offers:
-  - id: four-sigmatic-subscribe-first
-    title: "30% off your first subscription order"
-    type: deal
-    discount: "30%"
-    code: null
-    status: active
-    terms: "Applied when you choose a subscription rather than a one-time purchase. Applies to the first delivery; recurring orders then save 20%."
-  - id: four-sigmatic-subscribe-recurring
-    title: "20% off every recurring subscription order"
-    type: deal
-    discount: "20%"
-    code: null
-    status: active
-    terms: "Standing discount on deliveries after the first. Skip, reschedule or cancel anytime from your account."
-  - id: four-sigmatic-guarantee
-    title: "120-day 100% money-back guarantee"
-    type: deal
-    discount: "Risk-free"
-    code: null
-    status: active
-    terms: "No questions asked within 120 days of purchase. The refund does not include shipping costs."
-  - id: four-sigmatic-returns
-    title: "30-day returns on unopened product"
-    type: deal
-    discount: "Returns"
-    code: null
-    status: active
-    terms: "Unopened items in original condition can be returned within 30 days. Opened product is covered by the 120-day guarantee instead."
 ---
 
 # Four Sigmatic Coupons & Promo Codes

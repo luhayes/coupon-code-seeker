@@ -18,18 +18,9 @@ seo:
   keywords: []
 last_updated: YYYY-MM-DD
 verified_on: YYYY-MM-DD
-# type: code | deal        status: active | unverified | expired
-# Never leave a blank line anywhere inside this frontmatter block: parsers that
-# end frontmatter at the first blank line will drop everything below it into the
-# page body, where markdown collapses it into one run-on paragraph.
-offers:
-  - id: merchant-slug-offer-1
-    title: ""
-    type: deal
-    discount: ""
-    code: null                       # null when no code is required
-    status: active
-    terms: ""                        # exclusions, minimums, new-customer limits
+# Offers are NOT defined here — copy _templates/offers.yml to
+# data/offers/<slug>.yml. Frontmatter is rendered as a table by GitHub and a
+# nested array of offers becomes unreadable inside it.
 ---
 
 # Merchant Name Coupons & Promo Codes

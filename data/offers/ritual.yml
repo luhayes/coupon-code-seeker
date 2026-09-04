@@ -1,0 +1,33 @@
+# Offers for ritual — structured data consumed by the site.
+# Kept out of the page's YAML frontmatter so GitHub renders it as
+# readable source rather than collapsing it into a nested table.
+# type: code | deal   status: active | unverified | expired
+offers:
+  - id: ritual-referral
+    title: "Refer a friend: they get $15 off, you get $30 off"
+    type: deal
+    discount: "$15 / $30"
+    code: null
+    status: active
+    terms: "New customers only. Referral links are generated in the Ritual app under 'Refer a friend & earn'. The referred friend's discount applies to their first subscription order."
+  - id: ritual-free-shipping
+    title: "Free shipping on every order"
+    type: deal
+    discount: "Free shipping"
+    code: null
+    status: active
+    terms: "Applies to all orders shipping within the United States, Canada and the United Kingdom, with no minimum."
+  - id: ritual-first-order-refund
+    title: "30-day money-back guarantee on your first order"
+    type: deal
+    discount: "Risk-free"
+    code: null
+    status: active
+    terms: "Full refund of the first order within 30 days of purchase from ritual.com, with proof of purchase. No return of the product is required."
+  - id: ritual-subscription
+    title: "Subscription pricing from about $33 a month, cancel anytime"
+    type: deal
+    discount: "Subscription"
+    code: null
+    status: active
+    terms: "Ritual sells on subscription by default; bottles run roughly $30–$35 each. No commitment — skip or cancel from your account."

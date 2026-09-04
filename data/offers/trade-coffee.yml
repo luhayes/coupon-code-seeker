@@ -1,0 +1,33 @@
+# Offers for trade-coffee — structured data consumed by the site.
+# Kept out of the page's YAML frontmatter so GitHub renders it as
+# readable source rather than collapsing it into a nested table.
+# type: code | deal   status: active | unverified | expired
+offers:
+  - id: trade-first-order
+    title: "Up to 30% off your first coffee order"
+    type: deal
+    discount: "Up to 30%"
+    code: null
+    status: active
+    terms: "New-customer offer promoted on Trade's own landing page. The exact rate varies by promotion and typically applies to a first subscription order."
+  - id: trade-subscription
+    title: "15% off plus free shipping on a subscription"
+    type: deal
+    discount: "15%"
+    code: null
+    status: active
+    terms: "Standing subscription rate. Active subscribers also get free shipping on separate one-off products. Cancel anytime."
+  - id: trade-free-shipping
+    title: "Free shipping on orders over $30"
+    type: deal
+    discount: "Free shipping"
+    code: null
+    status: active
+    terms: "Shipping is waived at $30 on both subscription and one-time orders. Subscribers get free shipping regardless."
+  - id: trade-first-bag-guarantee
+    title: "First-Bag Guarantee — free replacement if you don't like it"
+    type: deal
+    discount: "Risk-free"
+    code: null
+    status: active
+    terms: "Contact Trade's Customer Experience team within one week of receiving your first order and they will replace it, for any reason."

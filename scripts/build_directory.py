@@ -33,7 +33,13 @@ def load_merchants():
         d = yaml.safe_load(m.group(1)) or {}
         if not d.get("slug"):
             continue
-        offers = [o for o in (d.get("offers") or [])
+        # Offers are stored alongside the page, not inside its frontmatter.
+        offers_path = os.path.join(ROOT, "data", "offers", f"{d['slug']}.yml")
+        raw = []
+        if os.path.exists(offers_path):
+            raw = (yaml.safe_load(open(offers_path, encoding="utf-8"))
+                   or {}).get("offers") or []
+        offers = [o for o in raw
                   if isinstance(o, dict) and o.get("status") == "active"]
         # The headline offer is the one a shopper would use first: the largest
         # percentage saving, else the first active offer.

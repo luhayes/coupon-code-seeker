@@ -1,16 +1,18 @@
 # coupon-code-seeker
 
-Merchant landing page content for **couponcodeseeker.com**. Each merchant gets one
-Markdown file with YAML frontmatter: structured metadata and offers for the site to
-render, plus a long-form body written for search and for shoppers deciding whether to buy.
+Merchant landing page content for **couponcodeseeker.com**. Each merchant gets a
+Markdown page — short YAML frontmatter plus a long-form body written for search and
+for shoppers deciding whether to buy — and a companion `data/offers/<slug>.yml`
+holding its structured deals.
 
 ## Layout
 
 ```
 merchants/             one file per merchant, named <slug>.md
+data/offers/           <slug>.yml — the offers for each merchant
 stores.md              generated directory page — do not hand-edit
 _notes/                internal working notes, never published
-_templates/            merchant.md — copy this to start a new page
+_templates/            merchant.md and offers.yml — copy these to start
 affiliates.example.yml public schema for the /go/<slug> tracking map
 affiliates.yml         real tracking links — gitignored, never committed
 scripts/validate.py    pre-publish checks
@@ -33,9 +35,31 @@ problem, so it also works as a pre-commit or CI gate.
 3. Fill in the frontmatter, then the body. Keep the section order in the template so
    pages are comparable across merchants. Record your sources, rejected offers and
    open tasks in `_notes/<slug>.md`.
-4. Set `last_updated` and `verified_on` to the date you actually checked.
-5. Add the slug to `affiliates.example.yml`, put the real link in your local
+4. Copy `_templates/offers.yml` to `data/offers/<slug>.yml` and fill in the offers:
+   `id`, `title`, `type` (`code`/`deal`), `discount`, `code`, `status`
+   (`active`/`unverified`/`expired`) and `terms` on each.
+5. Set `last_updated` and `verified_on` to the date you actually checked.
+6. Add the slug to `affiliates.example.yml`, put the real link in your local
    `affiliates.yml`, and add the logo before the page goes live.
+
+## Where offers live
+
+Offers go in **`data/offers/<slug>.yml`**, never in the page's frontmatter.
+
+GitHub renders a Markdown file's YAML frontmatter as a table, and an array of
+objects inside it collapses into a nested table that is effectively unreadable —
+wide, clipped, and impossible to scan. Since this repository is public and people
+read the pages here directly, that matters. As its own `.yml` file the identical
+data renders as plain highlighted source: one offer per block, one field per
+line, diffs that are legible in review.
+
+The site reads the two files together — the page for its metadata and copy, the
+offers file for the structured deals. `scripts/validate.py` fails if a merchant
+has no offers file, or if `offers` reappears in a frontmatter block.
+
+The frontmatter that remains is deliberately short: identity, taxonomy, SEO and
+dates. That keeps the table GitHub draws at the top of each page small enough to
+be worth reading.
 
 ## Frontmatter gotcha
 
@@ -133,7 +157,7 @@ stale should be treated as unpublished until rechecked.
 | `ships_to`, `currency` | shipping scope |
 | `seo.title` | ~60 characters, ends with the current month and year |
 | `seo.description` | 150–160 characters, leads with the best offer |
-| `offers[]` | `id`, `title`, `type` (`code`/`deal`), `discount`, `code`, `status` (`active`/`unverified`/`expired`), `terms` |
+| — | offers are not in the frontmatter; see `data/offers/<slug>.yml` |
 | `last_updated`, `verified_on` | ISO dates from the last real check |
 
 ## Store directory

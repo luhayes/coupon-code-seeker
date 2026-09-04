@@ -32,36 +32,6 @@ seo:
     - indian tea coupon code
 last_updated: 2026-09-04
 verified_on: 2026-09-04
-# type: code | deal   status: active | unverified | expired
-offers:
-  - id: vahdam-first-order-refund
-    title: "First-time buyer refund guarantee, up to $35"
-    type: deal
-    discount: "Risk-free"
-    code: null
-    status: active
-    terms: "Vahdam refunds first-time customers up to $35 on an online store order if they are not satisfied. Returns are not accepted once packaging has been torn open."
-  - id: vahdam-subscribe-save
-    title: "Subscribe & Save 15%"
-    type: deal
-    discount: "15%"
-    code: null
-    status: unverified
-    terms: "A flat 15% subscription discount is advertised, but sources disagree over whether it applies to the first order only or to every recurring delivery. Confirm on the product page before relying on it."
-  - id: vahdam-free-shipping
-    title: "Free shipping over a regional order threshold"
-    type: deal
-    discount: "Free shipping"
-    code: null
-    status: unverified
-    terms: "Vahdam runs separate US, UK, German and Indian storefronts with different thresholds — figures between $49 and $74.99 are cited by different sources. Check the threshold shown on the storefront serving your country."
-  - id: vahdam-referral
-    title: "Refer a friend for a discount on both orders"
-    type: deal
-    discount: "Referral"
-    code: null
-    status: unverified
-    terms: "A refer-a-friend program exists, but the reward documented is a rupee-denominated coupon on the Indian storefront. The US equivalent has not been confirmed."
 ---
 
 # Vahdam Teas Coupons & Promo Codes
