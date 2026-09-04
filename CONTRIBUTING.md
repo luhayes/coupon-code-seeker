@@ -24,6 +24,7 @@ _templates/            merchant.md and offers.yml — copy these to start
 affiliates.example.yml public schema for the /go/<slug> tracking map
 affiliates.yml         real tracking links — gitignored, never committed
 scripts/validate.py    pre-publish checks
+scripts/affiliates.py  manage the local tracking links
 assets/merchants/      logos, <slug>.png
 ```
 
@@ -151,9 +152,31 @@ Because this repository is public, the map is split in two:
 | `affiliates.example.yml` | yes | schema and merchant slugs, empty `url`/`network` |
 | `affiliates.yml` | **no**, gitignored | the real tracking URLs |
 
-Copy the example to `affiliates.yml` and fill it in locally, or supply the links
-to the redirect endpoint through environment variables if your host prefers
-secrets over a file. The merchant slugs stay public deliberately — each one is
+Use `scripts/affiliates.py` rather than editing the YAML by hand — it writes
+only to the gitignored file and will not touch the committed schema:
+
+```
+python3 scripts/affiliates.py status                    # who is earning, who is not
+python3 scripts/affiliates.py set <slug> "<template>" --network impact
+python3 scripts/affiliates.py test <slug> /some/path    # show the resolved URL
+python3 scripts/affiliates.py unset <slug>              # back to untracked
+```
+
+The `url` is a **template**: put `{dest}` where the destination URL belongs, and
+the redirect substitutes the URL-encoded destination — the storefront plus the
+`?to=` path on a deep link.
+
+```
+https://track.example-network.com/c/12345/678/9999?u={dest}
+```
+
+Leave `{dest}` out and every link lands on the tracked homepage, which is the
+right choice only if your network does not support deep linking. `set` warns
+when the template has no `{dest}`, and `test` prints exactly what a given link
+resolves to, so you can confirm a deep link survives before trusting it.
+
+Alternatively, supply the links to the redirect endpoint through environment
+variables if your host prefers secrets over a file. The merchant slugs stay public deliberately — each one is
 already a live page on the site — but a committed tracking URL would hand
 competitors your entire merchant-to-network mapping in one file, and some
 affiliate agreements prohibit disclosing terms at all. `scripts/validate.py`
