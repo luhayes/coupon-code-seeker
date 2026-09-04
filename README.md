@@ -8,6 +8,7 @@ render, plus a long-form body written for search and for shoppers deciding wheth
 
 ```
 merchants/             one file per merchant, named <slug>.md
+stores.md              generated directory page — do not hand-edit
 _notes/                internal working notes, never published
 _templates/            merchant.md — copy this to start a new page
 affiliates.example.yml public schema for the /go/<slug> tracking map
@@ -135,8 +136,16 @@ stale should be treated as unpublished until rechecked.
 | `offers[]` | `id`, `title`, `type` (`code`/`deal`), `discount`, `code`, `status` (`active`/`unverified`/`expired`), `terms` |
 | `last_updated`, `verified_on` | ISO dates from the last real check |
 
-## Merchants
+## Store directory
 
-| Merchant | Page | Verified |
-| --- | --- | --- |
-| Pique Life | [`merchants/pique-life.md`](merchants/pique-life.md) | 2026-09-04 |
+`stores.md` is the public directory page, generated in full from the merchant
+files. Never hand-edit it — add or edit a merchant, then rebuild:
+
+```
+python3 scripts/build_directory.py            # rebuild stores.md
+python3 scripts/build_directory.py --check    # CI: fail if stale
+```
+
+It groups merchants by category, lists them A–Z with their headline offer, and
+picks that offer as the highest active percentage discount. Run it as part of
+every content change so the directory never drifts from the pages.
