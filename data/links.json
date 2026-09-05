@@ -1,208 +1,251 @@
 {
   "merchants/ag1.md": [
     {
+      "dest": "",
       "from": "https://drinkag1.com",
-      "to": "/go/ag1"
+      "slug": "ag1"
     },
     {
+      "dest": "/ag1-membership",
       "from": "https://drinkag1.com/ag1-membership",
-      "to": "/go/ag1?to=/ag1-membership"
+      "slug": "ag1"
     }
   ],
   "merchants/american-leather-co.md": [
     {
+      "dest": "",
       "from": "https://www.americanleatherco.com",
-      "to": "/go/american-leather-co"
+      "slug": "american-leather-co"
     },
     {
+      "dest": "/collections/bags",
       "from": "https://www.americanleatherco.com/collections/bags",
-      "to": "/go/american-leather-co?to=/collections/bags"
+      "slug": "american-leather-co"
     },
     {
+      "dest": "/collections/sale",
       "from": "https://www.americanleatherco.com/collections/sale",
-      "to": "/go/american-leather-co?to=/collections/sale"
+      "slug": "american-leather-co"
     }
   ],
   "merchants/beauty-success.md": [
     {
+      "dest": "",
       "from": "https://www.beautysuccess.fr",
-      "to": "/go/beauty-success"
+      "slug": "beauty-success"
     }
   ],
   "merchants/feniko.md": [
     {
+      "dest": "",
       "from": "https://feniko.pl",
-      "to": "/go/feniko"
+      "slug": "feniko"
     }
   ],
   "merchants/four-sigmatic.md": [
     {
+      "dest": "",
       "from": "https://us.foursigmatic.com",
-      "to": "/go/four-sigmatic"
+      "slug": "four-sigmatic"
     },
     {
+      "dest": "/collections/coffee",
       "from": "https://us.foursigmatic.com/collections/coffee",
-      "to": "/go/four-sigmatic?to=/collections/coffee"
+      "slug": "four-sigmatic"
     }
   ],
   "merchants/les-cotons-de-romane.md": [
     {
+      "dest": "",
       "from": "https://lescotonsderomane.com",
-      "to": "/go/les-cotons-de-romane"
+      "slug": "les-cotons-de-romane"
     }
   ],
   "merchants/lmnt.md": [
     {
+      "dest": "",
       "from": "https://drinklmnt.com",
-      "to": "/go/lmnt"
+      "slug": "lmnt"
     },
     {
+      "dest": "/products/lmnt-recharge-electrolyte-drink",
       "from": "https://drinklmnt.com/products/lmnt-recharge-electrolyte-drink",
-      "to": "/go/lmnt?to=/products/lmnt-recharge-electrolyte-drink"
+      "slug": "lmnt"
     },
     {
+      "dest": "/products/lmnt-recharge-variety-pack",
       "from": "https://drinklmnt.com/products/lmnt-recharge-variety-pack",
-      "to": "/go/lmnt?to=/products/lmnt-recharge-variety-pack"
+      "slug": "lmnt"
     }
   ],
   "merchants/minicredit.md": [
     {
+      "dest": "",
       "from": "https://www.minicredit.pl",
-      "to": "/go/minicredit"
+      "slug": "minicredit"
     }
   ],
   "merchants/moon-juice.md": [
     {
+      "dest": "/pages/subscriptions",
       "from": "https://moonjuice.com/pages/subscriptions",
-      "to": "/go/moon-juice?to=/pages/subscriptions"
+      "slug": "moon-juice"
     },
     {
+      "dest": "/products/superyou",
       "from": "https://moonjuice.com/products/superyou",
-      "to": "/go/moon-juice?to=/products/superyou"
+      "slug": "moon-juice"
     },
     {
+      "dest": "/products/magnesi-om-magnesium-supplement",
       "from": "https://moonjuice.com/products/magnesi-om-magnesium-supplement",
-      "to": "/go/moon-juice?to=/products/magnesi-om-magnesium-supplement"
+      "slug": "moon-juice"
     },
     {
+      "dest": "/collections/superyou-magnesi-om",
       "from": "https://moonjuice.com/collections/superyou-magnesi-om",
-      "to": "/go/moon-juice?to=/collections/superyou-magnesi-om"
+      "slug": "moon-juice"
     },
     {
+      "dest": "",
       "from": "https://moonjuice.com",
-      "to": "/go/moon-juice"
+      "slug": "moon-juice"
     }
   ],
   "merchants/mudwtr.md": [
     {
+      "dest": "",
       "from": "https://mudwtr.com",
-      "to": "/go/mudwtr"
+      "slug": "mudwtr"
     },
     {
+      "dest": "/products/mud-starter-kit",
       "from": "https://mudwtr.com/products/mud-starter-kit",
-      "to": "/go/mudwtr?to=/products/mud-starter-kit"
+      "slug": "mudwtr"
     }
   ],
   "merchants/pique-life.md": [
     {
+      "dest": "/collections/subs-collection",
       "from": "https://www.piquelife.com/collections/subs-collection",
-      "to": "/go/pique-life?to=/collections/subs-collection"
+      "slug": "pique-life"
     },
     {
+      "dest": "",
       "from": "https://www.piquelife.com",
-      "to": "/go/pique-life"
+      "slug": "pique-life"
     },
     {
+      "dest": "/products/matcha-green-tea",
       "from": "https://www.piquelife.com/products/matcha-green-tea",
-      "to": "/go/pique-life?to=/products/matcha-green-tea"
+      "slug": "pique-life"
     },
     {
+      "dest": "/collections/teas",
       "from": "https://www.piquelife.com/collections/teas",
-      "to": "/go/pique-life?to=/collections/teas"
+      "slug": "pique-life"
     },
     {
+      "dest": "/pages/piquerewards",
       "from": "https://www.piquelife.com/pages/piquerewards",
-      "to": "/go/pique-life?to=/pages/piquerewards"
+      "slug": "pique-life"
     }
   ],
   "merchants/ritual.md": [
     {
+      "dest": "",
       "from": "https://ritual.com",
-      "to": "/go/ritual"
+      "slug": "ritual"
     },
     {
+      "dest": "/products",
       "from": "https://ritual.com/products",
-      "to": "/go/ritual?to=/products"
+      "slug": "ritual"
     }
   ],
   "merchants/sakara-life.md": [
     {
+      "dest": "",
       "from": "https://www.sakara.com",
-      "to": "/go/sakara-life"
+      "slug": "sakara-life"
     },
     {
+      "dest": "/nutrition/signature-nutrition-program",
       "from": "https://www.sakara.com/nutrition/signature-nutrition-program",
-      "to": "/go/sakara-life?to=/nutrition/signature-nutrition-program"
+      "slug": "sakara-life"
     }
   ],
   "merchants/seed.md": [
     {
+      "dest": "",
       "from": "https://seed.com",
-      "to": "/go/seed"
+      "slug": "seed"
     },
     {
+      "dest": "/daily-synbiotic",
       "from": "https://seed.com/daily-synbiotic",
-      "to": "/go/seed?to=/daily-synbiotic"
+      "slug": "seed"
     },
     {
+      "dest": "/daily-synbiotic-refill",
       "from": "https://seed.com/daily-synbiotic-refill",
-      "to": "/go/seed?to=/daily-synbiotic-refill"
+      "slug": "seed"
     }
   ],
   "merchants/trade-coffee.md": [
     {
+      "dest": "/pages/30-off",
       "from": "https://www.drinktrade.com/pages/30-off",
-      "to": "/go/trade-coffee?to=/pages/30-off"
+      "slug": "trade-coffee"
     },
     {
+      "dest": "/pages/subscribe",
       "from": "https://www.drinktrade.com/pages/subscribe",
-      "to": "/go/trade-coffee?to=/pages/subscribe"
+      "slug": "trade-coffee"
     },
     {
+      "dest": "/products/coffee-maker-collection",
       "from": "https://www.drinktrade.com/products/coffee-maker-collection",
-      "to": "/go/trade-coffee?to=/products/coffee-maker-collection"
+      "slug": "trade-coffee"
     },
     {
+      "dest": "",
       "from": "https://www.drinktrade.com",
-      "to": "/go/trade-coffee"
+      "slug": "trade-coffee"
     }
   ],
   "merchants/vahdam-teas.md": [
     {
+      "dest": "",
       "from": "https://www.vahdam.com",
-      "to": "/go/vahdam-teas"
+      "slug": "vahdam-teas"
     },
     {
+      "dest": "/collections/black-tea",
       "from": "https://www.vahdam.com/collections/black-tea",
-      "to": "/go/vahdam-teas?to=/collections/black-tea"
+      "slug": "vahdam-teas"
     }
   ],
   "merchants/vital-proteins.md": [
     {
+      "dest": "",
       "from": "https://www.vitalproteins.com",
-      "to": "/go/vital-proteins"
+      "slug": "vital-proteins"
     },
     {
+      "dest": "/products/collagen-peptides",
       "from": "https://www.vitalproteins.com/products/collagen-peptides",
-      "to": "/go/vital-proteins?to=/products/collagen-peptides"
+      "slug": "vital-proteins"
     },
     {
+      "dest": "/products/skin-complex",
       "from": "https://www.vitalproteins.com/products/skin-complex",
-      "to": "/go/vital-proteins?to=/products/skin-complex"
+      "slug": "vital-proteins"
     },
     {
+      "dest": "/products/collagen-peptides-360-capsules",
       "from": "https://www.vitalproteins.com/products/collagen-peptides-360-capsules",
-      "to": "/go/vital-proteins?to=/products/collagen-peptides-360-capsules"
+      "slug": "vital-proteins"
     }
   ]
 }

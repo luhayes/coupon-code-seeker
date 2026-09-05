@@ -6,6 +6,8 @@
     python3 scripts/affiliates.py test <slug> [/path/on/merchant/site]
     python3 scripts/affiliates.py unset <slug>
 
+`test` prints the exact href the site will render for that link.
+
 Real tracking URLs live in `affiliates.yml`, which is gitignored. This script
 only ever writes there — it refuses to touch `affiliates.example.yml`, because
 that file is committed to a public repository.
@@ -14,11 +16,12 @@ The url is a TEMPLATE. Put `{dest}` where the destination URL belongs:
 
     https://track.example-network.com/c/12345/678/9999?u={dest}
 
-At redirect time `{dest}` is replaced with the URL-encoded destination — the
-merchant's site, plus the `?to=` path when the link is a deep link. If your
-network does not support deep linking, leave `{dest}` out entirely and every
-link lands on the tracked homepage; that still works, it just loses the deep
-link.
+At build time `{dest}` is replaced with the URL-encoded destination — the
+merchant's site, plus the path of whichever link on the page is being rewritten.
+The result becomes the href directly, so the reader goes straight to the
+affiliate link with no redirect of ours in between. If your network does not
+support deep linking, leave `{dest}` out entirely and every link lands on the
+tracked homepage; that still works, it just loses the deep link.
 """
 import os
 import shutil
@@ -59,11 +62,11 @@ def save(data):
 
 
 def resolve(cfg, defaults, to=None):
-    """Reproduce what the redirect endpoint does, so `test` shows the truth."""
+    """Reproduce what the site build does, so `test` shows the real href."""
     fallback = (cfg.get("fallback") or "").rstrip("/")
     dest = fallback + to if to else fallback
     if cfg.get("status") != "active" or not (cfg.get("url") or "").strip():
-        return dest, "untracked fallback (status is not active)"
+        return dest, "left as-is, untracked (status is not active)"
     url = cfg["url"]
     if "{dest}" in url:
         return url.replace("{dest}", quote(dest, safe="")), "tracked, deep link preserved"
@@ -114,7 +117,7 @@ def cmd_set(slug, url, network=None):
               "  URL belongs.")
     defaults = data.get("defaults") or {}
     out, note = resolve(cfg, defaults)
-    print(f"\n  /go/{slug}  ->  {out}\n  ({note})")
+    print(f"\n  {cfg.get('fallback')}\n    ->  {out}\n  ({note})")
 
 
 def cmd_unset(slug):
@@ -125,7 +128,7 @@ def cmd_unset(slug):
     cfg["url"] = ""
     cfg["status"] = "unconfigured"
     save(data)
-    print(f"{slug}: tracking link cleared — /go/{slug} now falls back untracked")
+    print(f"{slug}: tracking link cleared — links on that page stay as written")
 
 
 def cmd_test(slug, to=None):
@@ -137,8 +140,8 @@ def cmd_test(slug, to=None):
     if to and not to.startswith("/"):
         sys.exit("the ?to= path must be a same-site absolute path starting with '/'")
     out, note = resolve(cfg, data.get("defaults") or {}, to)
-    label = f"/go/{slug}" + (f"?to={to}" if to else "")
-    print(f"source: {os.path.basename(path)}\n\n{label}\n  ->  {out}\n  ({note})")
+    src = (cfg.get("fallback") or "").rstrip("/") + (to or "")
+    print(f"source: {os.path.basename(path)}\n\n{src}\n  ->  {out}\n  ({note})")
 
 
 def main():

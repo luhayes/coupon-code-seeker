@@ -3,8 +3,8 @@
 
     python3 scripts/validate.py
 
-Checks frontmatter integrity, the offer schema, and that every monetized anchor
-resolves against affiliates.yml. Exits non-zero on the first failing file so it
+Checks frontmatter integrity, the offer schema, internal links, and that every
+monetizable anchor belongs to a merchant the site can build a tracking link for. Exits non-zero on the first failing file so it
 can gate a commit or CI run.
 """
 import datetime
@@ -20,7 +20,6 @@ except ImportError:
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 FRONTMATTER = re.compile(r"^---\n(.*?)\n---\n", re.S)
-GO_LINK = re.compile(r"\]\(/go/([a-z0-9-]+)(?:\?to=([^)]*))?\)")
 OFFER_FIELDS = {"id", "title", "label", "type", "discount", "code", "status", "terms"}
 # Optional: access (how to get it when there is no code), expires_on (ISO date)
 TYPES = {"code", "deal"}
@@ -174,12 +173,6 @@ def check(path, affiliates):
                     err(f"offer '{oid}' expired on {when} but is still marked "
                         "active — set status: expired or refresh the offer")
 
-    for link_slug, dest in GO_LINK.findall(body):
-        if not is_template and link_slug not in affiliates:
-            err(f"/go/{link_slug} has no entry in affiliates.yml")
-        if dest and not dest.startswith("/"):
-            err(f"/go/{link_slug}?to={dest} is not a same-site absolute path")
-
     # Markdown renderers pass HTML comments straight through into the published
     # page, where any visitor can read them via View Source. Internal reasoning
     # belongs in _notes/<slug>.md instead.
@@ -189,7 +182,7 @@ def check(path, affiliates):
             "published page source; move it to _notes/")
 
     # Support destinations stay as direct external links; shopping paths must go
-    # through /go/. The marker can be in the host (help.example.com) or in the
+    # be monetized. The marker can be in the host (help.example.com) or in the
     # path (example.com/pages/help-center), so test the whole URL.
     # Support destinations stay direct. The markers are multilingual because the
     # site covers merchants outside the English-speaking market — a French
@@ -213,8 +206,8 @@ def check(path, affiliates):
         return ".".join(host.split(":")[0].split(".")[-2:])
 
     # Merchant pages link to the merchant's real URL so the links work when the
-    # page is read on GitHub; the site rewrites them to /go/<slug> using
-    # data/links.json. The risk of that direction is silent: an unrewritten link
+    # page is read on GitHub; the site swaps in the affiliate URL at build
+    # time using data/links.json. The risk of that direction is silent: an unrewritten link
     # still works, it just stops earning. So every monetizable link must at
     # least have a slug the redirect can be built for.
     storefront = registrable(data.get("website") or "") if data.get("website") else ""
@@ -281,8 +274,8 @@ def check_internal_links():
     (`/stores/feniko`) 404 there, because the file is `merchants/feniko.md`.
     Links are therefore repo-relative, and the site rewrites them at build time.
 
-    `/go/` is the exception: it is a redirect endpoint that only exists on the
-    site, with no file behind it.
+    Outbound merchant links are real URLs, so they are absolute and skipped here;
+    what this catches is an internal cross-reference written as a site path.
     """
     targets = (glob.glob(os.path.join(ROOT, "merchants", "*.md")) +
                glob.glob(os.path.join(ROOT, "categories", "*.md")) +
@@ -294,8 +287,6 @@ def check_internal_links():
         text = re.sub(r"```.*?```", "", open(path, encoding="utf-8").read(), flags=re.S)
         for label, target in re.findall(r"\[([^\]]+)\]\(([^)]+)\)", text):
             if target.startswith(("http://", "https://", "#", "mailto:")):
-                continue
-            if target.startswith("/go/"):
                 continue
             if target.startswith("/"):
                 errors.append(
@@ -314,7 +305,7 @@ def check_doc_links():
 
     README.md links by hand to generated category pages, and a category whose
     merchants all move away stops being generated — so the link would rot
-    silently. Code fences are skipped: they contain illustrative /go/ paths.
+    silently. Code fences are skipped: they contain illustrative paths.
     """
     for name in ("README.md", "CONTRIBUTING.md"):
         path = os.path.join(ROOT, name)

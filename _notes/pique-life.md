@@ -27,14 +27,14 @@ cart. A dead code costs more reader trust than an empty code slot.
 - [ ] Add the Pique tracking link to the local (gitignored) `affiliates.yml`
       and set `status: active`. Never put it in `affiliates.example.yml` — that
       file is committed to a public repository.
-      Commercial anchors already point at `/go/pique-life`; until the link is set
-      the redirect resolves untracked to piquelife.com, so no link is broken.
+      Until it is set, the page's links stay as written and point at
+      piquelife.com, so nothing is broken — they simply earn nothing.
 - [ ] Add the logo asset at `/assets/merchants/pique-life.png`.
 - [ ] Re-check the prices in the product table — they move with promotions.
 
 ## Link decisions
 
 Help centre and returns-portal links are deliberately left as direct external
-links rather than routed through `/go/`. They are support destinations rather
+links rather than monetized. They are support destinations rather
 than shopping paths, and sending someone chasing a refund through a redirect
 would be a poor experience.

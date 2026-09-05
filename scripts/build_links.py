@@ -5,19 +5,25 @@
     python3 scripts/build_links.py --check   # fail if it is stale
 
 Merchant pages link to the merchant's real URL, so the links work when someone
-reads the page on GitHub. On the live site those links must be rewritten to the
-tracked redirect, and this file says exactly which ones and to what:
+reads the page on GitHub. On the live site those links are replaced with the
+affiliate URL directly — no redirect hop of our own — and this file says which
+links to replace and what destination each carries:
 
     {"merchants/feniko.md": [
-       {"from": "https://feniko.pl", "to": "/go/feniko"},
+       {"from": "https://feniko.pl", "slug": "feniko", "dest": ""},
        {"from": "https://feniko.pl/pierwsza-pozyczka-za-darmo",
-        "to": "/go/feniko?to=/pierwsza-pozyczka-za-darmo"}
+        "slug": "feniko", "dest": "/pierwsza-pozyczka-za-darmo"}
     ]}
+
+The build resolves each entry against `affiliates.yml` — which stays out of this
+repository — by substituting `{dest}` in that merchant's tracking template with
+the merchant's site plus `dest`, URL-encoded. The final href is the affiliate
+URL itself, so the reader goes straight there.
 
 The map exists so the site does not have to reimplement the rule below. If it
 did, the two would drift, and a drifted rewrite fails silently — the link still
 works, it just stops earning. That is the one failure mode this direction has
-that the old /go/-in-the-file approach did not, so it is worth removing.
+that writing a redirect path into the file did not, so it is worth removing.
 
 The rule, applied once, here: a link is monetized when its host matches the
 merchant's own `website` host, EXCEPT when the URL looks like a support
@@ -75,10 +81,7 @@ def build():
                 continue
             seen.add(url)
             tail = url[len(site):]
-            entries.append({
-                "from": url,
-                "to": f"/go/{slug}?to={tail}" if tail else f"/go/{slug}",
-            })
+            entries.append({"from": url, "slug": slug, "dest": tail})
         if entries:
             out[rel] = entries
     return out

@@ -21,7 +21,7 @@ categories/            generated category pages — do not hand-edit
 stores.md              generated directory page — do not hand-edit
 _notes/                internal working notes, never published
 _templates/            merchant.md and offers.yml — copy these to start
-affiliates.example.yml public schema for the /go/<slug> tracking map
+affiliates.example.yml public schema — merchant slugs, no tracking links
 affiliates.yml         real tracking links — gitignored, never committed
 scripts/validate.py    pre-publish checks
 scripts/build_pages.py generates the deals table inside each page
@@ -155,8 +155,8 @@ cost the site one rewrite rule at build time:
 | `stores.md` | `/stores` |
 
 Outbound links to a merchant are written as the **merchant's real URL**, for the
-same reason: a reader on GitHub can click through to the store. The site
-rewrites them to the tracked redirect at build time.
+same reason: a reader on GitHub can click through to the store. The site swaps
+in the affiliate link at build time — see "Affiliate links" below.
 
 That check earned its place immediately: it caught the category generator
 linking a breadcrumb to a parent page that is deliberately never generated,
@@ -213,96 +213,53 @@ separate sections instead of blank lines. `scripts/validate.py` fails on this.
 
 Tracking links never appear in page copy, and never in the repository either.
 
-Pages link to the merchant's real URL. The site rewrites those to
-**`/go/<slug>`**, which resolves to the tracking URL at redirect time, using the
-generated map in **`data/links.json`**:
+Pages link to the **merchant's real URL**, so they work when someone reads the
+page on GitHub. The site replaces those with the **affiliate URL directly** at
+build time — no redirect of our own in between — using two files:
+
+| File | Committed? | Role |
+| --- | --- | --- |
+| `data/links.json` | yes | which links to replace, and each one's merchant and destination path |
+| `affiliates.yml` | **no**, gitignored | the tracking template per merchant |
 
 ```json
 "merchants/feniko.md": [
-  { "from": "https://feniko.pl", "to": "/go/feniko" },
-  { "from": "https://feniko.pl/pierwsza-pozyczka-za-darmo",
-    "to": "/go/feniko?to=/pierwsza-pozyczka-za-darmo" }
+  { "from": "https://feniko.pl", "slug": "feniko", "dest": "" }
 ]
 ```
 
-**Apply the map; do not reimplement the rule.** If the site derived which links
-to rewrite on its own, the two would drift — and a drifted rewrite fails
-silently: the link still works, it just stops earning. That is the one failure
-mode this direction has that keeping `/go/` in the file did not, and the map is
-how it is removed. `scripts/build_links.py --check` fails when the map is stale.
+The build takes that merchant's `url` template, substitutes `{dest}` with the
+URL-encoded destination (`fallback` + `dest`), and uses the result as the href.
+`scripts/affiliates.py test <slug> [path]` prints exactly what that will be.
 
-The rule the map encodes, for reference: a link is monetized when its host
-matches the merchant's own `website` host, **except** when the URL looks like a
-support destination. Sending someone chasing a refund through an affiliate
-redirect earns nothing and is a poor thing to do to a reader mid-problem — so
-help centres and returns portals stay direct.
+When a merchant's `status` is not `active`, the link is **left as written** and
+points at the merchant. A page never carries a broken link because the affiliate
+link is not set up yet.
+
+**Apply the map; do not reimplement the rule.** If the site decided for itself
+which links to rewrite, the two would drift — and a drifted rewrite fails
+silently: the link still works, it just stops earning. That is the failure mode
+this direction has, and the generated map is how it is removed.
+`scripts/build_links.py --check` fails when the map is stale.
+
+The rule the map encodes: monetize a link whose host matches the merchant's own
+`website` host, **except** where the URL looks like a support destination. Help
+centres and returns portals stay direct — sending someone chasing a refund
+through an affiliate link earns nothing and is a poor thing to do to a reader
+mid-problem.
 
 `validate.py` fails if a monetizable link belongs to a merchant with no entry in
-`affiliates.example.yml`, since the site could not build a redirect for it.
+`affiliates.example.yml`, since no tracking link could be built for it.
 
-Because this repository is public, the map is split in two:
+### Marking paid links
 
-| File | Committed? | Contents |
-| --- | --- | --- |
-| `affiliates.example.yml` | yes | schema and merchant slugs, empty `url`/`network` |
-| `affiliates.yml` | **no**, gitignored | the real tracking URLs |
+The rendered anchor must carry **`rel="sponsored nofollow noopener"`**. This
+matters more with direct affiliate links than it did behind a redirect: the href
+is now openly a tracking URL, and an unmarked paid link is what search engines
+penalise. The build adds it — the Markdown cannot.
 
-Use `scripts/affiliates.py` rather than editing the YAML by hand — it writes
-only to the gitignored file and will not touch the committed schema:
-
-```
-python3 scripts/affiliates.py status                    # who is earning, who is not
-python3 scripts/affiliates.py set <slug> "<template>" --network impact
-python3 scripts/affiliates.py test <slug> /some/path    # show the resolved URL
-python3 scripts/affiliates.py unset <slug>              # back to untracked
-```
-
-The `url` is a **template**: put `{dest}` where the destination URL belongs, and
-the redirect substitutes the URL-encoded destination — the storefront plus the
-`?to=` path on a deep link.
-
-```
-https://track.example-network.com/c/12345/678/9999?u={dest}
-```
-
-Leave `{dest}` out and every link lands on the tracked homepage, which is the
-right choice only if your network does not support deep linking. `set` warns
-when the template has no `{dest}`, and `test` prints exactly what a given link
-resolves to, so you can confirm a deep link survives before trusting it.
-
-Alternatively, supply the links to the redirect endpoint through environment
-variables if your host prefers secrets over a file. The merchant slugs stay public deliberately — each one is
-already a live page on the site — but a committed tracking URL would hand
-competitors your entire merchant-to-network mapping in one file, and some
-affiliate agreements prohibit disclosing terms at all. `scripts/validate.py`
-fails if a committed affiliates file has a non-empty `url` or `network`.
-
-```markdown
-Add your items to the cart at [piquelife.com](/go/pique-life), choosing
-["Subscribe & Save"](/go/pique-life?to=/collections/subs-collection) as you go.
-```
-
-Why the indirection rather than pasting the network URL into each link:
-
-- A network switch or a tracking-parameter change is one line in `affiliates.yml`,
-  not a find-and-replace across every page that mentions the merchant.
-- Pages stay readable in the repo, and reviewers can see what a link means.
-- The redirect is the natural place to count clicks per merchant and per anchor.
-- Before a link exists, `/go/<slug>` falls back to the plain storefront, so a page
-  can ship un-monetized without a single broken link.
-
-Placement matters more than the URL: put the link on meaningful anchor text inside
-a sentence people are already reading — the offer name, the product, the CTA — not
-on a bare URL in a metadata row. Leave support destinations (help centers, returns
-portals) as direct external links.
-
-The redirect endpoint must: send `rel="sponsored nofollow noopener"` on rendered
-anchors, return **302** and not 301 so a network change is not cached in browsers,
-reject any `?to=` value that is not a same-site absolute path, and be disallowed in
-`robots.txt` so `/go/` is never crawled.
-
-Every monetized page carries the one-line commission disclosure near the top. It is
-in the template — keep it.
+Every monetized page also carries the one-line commission disclosure near the
+top. It is in the template; keep it.
 
 ## Maintenance
 

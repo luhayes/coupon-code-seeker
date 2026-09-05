@@ -9,28 +9,24 @@
 # file. scripts/validate.py fails the build if a committed affiliates file has
 # a non-empty `url`.
 #
-# Merchant pages never contain a raw tracking URL. Body anchors point at the
-# internal path /go/<slug>, and the site resolves that here at redirect time.
-# Switching networks or refreshing tracking parameters is then a one-line edit
-# in this file instead of a find-and-replace across every merchant page.
+# Merchant pages never contain a raw tracking URL. They link to the merchant's
+# real URL, and the site swaps in the affiliate link at build time using
+# data/links.json. Switching networks or refreshing tracking parameters is then
+# a one-line edit in this file rather than a find-and-replace across every page.
 #
-# Deep links: /go/<slug>?to=/products/matcha-green-tea sends the shopper to that
-# specific page on the merchant's site with tracking applied, so anchor text in
-# the middle of a paragraph can point somewhere more useful than the homepage.
+# Resolution, per entry in data/links.json:
+#   1. status: active   -> take that merchant's `url` template and substitute
+#                          {dest} with the URL-encoded destination, which is
+#                          `fallback` plus the entry's `dest` path. The result
+#                          is the href — the reader goes straight to the
+#                          affiliate link, with no redirect of our own.
+#   2. anything else    -> leave the link exactly as written, pointing at the
+#                          merchant. A page never carries a broken or dead link
+#                          just because the affiliate link is not set up yet.
 #
-# Resolution rules the redirect endpoint must implement:
-#   1. status: active   -> build the tracking URL from `url`, substituting
-#                          {dest} with the URL-encoded destination
-#                          (`fallback` + the ?to= path, or `fallback` alone).
-#   2. anything else    -> 302 straight to `fallback` + ?to= path, untracked.
-#      A page therefore never carries a broken or dead link just because the
-#      affiliate link has not been set up yet.
-#   3. Reject a ?to= value that is not a same-site absolute path beginning with
-#      a single "/" — never redirect to an arbitrary attacker-supplied host.
-#
-# The endpoint should also send `rel` on the rendered anchor, return 302 (never
-# 301, so a network change is not cached in browsers), and be disallowed in
-# robots.txt so /go/ is never crawled or indexed.
+# The rendered anchor must carry `rel` (below). That matters more now than it
+# did behind a redirect: the href is a tracking URL, and an unmarked paid link
+# is what search engines penalise.
 
 version: 1
 
@@ -43,124 +39,86 @@ defaults:
 merchants:
   pique-life:
     status: unconfigured # -> active once `url` is filled in
-    network: "" # e.g. impact, shareasale, awin, cj
+    network: "" # e.g. impact, salegains, awin, cj
     url: "" # tracking template; {dest} is replaced with the encoded destination
     fallback: https://www.piquelife.com
-    notes: |
-      Deep links used in the page copy:
-        /go/pique-life
-        /go/pique-life?to=/collections/subs-collection
-        /go/pique-life?to=/products/matcha-green-tea
-        /go/pique-life?to=/pages/piquerewards
-      Confirm the network permits deep linking before setting status: active.
-      If it does not, the redirect still resolves — every ?to= simply lands on
-      the tracked homepage.
   mudwtr:
     status: unconfigured
     network: ""
     url: ""
     fallback: https://mudwtr.com
-    notes: |
-      Deep links used: /go/mudwtr, ?to=/products/mud-starter-kit
   four-sigmatic:
     status: unconfigured
     network: ""
     url: ""
     fallback: https://us.foursigmatic.com
-    notes: |
-      Deep links used: /go/four-sigmatic, ?to=/collections/coffee
   lmnt:
     status: unconfigured
     network: ""
     url: ""
     fallback: https://drinklmnt.com
     notes: |
-      Deep links used: /go/lmnt, ?to=/products/lmnt-recharge-electrolyte-drink,
-      ?to=/products/lmnt-recharge-variety-pack
-      LMNT's free Sample Pack offer attaches via partner links specifically, so
-      confirm the tracking link preserves it before setting status: active.
+      LMNT's free Sample Pack attaches through partner links specifically, so
+      confirm the tracking link still triggers it — if it does not, the page's
+      headline offer is wrong and needs rewriting.
   ritual:
     status: unconfigured
     network: ""
     url: ""
     fallback: https://ritual.com
-    notes: |
-      Deep links used: /go/ritual, ?to=/products
   vahdam-teas:
     status: unconfigured
     network: ""
     url: ""
     fallback: https://www.vahdam.com
     notes: |
-      Deep links used: /go/vahdam-teas, ?to=/collections/black-tea
-      Vahdam runs separate US/UK/DE/IN storefronts — confirm the tracking link
+      Vahdam runs separate US/UK/DE/IN storefronts. Confirm the tracking link
       targets the US store before setting status: active.
   seed:
     status: unconfigured
     network: ""
     url: ""
     fallback: https://seed.com
-    notes: |
-      Deep links used: /go/seed, ?to=/daily-synbiotic, ?to=/daily-synbiotic-refill
   trade-coffee:
     status: unconfigured
     network: ""
     url: ""
     fallback: https://www.drinktrade.com
-    notes: |
-      Deep links used: /go/trade-coffee, ?to=/pages/30-off, ?to=/pages/subscribe,
-      ?to=/products/coffee-maker-collection
   vital-proteins:
     status: unconfigured
     network: ""
     url: ""
     fallback: https://www.vitalproteins.com
-    notes: |
-      Deep links used: /go/vital-proteins, ?to=/products/collagen-peptides,
-      ?to=/products/skin-complex, ?to=/products/collagen-peptides-360-capsules
   moon-juice:
     status: unconfigured
     network: ""
     url: ""
     fallback: https://moonjuice.com
-    notes: |
-      Deep links used: /go/moon-juice, ?to=/pages/subscriptions,
-      ?to=/products/superyou, ?to=/products/magnesi-om-magnesium-supplement,
-      ?to=/collections/superyou-magnesi-om
   ag1:
     status: unconfigured
     network: ""
     url: ""
     fallback: https://drinkag1.com
     notes: |
-      Deep links used: /go/ag1, ?to=/ag1-membership
-      AG1's affiliate programme is selective and its promotions bundle extra
-      items with a first subscription order rather than discounting price — if
-      our link carries a specific Welcome Kit bundle, the page's kit contents
-      need to match it.
+      AG1's programme is selective, and its promotions bundle extra items with a
+      first subscription order rather than discounting price. If our link carries a
+      specific Welcome Kit, the page's description of it must match.
   sakara-life:
     status: unconfigured
     network: ""
     url: ""
     fallback: https://www.sakara.com
-    notes: |
-      Deep links used: /go/sakara-life,
-      ?to=/nutrition/signature-nutrition-program
   american-leather-co:
     status: unconfigured
     network: ""
     url: ""
     fallback: https://www.americanleatherco.com
-    notes: |
-      Deep links used: /go/american-leather-co, ?to=/collections/bags,
-      ?to=/collections/sale
   beauty-success:
     status: unconfigured
     network: ""
     url: ""
     fallback: https://www.beautysuccess.fr
     notes: |
-      Deep links used: /go/beauty-success
       French market, EUR. Confirm the link targets beautysuccess.fr and not a
       Groupe NOVI corporate domain.
   les-cotons-de-romane:
@@ -169,29 +127,25 @@ merchants:
     url: ""
     fallback: https://lescotonsderomane.com
     notes: |
-      Deep links used: /go/les-cotons-de-romane
-      CRITICAL: several .shop look-alike domains copy this brand. The fallback
-      above is the domain the brand promotes from its own Instagram and TikTok.
-      Verify any tracking link resolves to lescotonsderomane.com and nowhere
-      else before setting status: active.
+      CRITICAL: several .shop look-alike domains copy this brand. The fallback is
+      the domain the brand promotes from its own Instagram and TikTok. Verify any
+      tracking link resolves to lescotonsderomane.com and nowhere else.
   feniko:
     status: unconfigured
     network: ""
     url: ""
     fallback: https://feniko.pl
     notes: |
-      CONSUMER CREDIT, Poland, PLN. Deep links used: /go/feniko
-      Lending affiliate programmes carry compliance obligations on how the
-      product may be advertised — check the network's creative rules before
-      setting status: active, and make sure the page's cost disclosures satisfy
-      them.
+      CONSUMER CREDIT, Poland, PLN. Lending affiliate programmes impose rules on
+      how credit may be advertised — check the network's creative requirements and
+      confirm this page's cost disclosures satisfy them. Re-check the RRSO on every
+      verification pass; a stale rate on a credit page is a compliance exposure.
   minicredit:
     status: unconfigured
     network: ""
     url: ""
     fallback: https://www.minicredit.pl
     notes: |
-      CONSUMER CREDIT, Poland, PLN. Deep links used: /go/minicredit
-      Same compliance caveat as Feniko. Also re-check the representative example
-      (2,500 zl / 30 days / 297.61% RRSO) on each verification pass — lenders
-      update these and a stale figure is a compliance problem, not just a typo.
+      CONSUMER CREDIT, Poland, PLN. Same compliance caveat as Feniko. Also
+      re-check the representative example (2,500 zl / 30 days / 297.61% RRSO) each
+      pass — lenders update these.
