@@ -17,6 +17,7 @@ status and the re-check cadence are the machinery behind that sentence.
 merchants/             one file per merchant, named <slug>.md
 data/offers/           <slug>.yml — the offers for each merchant
 taxonomy.yml           the controlled vocabulary of categories
+site.yml               site URL and the /go redirect base
 categories/            generated category pages — do not hand-edit
 stores.md              generated directory page — do not hand-edit
 _notes/                internal working notes, never published
@@ -25,8 +26,6 @@ affiliates.example.yml public schema — merchant slugs, no tracking links
 affiliates.yml         real tracking links — gitignored, never committed
 scripts/validate.py    pre-publish checks
 scripts/build_pages.py generates the deals table inside each page
-scripts/build_links.py the outbound-link map the site rewrites with
-data/links.json        generated — which links to monetize, and to what
 scripts/affiliates.py  manage the local tracking links
 assets/merchants/      logos, <slug>.png
 ```
@@ -154,9 +153,8 @@ cost the site one rewrite rule at build time:
 | `categories/<slug>.md` | `/categories/<slug>` |
 | `stores.md` | `/stores` |
 
-Outbound links to a merchant are written as the **merchant's real URL**, for the
-same reason: a reader on GitHub can click through to the store. The site swaps
-in the affiliate link at build time — see "Affiliate links" below.
+Outbound links to a merchant are the exception, and they are absolute on
+purpose — see "Affiliate links" below.
 
 That check earned its place immediately: it caught the category generator
 linking a breadcrumb to a parent page that is deliberately never generated,
@@ -213,50 +211,59 @@ separate sections instead of blank lines. `scripts/validate.py` fails on this.
 
 Tracking links never appear in page copy, and never in the repository either.
 
-Pages link to the **merchant's real URL**, so they work when someone reads the
-page on GitHub. The site replaces those with the **affiliate URL directly** at
-build time — no redirect of our own in between — using two files:
+Every outbound merchant link is written as our own redirect, with the base from
+`site.yml`:
+
+```markdown
+[feniko.pl](https://couponcodeseeker.com/go/feniko)
+[Collagen Peptides](https://couponcodeseeker.com/go/vital-proteins?to=/products/collagen-peptides)
+```
+
+**There is no build step.** That string is the final URL. It is absolute, and
+that is the whole point: `/go/feniko` written as a relative path resolves
+against `github.com` when someone reads the page there, so it 404s — which is
+exactly what happened before. An absolute URL on our own domain is clickable on
+GitHub, correct on the site, and correct anywhere else the Markdown is rendered.
+It is the one deliberate exception to the repo-relative rule above.
+
+It also means nothing has to be regenerated when a network changes. The
+`/go/<slug>` endpoint reads `affiliates.yml` at **request time**:
 
 | File | Committed? | Role |
 | --- | --- | --- |
-| `data/links.json` | yes | which links to replace, and each one's merchant and destination path |
+| `site.yml` | yes | the redirect base — one line, not repeated anywhere |
+| `affiliates.example.yml` | yes | the schema and the merchant slugs, no URLs |
 | `affiliates.yml` | **no**, gitignored | the tracking template per merchant |
 
-```json
-"merchants/feniko.md": [
-  { "from": "https://feniko.pl", "slug": "feniko", "dest": "" }
-]
-```
+On a request the endpoint takes that merchant's `url` template, substitutes
+`{dest}` with the URL-encoded destination (`fallback` + the `?to=` path), and
+redirects there. `scripts/affiliates.py test <slug> [path]` prints exactly what
+that will be. When a merchant's `status` is not `active`, it redirects to the
+storefront untracked — a reader never hits a dead end because the affiliate link
+is not set up yet; the click just earns nothing.
 
-The build takes that merchant's `url` template, substitutes `{dest}` with the
-URL-encoded destination (`fallback` + `dest`), and uses the result as the href.
-`scripts/affiliates.py test <slug> [path]` prints exactly what that will be.
+Help centres and returns portals stay **direct**, not redirected. Sending
+someone chasing a refund through an affiliate link earns nothing and is a poor
+thing to do to a reader mid-problem.
 
-When a merchant's `status` is not `active`, the link is **left as written** and
-points at the merchant. A page never carries a broken link because the affiliate
-link is not set up yet.
+`validate.py` enforces all of this on every page:
 
-**Apply the map; do not reimplement the rule.** If the site decided for itself
-which links to rewrite, the two would drift — and a drifted rewrite fails
-silently: the link still works, it just stops earning. That is the failure mode
-this direction has, and the generated map is how it is removed.
-`scripts/build_links.py --check` fails when the map is stale.
-
-The rule the map encodes: monetize a link whose host matches the merchant's own
-`website` host, **except** where the URL looks like a support destination. Help
-centres and returns portals stay direct — sending someone chasing a refund
-through an affiliate link earns nothing and is a poor thing to do to a reader
-mid-problem.
-
-`validate.py` fails if a monetizable link belongs to a merchant with no entry in
-`affiliates.example.yml`, since no tracking link could be built for it.
+- a `/go/<slug>` link whose slug is not this page's merchant (the reader would
+  land on a different store);
+- a slug with no entry in `affiliates.example.yml` (the redirect cannot resolve
+  it);
+- a `?to=` that is not a single-slash path on the merchant's own site — anything
+  else turns the endpoint into an open redirect;
+- a raw link straight to the merchant's storefront, which still works for the
+  reader and silently earns nothing. That silent failure is the one worth
+  automating, because nobody notices it by reading the page.
 
 ### Marking paid links
 
-The rendered anchor must carry **`rel="sponsored nofollow noopener"`**. This
-matters more with direct affiliate links than it did behind a redirect: the href
-is now openly a tracking URL, and an unmarked paid link is what search engines
-penalise. The build adds it — the Markdown cannot.
+The anchor the site renders must carry **`rel="sponsored nofollow noopener"`**,
+and `/go/` must be disallowed in `robots.txt` so crawlers never follow the hop.
+An unmarked paid link is what search engines penalise. The site adds the `rel` —
+Markdown cannot express it.
 
 Every monetized page also carries the one-line commission disclosure near the
 top. It is in the template; keep it.
@@ -291,11 +298,9 @@ files. Never hand-edit it — add or edit a merchant, then rebuild:
 
 ```
 python3 scripts/build_pages.py                 # rebuild the in-page deals tables
-python3 scripts/build_links.py                 # rebuild data/links.json
 python3 scripts/build_directory.py             # rebuild stores.md
 python3 scripts/build_categories.py            # rebuild categories/*.md
 python3 scripts/build_pages.py --check         # CI: fail if stale
-python3 scripts/build_links.py --check
 python3 scripts/build_directory.py --check
 python3 scripts/build_categories.py --check
 ```

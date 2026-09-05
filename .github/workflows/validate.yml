@@ -34,9 +34,6 @@ jobs:
       - name: Check the deals tables match the offers files
         run: python3 scripts/build_pages.py --check
 
-      - name: Check the outbound-link map is current
-        run: python3 scripts/build_links.py --check
-
       - name: Check the store directory is current
         run: python3 scripts/build_directory.py --check
 

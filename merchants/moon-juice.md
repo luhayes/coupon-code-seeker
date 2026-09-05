@@ -32,7 +32,7 @@ verified_on: 2026-09-04
 
 # Moon Juice Coupons & Promo Codes
 
-**Best offer right now:** [Subscribe & Save](https://moonjuice.com/pages/subscriptions) takes 10% off and ships free in the contiguous US — no code, no minimum.
+**Best offer right now:** [Subscribe & Save](https://couponcodeseeker.com/go/moon-juice?to=/pages/subscriptions) takes 10% off and ships free in the contiguous US — no code, no minimum.
 
 Moon Juice sells adaptogenic supplements aimed at stress, sleep and skin. Its two anchor products are SuperYou, a cortisol-focused daily capsule, and Magnesi-Om, a magnesium powder with L-theanine.
 
@@ -52,9 +52,9 @@ Positioning honestly: adaptogens remain a category where the clinical literature
 
 | Line | What it is |
 | --- | --- |
-| [SuperYou](https://moonjuice.com/products/superyou) | Daily adaptogen capsule for stress, energy and focus — the cortisol product |
-| [Magnesi-Om](https://moonjuice.com/products/magnesi-om-magnesium-supplement) | Magnesium powder, three forms plus L-theanine, for relaxation and regularity |
-| [Stacks](https://moonjuice.com/collections/superyou-magnesi-om) | Bundled combinations of the two anchor products |
+| [SuperYou](https://couponcodeseeker.com/go/moon-juice?to=/products/superyou) | Daily adaptogen capsule for stress, energy and focus — the cortisol product |
+| [Magnesi-Om](https://couponcodeseeker.com/go/moon-juice?to=/products/magnesi-om-magnesium-supplement) | Magnesium powder, three forms plus L-theanine, for relaxation and regularity |
+| [Stacks](https://couponcodeseeker.com/go/moon-juice?to=/collections/superyou-magnesi-om) | Bundled combinations of the two anchor products |
 | Dusts & beauty | The original adaptogenic powders and skin-focused range |
 
 > Prices vary by format and were not captured on this pass — check the product page.
@@ -85,7 +85,7 @@ Moon Juice runs a 100% satisfaction policy with returns accepted **within 45 day
 
 ## How to use a Moon Juice promo code
 
-1. Add SuperYou, Magnesi-Om or a stack to the cart at [moonjuice.com](https://moonjuice.com), choosing **Subscribe & Save** for 10% and free shipping.
+1. Add SuperYou, Magnesi-Om or a stack to the cart at [moonjuice.com](https://couponcodeseeker.com/go/moon-juice), choosing **Subscribe & Save** for 10% and free shipping.
 2. Continue to checkout.
 3. Enter your code in the discount field before paying.
 4. Confirm it appears in the order summary — **and re-check the shipping line**, because the $65 threshold is applied after discounts and a code can drop you below it.
@@ -98,7 +98,7 @@ Moon Juice runs a 100% satisfaction policy with returns accepted **within 45 day
 
 | | |
 | --- | --- |
-| **Website** | [moonjuice.com](https://moonjuice.com) |
+| **Website** | [moonjuice.com](https://couponcodeseeker.com/go/moon-juice) |
 | **Founded** | 2012 |
 | **Founder** | Amanda Chantal Bacon |
 | **Category** | Adaptogens, magnesium, beauty and stress supplements |

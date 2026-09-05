@@ -4,7 +4,8 @@
     python3 scripts/validate.py
 
 Checks frontmatter integrity, the offer schema, internal links, and that every
-monetizable anchor belongs to a merchant the site can build a tracking link for. Exits non-zero on the first failing file so it
+outbound merchant link goes through the site's `/go/<slug>` redirect and names a
+merchant the redirect can resolve. Exits non-zero on the first failing file so it
 can gate a commit or CI run.
 """
 import datetime
@@ -27,6 +28,24 @@ STATUSES = {"active", "unverified", "expired"}
 
 errors = []
 _taxonomy = None
+_site = None
+
+
+def load_site():
+    """site.yml — chiefly `redirect_base`, the prefix every outbound link uses."""
+    global _site
+    if _site is None:
+        path = os.path.join(ROOT, "site.yml")
+        if not os.path.exists(path):
+            errors.append("site.yml is missing — it defines redirect_base")
+            _site = {}
+        else:
+            _site = yaml.safe_load(open(path, encoding="utf-8")) or {}
+            if not (_site.get("redirect_base") or "").startswith("http"):
+                errors.append(
+                    "site.yml: redirect_base must be an absolute URL. A relative "
+                    "path resolves against github.com when the page is read there.")
+    return _site
 
 
 def load_taxonomy():
@@ -181,12 +200,12 @@ def check(path, affiliates):
         err(f"HTML comment in page body near line {line} — it ships to the "
             "published page source; move it to _notes/")
 
-    # Support destinations stay as direct external links; shopping paths must go
-    # be monetized. The marker can be in the host (help.example.com) or in the
-    # path (example.com/pages/help-center), so test the whole URL.
-    # Support destinations stay direct. The markers are multilingual because the
-    # site covers merchants outside the English-speaking market — a French
-    # help centre lives at /aide, a Polish one at /pomoc.
+    # Support destinations stay as direct external links; shopping paths go
+    # through the redirect. The marker can be in the host (help.example.com) or
+    # in the path (example.com/pages/help-center), so test the whole URL. The
+    # markers are multilingual because the site covers merchants outside the
+    # English-speaking market — a French help centre lives at /aide, a Polish
+    # one at /pomoc.
     SUPPORT = (
         # English
         "help", "support", "return", "faq", "contact", "policy", "terms",
@@ -205,20 +224,57 @@ def check(path, affiliates):
         host = re.sub(r"^https?://", "", url).split("/")[0].lower()
         return ".".join(host.split(":")[0].split(".")[-2:])
 
-    # Merchant pages link to the merchant's real URL so the links work when the
-    # page is read on GitHub; the site swaps in the affiliate URL at build
-    # time using data/links.json. The risk of that direction is silent: an unrewritten link
-    # still works, it just stops earning. So every monetizable link must at
-    # least have a slug the redirect can be built for.
+    # Outbound merchant links go through our own redirect:
+    #
+    #     https://couponcodeseeker.com/go/<slug>[?to=/path/on/merchant/site]
+    #
+    # It is written as an absolute URL on our domain so the same character string
+    # works on GitHub, on the live site, and anywhere else the Markdown renders —
+    # no build step rewrites anything, and no tracking parameter is ever
+    # committed. The redirect resolves the slug against the gitignored
+    # affiliates.yml at request time.
+    #
+    # The failures worth catching are all silent ones: a link that still works
+    # for the reader while earning nothing, or sending them to the wrong store.
+    base = (load_site().get("redirect_base") or "").rstrip("/")
+    site_host = registrable(load_site().get("url") or "") if load_site().get("url") else ""
     storefront = registrable(data.get("website") or "") if data.get("website") else ""
     for url in re.findall(r"\]\((https?://[^)]+)\)", body):
-        if is_template or not storefront:
+        if is_template:
             continue
+
+        if base and url.startswith(base + "/"):
+            rest = url[len(base) + 1:]
+            target, _, query = rest.partition("?")
+            if target != slug:
+                err(f"{url} redirects to '{target}', but this is the '{slug}' "
+                    "page — the reader would land on a different store")
+            elif target not in affiliates:
+                err(f"{url} names '{target}', which has no entry in "
+                    "affiliates.example.yml — the redirect cannot resolve it")
+            if query:
+                key, _, dest = query.partition("=")
+                if key != "to":
+                    err(f"{url} carries '{key}=' — the redirect only reads ?to=")
+                elif not dest.startswith("/") or dest.startswith("//") or "://" in dest:
+                    err(f"{url} has ?to={dest} — it must be a path on the "
+                        "merchant's own site, starting with a single '/'. "
+                        "Anything else turns the redirect into an open redirect.")
+            continue
+
+        # Support destinations stay direct: sending someone chasing a refund
+        # through an affiliate redirect earns nothing and is a poor thing to do
+        # to a reader mid-problem.
         if any(marker in url.lower() for marker in SUPPORT):
             continue
-        if registrable(url) == storefront and slug not in affiliates:
-            err(f"{url} is a monetizable link, but '{slug}' has no entry in "
-                "affiliates.example.yml — the site cannot build a redirect for it")
+
+        if site_host and registrable(url) == site_host:
+            err(f"{url} points at our own domain but is not a "
+                f"{base}/<slug> link — write internal links as repo-relative "
+                "paths so they resolve on GitHub")
+        elif storefront and registrable(url) == storefront:
+            err(f"{url} links straight to the merchant, so it earns nothing. "
+                f"Write it as {base}/{slug} (add ?to=/path for a deep link).")
 
 
 def load_affiliates():
@@ -274,8 +330,9 @@ def check_internal_links():
     (`/stores/feniko`) 404 there, because the file is `merchants/feniko.md`.
     Links are therefore repo-relative, and the site rewrites them at build time.
 
-    Outbound merchant links are real URLs, so they are absolute and skipped here;
-    what this catches is an internal cross-reference written as a site path.
+    Absolute URLs are skipped here — that is where the outbound `/go/<slug>`
+    redirects live, and they are absolute on purpose. What this catches is an
+    internal cross-reference written as a site path.
     """
     targets = (glob.glob(os.path.join(ROOT, "merchants", "*.md")) +
                glob.glob(os.path.join(ROOT, "categories", "*.md")) +

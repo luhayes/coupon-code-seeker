@@ -33,7 +33,7 @@ verified_on: 2026-09-04
 
 # Seed Coupons & Deals
 
-**Best offer right now:** your [first month](https://seed.com) includes the Welcome Kit and is covered by a 30-day no-questions-asked refund — the whole first order is effectively risk-free.
+**Best offer right now:** your [first month](https://couponcodeseeker.com/go/seed) includes the Welcome Kit and is covered by a 30-day no-questions-asked refund — the whole first order is effectively risk-free.
 
 Seed makes DS-01, a daily synbiotic: 24 probiotic strains paired with a polyphenol-based prebiotic, in a capsule-within-a-capsule designed to survive stomach acid and release in the colon.
 
@@ -53,8 +53,8 @@ The packaging is also part of the pitch. The first month ships as a **Welcome Ki
 
 | Line | What it is | Price (Sept 2026) |
 | --- | --- | --- |
-| [DS-01 Daily Synbiotic](https://seed.com/daily-synbiotic) | 24 probiotic strains plus a polyphenol prebiotic, for adults | $49.99 / month |
-| [DS-01 refills](https://seed.com/daily-synbiotic-refill) | Compostable monthly refills for the Welcome Kit jar | $49.99 / month |
+| [DS-01 Daily Synbiotic](https://couponcodeseeker.com/go/seed?to=/daily-synbiotic) | 24 probiotic strains plus a polyphenol prebiotic, for adults | $49.99 / month |
+| [DS-01 refills](https://couponcodeseeker.com/go/seed?to=/daily-synbiotic-refill) | Compostable monthly refills for the Welcome Kit jar | $49.99 / month |
 | Paediatric and other formulas | Additional synbiotics across life stages | Varies |
 
 ---
@@ -83,7 +83,7 @@ Seed sells DS-01 **on subscription by default** — there is no cheaper one-time
 
 ## How to buy from Seed
 
-1. Open [seed.com](https://seed.com) and choose DS-01.
+1. Open [seed.com](https://couponcodeseeker.com/go/seed) and choose DS-01.
 2. Set your delivery frequency — the subscription is the purchase, not an upsell on top of one.
 3. Enter any code in the discount field at checkout before paying.
 4. Your first shipment arrives as the Welcome Kit; later deliveries are refills.
@@ -97,7 +97,7 @@ Seed sells DS-01 **on subscription by default** — there is no cheaper one-time
 
 | | |
 | --- | --- |
-| **Website** | [seed.com](https://seed.com) |
+| **Website** | [seed.com](https://couponcodeseeker.com/go/seed) |
 | **Co-founder & co-CEO** | Ara Katz |
 | **Category** | Probiotics, synbiotics, microbiome science |
 | **Signature product** | DS-01 Daily Synbiotic — 24 strains plus prebiotic |

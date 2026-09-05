@@ -6,7 +6,7 @@
 slug: merchant-slug                  # kebab-case, must match the filename
 name: Merchant Name
 aliases: []                          # other names shoppers search for
-website: https://www.example.com     # canonical storefront, for reference only
+website: https://www.example.com     # canonical storefront; the redirect's fallback
 logo: /assets/merchants/merchant-slug.png
 primary_category: ""                 # exactly one slug from taxonomy.yml
 categories: []                       # the primary plus at most 2 secondaries
@@ -68,7 +68,9 @@ flagging. One subsection per offer, in the same order as the table.
 
 ## How to use a Merchant Name promo code
 
-1. Add items to the cart at [example.com](https://www.example.com).
+1. Add items to the cart at [example.com](https://couponcodeseeker.com/go/merchant-slug).
+   Every outbound link takes this form — `.../go/<slug>`, plus `?to=/path` for a
+   deep link. Help centres and returns portals stay as direct URLs.
 2. Continue to checkout.
 3. Enter the code in the discount field before payment.
 4. Confirm the discount shows in the order summary.

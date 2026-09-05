@@ -9,24 +9,33 @@
 # file. scripts/validate.py fails the build if a committed affiliates file has
 # a non-empty `url`.
 #
-# Merchant pages never contain a raw tracking URL. They link to the merchant's
-# real URL, and the site swaps in the affiliate link at build time using
-# data/links.json. Switching networks or refreshing tracking parameters is then
-# a one-line edit in this file rather than a find-and-replace across every page.
+# Merchant pages never contain a raw tracking URL. Every outbound link is
+# written as our own redirect:
 #
-# Resolution, per entry in data/links.json:
+#   https://couponcodeseeker.com/go/<slug>[?to=/path/on/merchant/site]
+#
+# There is no build step. That URL is the final URL — identical in the Markdown
+# file, on GitHub, and on the live site — and this file is read by the redirect
+# endpoint at REQUEST time. Switching networks or refreshing tracking parameters
+# is a one-line edit here that takes effect on the next click, with no rebuild
+# and no find-and-replace across every page.
+#
+# Resolution, per request to /go/<slug>:
 #   1. status: active   -> take that merchant's `url` template and substitute
 #                          {dest} with the URL-encoded destination, which is
-#                          `fallback` plus the entry's `dest` path. The result
-#                          is the href — the reader goes straight to the
-#                          affiliate link, with no redirect of our own.
-#   2. anything else    -> leave the link exactly as written, pointing at the
-#                          merchant. A page never carries a broken or dead link
-#                          just because the affiliate link is not set up yet.
+#                          `fallback` plus the request's `?to=` path. Redirect
+#                          there with `redirect_status`.
+#   2. anything else    -> redirect to `fallback` plus `?to=`, untracked. A
+#                          reader never hits a dead end because the affiliate
+#                          link is not set up yet — the click just earns nothing.
 #
-# The rendered anchor must carry `rel` (below). That matters more now than it
-# did behind a redirect: the href is a tracking URL, and an unmarked paid link
-# is what search engines penalise.
+# `?to=` must be a path on the merchant's own site, starting with a single '/'.
+# Reject anything else rather than following it, or the endpoint becomes an open
+# redirect that anyone can point at their own domain. scripts/validate.py
+# enforces the same rule on the committed pages.
+#
+# The rendered anchor must carry `rel` (below) — an unmarked paid link is what
+# search engines penalise.
 
 version: 1
 

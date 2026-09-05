@@ -16,12 +16,11 @@ The url is a TEMPLATE. Put `{dest}` where the destination URL belongs:
 
     https://track.example-network.com/c/12345/678/9999?u={dest}
 
-At build time `{dest}` is replaced with the URL-encoded destination — the
-merchant's site, plus the path of whichever link on the page is being rewritten.
-The result becomes the href directly, so the reader goes straight to the
-affiliate link with no redirect of ours in between. If your network does not
-support deep linking, leave `{dest}` out entirely and every link lands on the
-tracked homepage; that still works, it just loses the deep link.
+When someone clicks a `/go/<slug>` link, the redirect endpoint replaces `{dest}`
+with the URL-encoded destination — the merchant's site, plus the `?to=` path the
+link carried — and sends the reader there. If your network does not support deep
+linking, leave `{dest}` out entirely and every link lands on the tracked
+homepage; that still works, it just loses the deep link.
 """
 import os
 import shutil
@@ -62,11 +61,11 @@ def save(data):
 
 
 def resolve(cfg, defaults, to=None):
-    """Reproduce what the site build does, so `test` shows the real href."""
+    """Reproduce what the redirect endpoint does, so `test` shows the real hop."""
     fallback = (cfg.get("fallback") or "").rstrip("/")
     dest = fallback + to if to else fallback
     if cfg.get("status") != "active" or not (cfg.get("url") or "").strip():
-        return dest, "left as-is, untracked (status is not active)"
+        return dest, "straight to the storefront, untracked (status is not active)"
     url = cfg["url"]
     if "{dest}" in url:
         return url.replace("{dest}", quote(dest, safe="")), "tracked, deep link preserved"
@@ -128,7 +127,8 @@ def cmd_unset(slug):
     cfg["url"] = ""
     cfg["status"] = "unconfigured"
     save(data)
-    print(f"{slug}: tracking link cleared — links on that page stay as written")
+    print(f"{slug}: tracking link cleared — /go/{slug} now hops straight to the "
+          "storefront, untracked")
 
 
 def cmd_test(slug, to=None):

@@ -1,0 +1,15 @@
+# Site-level configuration for couponcodeseeker.com.
+#
+# `redirect_base` is where outbound merchant links point. It is an ABSOLUTE URL
+# on our own domain, and that is the whole point: a relative path like
+# /go/feniko resolves against github.com when someone reads the page there, so
+# it 404s. An absolute URL works on GitHub, on the live site, and anywhere else
+# the Markdown is rendered — with no build step rewriting anything.
+#
+# The redirect endpoint resolves the slug against affiliates.yml, which stays
+# off this public repository, so no tracking parameter is ever committed.
+#
+# Change the base here and regenerate; it is not repeated anywhere else.
+
+url: https://couponcodeseeker.com
+redirect_base: https://couponcodeseeker.com/go

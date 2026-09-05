@@ -34,7 +34,7 @@ verified_on: 2026-09-04
 
 # MUD\WTR Coupons & Promo Codes
 
-**Best offer right now:** [Subscribe & Save](https://mudwtr.com) takes up to 33% off and makes shipping free on every recurring order — no code needed.
+**Best offer right now:** [Subscribe & Save](https://couponcodeseeker.com/go/mudwtr) takes up to 33% off and makes shipping free on every recurring order — no code needed.
 
 MUD\WTR is a coffee alternative built around cacao, masala chai and functional mushrooms. The pitch is alertness without the crash: roughly a seventh of the caffeine in a cup of coffee, carried by ingredients meant to smooth out the spike-and-slump cycle that heavy coffee drinkers complain about.
 
@@ -54,7 +54,7 @@ Positioning honestly: this is a premium product in a category where instant coff
 
 | Line | What it is |
 | --- | --- |
-| [:rise](https://mudwtr.com/products/mud-starter-kit) | The flagship morning blend — masala chai, cacao, turmeric, cinnamon, lion's mane, chaga |
+| [:rise](https://couponcodeseeker.com/go/mudwtr?to=/products/mud-starter-kit) | The flagship morning blend — masala chai, cacao, turmeric, cinnamon, lion's mane, chaga |
 | :balance | Daytime blend for a mid-afternoon reset without added caffeine load |
 | :rest | Evening blend, caffeine-free, aimed at winding down |
 | Starter kits | Blend plus the branded frother and mug, the usual entry point |
@@ -95,7 +95,7 @@ A referral gets your friend **20% off their first subscription order**. New cust
 
 ## How to use a MUD\WTR promo code
 
-1. Add your blend or starter kit to the cart at [mudwtr.com](https://mudwtr.com), selecting **Subscribe & Save** rather than one-time if you want the recurring discount.
+1. Add your blend or starter kit to the cart at [mudwtr.com](https://couponcodeseeker.com/go/mudwtr), selecting **Subscribe & Save** rather than one-time if you want the recurring discount.
 2. Go to checkout.
 3. Enter your code in the discount field before paying.
 4. Confirm both the subscription discount and the code appear in the order summary.
@@ -109,7 +109,7 @@ A referral gets your friend **20% off their first subscription order**. New cust
 
 | | |
 | --- | --- |
-| **Website** | [mudwtr.com](https://mudwtr.com) |
+| **Website** | [mudwtr.com](https://couponcodeseeker.com/go/mudwtr) |
 | **Founded** | 2018 |
 | **Founder** | Shane Heath |
 | **Category** | Coffee alternative, functional mushrooms, adaptogens |

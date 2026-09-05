@@ -33,7 +33,7 @@ verified_on: 2026-09-04
 
 # Beauty Success Coupons & Deals
 
-**Best offer right now:** [click and collect is free with no minimum](https://www.beautysuccess.fr), which undercuts the €60 threshold for home delivery entirely.
+**Best offer right now:** [click and collect is free with no minimum](https://couponcodeseeker.com/go/beauty-success), which undercuts the €60 threshold for home delivery entirely.
 
 Beauty Success is a French perfumery and beauty-institute chain selling selective fragrance, skincare and makeup both in around 310 stores and online at beautysuccess.fr.
 
@@ -95,7 +95,7 @@ Beauty Success is an **approved distributor** for the selective brands it carrie
 
 ## How to use a Beauty Success code promo
 
-1. Add your items to the cart at [beautysuccess.fr](https://www.beautysuccess.fr).
+1. Add your items to the cart at [beautysuccess.fr](https://couponcodeseeker.com/go/beauty-success).
 2. Choose **click and collect** if you are below €60 and a store is convenient — it is free at any basket size.
 3. Enter your code in the discount field at checkout before paying.
 4. Confirm it applies in the order summary. Selective fragrance is often excluded from percentage discounts because of brand pricing rules.
@@ -109,7 +109,7 @@ Beauty Success is an **approved distributor** for the selective brands it carrie
 
 | | |
 | --- | --- |
-| **Website** | [beautysuccess.fr](https://www.beautysuccess.fr) |
+| **Website** | [beautysuccess.fr](https://couponcodeseeker.com/go/beauty-success) |
 | **Founded** | 1973 as Parfumerie Nicole Georges; Beauty Success banner from 1995 |
 | **Parent group** | Groupe NOVI (renamed from Groupe Beauty Success in October 2022) |
 | **Network** | ~650 stores in 15 countries, ~310 of them Beauty Success |

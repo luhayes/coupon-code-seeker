@@ -33,7 +33,7 @@ verified_on: 2026-09-04
 
 # American Leather Co. Coupons & Deals
 
-**Best offer right now:** [free FedEx ground shipping on every US order](https://www.americanleatherco.com) — no minimum to reach, no code to enter.
+**Best offer right now:** [free FedEx ground shipping on every US order](https://couponcodeseeker.com/go/american-leather-co) — no minimum to reach, no code to enter.
 
 American Leather Co. makes genuine leather handbags, crossbodies and backpacks from soft glove leather with antiqued hardware, styled on vintage Americana and priced well below designer leather.
 
@@ -55,11 +55,11 @@ Positioning honestly: this is soft, unstructured leather, so bags slouch rather 
 
 | Line | What it is | Typical price (Sept 2026) |
 | --- | --- | --- |
-| [Crossbody bags](https://www.americanleatherco.com/collections/bags) | The core category — Acorn, Kansas, Cleveland, Tribeca styles | ~$95–$195 |
+| [Crossbody bags](https://couponcodeseeker.com/go/american-leather-co?to=/collections/bags) | The core category — Acorn, Kansas, Cleveland, Tribeca styles | ~$95–$195 |
 | Shoulder bags & totes | Larger everyday carriers in the same glove leather | ~$120–$195 |
 | Backpacks | Leather backpacks in the same construction | ~$150–$195 |
 | Small leather goods | Wallets, pouches and accessories | Varies |
-| [Sale](https://www.americanleatherco.com/collections/sale) | Standing discount section, stock rotates | Reduced |
+| [Sale](https://couponcodeseeker.com/go/american-leather-co?to=/collections/sale) | Standing discount section, stock rotates | Reduced |
 
 ---
 
@@ -89,7 +89,7 @@ This is a genuinely less generous policy than most merchants we track — a $5 c
 
 ## How to use an American Leather Co. promo code
 
-1. Browse the range at [americanleatherco.com](https://www.americanleatherco.com), checking the [sale section](https://www.americanleatherco.com/collections/sale) first.
+1. Browse the range at [americanleatherco.com](https://couponcodeseeker.com/go/american-leather-co), checking the [sale section](https://couponcodeseeker.com/go/american-leather-co?to=/collections/sale) first.
 2. Add your bag to the cart and continue to checkout.
 3. Enter your code in the discount field before entering payment details.
 4. Confirm it applies in the order summary — sale items frequently reject additional codes.
@@ -103,7 +103,7 @@ This is a genuinely less generous policy than most merchants we track — a $5 c
 
 | | |
 | --- | --- |
-| **Website** | [americanleatherco.com](https://www.americanleatherco.com) |
+| **Website** | [americanleatherco.com](https://couponcodeseeker.com/go/american-leather-co) |
 | **Category** | Leather handbags, crossbodies, backpacks and accessories |
 | **Signature material** | Glove leather with antiqued hardware |
 | **Price range** | ~$95–$195 for most bags |
