@@ -35,7 +35,7 @@ verified_on: 2026-09-04
 
 # LMNT Coupons & Deals
 
-**Best offer right now:** a [free 8-flavour Sample Pack](/go/lmnt) with any drink mix order, on top of free US shipping — no code, no minimum.
+**Best offer right now:** a [free 8-flavour Sample Pack](https://drinklmnt.com) with any drink mix order, on top of free US shipping — no code, no minimum.
 
 LMNT is a zero-sugar electrolyte drink mix built around an unusually high sodium dose: 1,000mg per stick, with potassium and magnesium alongside. It is aimed at low-carb, keto, fasting and heavy-sweat athletes, where standard sports drinks under-deliver sodium and over-deliver sugar.
 
@@ -55,8 +55,8 @@ Pricing is straightforward: roughly **$45 for a box of 30 sticks**, around $1.50
 
 | Line | Detail | Typical price (Sept 2026) |
 | --- | --- | --- |
-| [Recharge drink mix](/go/lmnt?to=/products/lmnt-recharge-electrolyte-drink) | 1,000mg sodium, 200mg potassium, 60mg magnesium per stick | ~$45 / 30 sticks |
-| [Variety Pack](/go/lmnt?to=/products/lmnt-recharge-variety-pack) | Mixed flavours in one box — the usual starting point | ~$45 / 30 sticks |
+| [Recharge drink mix](https://drinklmnt.com/products/lmnt-recharge-electrolyte-drink) | 1,000mg sodium, 200mg potassium, 60mg magnesium per stick | ~$45 / 30 sticks |
+| [Variety Pack](https://drinklmnt.com/products/lmnt-recharge-variety-pack) | Mixed flavours in one box — the usual starting point | ~$45 / 30 sticks |
 | Sparkling | Canned ready-to-drink version of the same formula | Varies |
 | Flavours | Citrus, Watermelon, Orange, Raspberry, Grapefruit, Lemonade, Chocolate, Mango Chili, Chocolate Caramel, Raw Unflavoured | — |
 
@@ -100,7 +100,7 @@ If the product does not suit you, LMNT refunds or replaces it without requiring 
 
 ## How to use an LMNT offer
 
-1. Open [drinklmnt.com](/go/lmnt) through a partner link so the free Sample Pack attaches to your order.
+1. Open [drinklmnt.com](https://drinklmnt.com) through a partner link so the free Sample Pack attaches to your order.
 2. Add a drink mix or Sparkling product to the cart — the Sample Pack appears automatically; it is not a code you type.
 3. Choose **subscription** for 12% off, or the **Insider Bundle** for four boxes at the price of three.
 4. Check out. There is no shipping threshold to worry about on US orders.
@@ -113,7 +113,7 @@ If the product does not suit you, LMNT refunds or replaces it without requiring 
 
 | | |
 | --- | --- |
-| **Website** | [drinklmnt.com](/go/lmnt) |
+| **Website** | [drinklmnt.com](https://drinklmnt.com) |
 | **Founded** | 2019 |
 | **Founders** | Robb Wolf, James Murphy, Tyler Cartwright, Luis Villaseñor |
 | **Category** | Electrolytes, hydration, zero-sugar drink mix |

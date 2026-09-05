@@ -33,7 +33,7 @@ verified_on: 2026-09-04
 
 # Vital Proteins Coupons & Promo Codes
 
-**Best offer right now:** [Subscribe & Save](/go/vital-proteins) takes 15% off and makes every future order ship free, whatever its size.
+**Best offer right now:** [Subscribe & Save](https://www.vitalproteins.com) takes 15% off and makes every future order ship free, whatever its size.
 
 Vital Proteins is the brand that turned collagen powder into a mainstream habit. Its Collagen Peptides are sourced from grass-fed, pasture-raised cattle, dissolve into hot or cold liquid without clumping, and are sold unflavoured so they disappear into coffee.
 
@@ -53,9 +53,9 @@ Positioning honestly: the evidence for collagen supplementation is meaningfully 
 
 | Line | What it is |
 | --- | --- |
-| [Collagen Peptides](/go/vital-proteins?to=/products/collagen-peptides) | The flagship — unflavoured grass-fed collagen powder |
-| [Skin Complex](/go/vital-proteins?to=/products/skin-complex) | Collagen with hyaluronic acid and vitamin C |
-| [Collagen capsules](/go/vital-proteins?to=/products/collagen-peptides-360-capsules) | Same peptides in capsule form for people who dislike powders |
+| [Collagen Peptides](https://www.vitalproteins.com/products/collagen-peptides) | The flagship — unflavoured grass-fed collagen powder |
+| [Skin Complex](https://www.vitalproteins.com/products/skin-complex) | Collagen with hyaluronic acid and vitamin C |
+| [Collagen capsules](https://www.vitalproteins.com/products/collagen-peptides-360-capsules) | Same peptides in capsule form for people who dislike powders |
 | Flavoured & speciality blends | Marine collagen, matcha and beauty-focused variants |
 
 > Prices vary by size and format and were not captured on this pass — check the product page.
@@ -86,7 +86,7 @@ Problems with an order placed on vitalproteins.com must be raised **within 30 da
 
 ## How to use a Vital Proteins promo code
 
-1. Add your collagen to the cart at [vitalproteins.com](/go/vital-proteins), choosing **Subscribe & Save** on the product page for 15% and free ongoing shipping.
+1. Add your collagen to the cart at [vitalproteins.com](https://www.vitalproteins.com), choosing **Subscribe & Save** on the product page for 15% and free ongoing shipping.
 2. Continue to checkout.
 3. Enter your code in the discount field before payment.
 4. Confirm it applies in the order summary — items already reduced on the sale page often reject additional codes.
@@ -100,7 +100,7 @@ Problems with an order placed on vitalproteins.com must be raised **within 30 da
 
 | | |
 | --- | --- |
-| **Website** | [vitalproteins.com](/go/vital-proteins) |
+| **Website** | [vitalproteins.com](https://www.vitalproteins.com) |
 | **Founded** | 2013 |
 | **Founder** | Kurt Seidensticker, former NASA aerospace engineer |
 | **Category** | Collagen peptides, beauty-from-within supplements |

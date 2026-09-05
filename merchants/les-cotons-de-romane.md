@@ -34,7 +34,7 @@ verified_on: 2026-09-04
 
 # Les Cotons de Romane Deals & Info
 
-**Best offer right now:** free delivery in metropolitan France on orders over **€60**. And worth knowing first: the only official shop is **[lescotonsderomane.com](/go/les-cotons-de-romane)** — several near-identical `.shop` domains copy this brand, see the warning below.
+**Best offer right now:** free delivery in metropolitan France on orders over **€60**. And worth knowing first: the only official shop is **[lescotonsderomane.com](https://lescotonsderomane.com)** — several near-identical `.shop` domains copy this brand, see the warning below.
 
 Les Cotons de Romane makes reusable, washable everyday products — cotton pads, kitchen roll, sanitary towels and pouches — hand-sewn in Rennes, alongside a range of low-waste hygiene items.
 
@@ -107,7 +107,7 @@ A practical note the policy does not spell out: reusable hygiene products are co
 
 ## How to order
 
-1. Confirm you are on **[lescotonsderomane.com](/go/les-cotons-de-romane)** — not a `.shop` look-alike.
+1. Confirm you are on **[lescotonsderomane.com](https://lescotonsderomane.com)** — not a `.shop` look-alike.
 2. Add your items to the cart.
 3. Enter any code from the brand's own social channels in the discount field at checkout.
 4. Push the order over **€60** if you are close to it — that is the free-delivery line in metropolitan France.
@@ -120,7 +120,7 @@ A practical note the policy does not spell out: reusable hygiene products are co
 
 | | |
 | --- | --- |
-| **Official website** | [lescotonsderomane.com](/go/les-cotons-de-romane) — the only official shop |
+| **Official website** | [lescotonsderomane.com](https://lescotonsderomane.com) — the only official shop |
 | **Founded** | 2019 |
 | **Founder** | Romane Gautret, formerly a paediatric nurse |
 | **Based in** | Rennes, Brittany, France |

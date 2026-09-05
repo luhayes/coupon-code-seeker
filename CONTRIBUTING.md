@@ -25,6 +25,8 @@ affiliates.example.yml public schema for the /go/<slug> tracking map
 affiliates.yml         real tracking links — gitignored, never committed
 scripts/validate.py    pre-publish checks
 scripts/build_pages.py generates the deals table inside each page
+scripts/build_links.py the outbound-link map the site rewrites with
+data/links.json        generated — which links to monetize, and to what
 scripts/affiliates.py  manage the local tracking links
 assets/merchants/      logos, <slug>.png
 ```
@@ -152,11 +154,9 @@ cost the site one rewrite rule at build time:
 | `categories/<slug>.md` | `/categories/<slug>` |
 | `stores.md` | `/stores` |
 
-**`/go/<slug>` is the one exception** and stays a site-absolute path. It is a
-redirect endpoint with no file behind it, so there is nothing for GitHub to
-resolve — those links only work on the live site. `validate.py` allows `/go/`
-and rejects every other site-absolute path, and it checks that each relative
-link resolves to a file that exists.
+Outbound links to a merchant are written as the **merchant's real URL**, for the
+same reason: a reader on GitHub can click through to the store. The site
+rewrites them to the tracked redirect at build time.
 
 That check earned its place immediately: it caught the category generator
 linking a breadcrumb to a parent page that is deliberately never generated,
@@ -212,9 +212,33 @@ separate sections instead of blank lines. `scripts/validate.py` fails on this.
 ## Affiliate links
 
 Tracking links never appear in page copy, and never in the repository either.
-Monetized anchors point at the internal path **`/go/<slug>`**, which the site
-resolves to a real tracking URL at redirect time. Deep link with
-`/go/<slug>?to=/path/on/merchant/site`.
+
+Pages link to the merchant's real URL. The site rewrites those to
+**`/go/<slug>`**, which resolves to the tracking URL at redirect time, using the
+generated map in **`data/links.json`**:
+
+```json
+"merchants/feniko.md": [
+  { "from": "https://feniko.pl", "to": "/go/feniko" },
+  { "from": "https://feniko.pl/pierwsza-pozyczka-za-darmo",
+    "to": "/go/feniko?to=/pierwsza-pozyczka-za-darmo" }
+]
+```
+
+**Apply the map; do not reimplement the rule.** If the site derived which links
+to rewrite on its own, the two would drift — and a drifted rewrite fails
+silently: the link still works, it just stops earning. That is the one failure
+mode this direction has that keeping `/go/` in the file did not, and the map is
+how it is removed. `scripts/build_links.py --check` fails when the map is stale.
+
+The rule the map encodes, for reference: a link is monetized when its host
+matches the merchant's own `website` host, **except** when the URL looks like a
+support destination. Sending someone chasing a refund through an affiliate
+redirect earns nothing and is a poor thing to do to a reader mid-problem — so
+help centres and returns portals stay direct.
+
+`validate.py` fails if a monetizable link belongs to a merchant with no entry in
+`affiliates.example.yml`, since the site could not build a redirect for it.
 
 Because this repository is public, the map is split in two:
 
@@ -310,9 +334,11 @@ files. Never hand-edit it — add or edit a merchant, then rebuild:
 
 ```
 python3 scripts/build_pages.py                 # rebuild the in-page deals tables
+python3 scripts/build_links.py                 # rebuild data/links.json
 python3 scripts/build_directory.py             # rebuild stores.md
 python3 scripts/build_categories.py            # rebuild categories/*.md
 python3 scripts/build_pages.py --check         # CI: fail if stale
+python3 scripts/build_links.py --check
 python3 scripts/build_directory.py --check
 python3 scripts/build_categories.py --check
 ```

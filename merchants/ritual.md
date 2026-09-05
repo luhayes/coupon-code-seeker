@@ -34,7 +34,7 @@ verified_on: 2026-09-04
 
 # Ritual Coupons & Promo Codes
 
-**Best offer right now:** a [referral link](/go/ritual) takes **$15 off your first month**, and every order ships free — no code required.
+**Best offer right now:** a [referral link](https://ritual.com) takes **$15 off your first month**, and every order ships free — no code required.
 
 Ritual makes subscription multivitamins built around a traceability claim: each ingredient is listed with its supplier and country of origin, in a category where "proprietary blend" usually hides both. The capsules are delayed-release and the range now extends past multivitamins into prenatals, probiotics and protein.
 
@@ -54,7 +54,7 @@ Positioning honestly: at roughly **$30–$35 a bottle**, Ritual costs several ti
 
 | Line | What it is | Typical price (Sept 2026) |
 | --- | --- | --- |
-| [Essential multivitamins](/go/ritual?to=/products) | Age- and life-stage specific formulas for women and men | ~$30–$35 / bottle |
+| [Essential multivitamins](https://ritual.com/products) | Age- and life-stage specific formulas for women and men | ~$30–$35 / bottle |
 | Prenatal | The original product, and still the best known | ~$30–$35 / bottle |
 | Probiotics | Gut-health formulas sold on the same subscription model | Varies |
 | Protein | Plant-based protein powders | Varies |
@@ -92,7 +92,7 @@ Ritual sells on subscription by default rather than offering a separate "Subscri
 
 ## How to use a Ritual promo code
 
-1. Open [ritual.com](/go/ritual), ideally through a friend's referral link if you are a new customer, so the $15 applies.
+1. Open [ritual.com](https://ritual.com), ideally through a friend's referral link if you are a new customer, so the $15 applies.
 2. Choose your formula and add it to the cart.
 3. Continue to checkout and enter any code in the discount field before paying.
 4. Confirm the discount shows in the order summary. Referral credit applies to the first order only.
@@ -106,7 +106,7 @@ Ritual sells on subscription by default rather than offering a separate "Subscri
 
 | | |
 | --- | --- |
-| **Website** | [ritual.com](/go/ritual) |
+| **Website** | [ritual.com](https://ritual.com) |
 | **Founder** | Katerina Schneider |
 | **Category** | Multivitamins, prenatal, probiotics, protein |
 | **Signature products** | Essential for Women, Essential Prenatal |

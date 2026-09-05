@@ -32,7 +32,7 @@ verified_on: 2026-09-04
 
 # MiniCredit — Loan Costs, RRSO and Terms
 
-MiniCredit is a Polish short-term consumer lender (*chwilówka*) at [minicredit.pl](/go/minicredit), lending between 500 and 9,600 zł with decisions in about 15 minutes.
+MiniCredit is a Polish short-term consumer lender (*chwilówka*) at [minicredit.pl](https://www.minicredit.pl), lending between 500 and 9,600 zł with decisions in about 15 minutes.
 
 *We may earn a commission if you take a product through links on this page. It never changes what you pay or what we tell you about the cost.*
 
@@ -92,7 +92,7 @@ MiniCredit does **not** run a permanent free-first-loan offer. A **0 zł** promo
 
 1. Write down the **exact date and source** of your repayment. The full balance falls due in one payment.
 2. Price the loan you actually want using the representative example — not a promotional headline.
-3. Check whether a 0 zł promotion is genuinely live on [minicredit.pl](/go/minicredit) right now. If it is not, compare against lenders who do offer a free first loan.
+3. Check whether a 0 zł promotion is genuinely live on [minicredit.pl](https://www.minicredit.pl) right now. If it is not, compare against lenders who do offer a free first loan.
 4. Remember early repayment saves little here, because most of the cost is fixed commission.
 5. If this is being considered to cover an existing debt, get free statutory debt advice first.
 
@@ -102,7 +102,7 @@ MiniCredit does **not** run a permanent free-first-loan offer. A **0 zł** promo
 
 | | |
 | --- | --- |
-| **Website** | [minicredit.pl](/go/minicredit) |
+| **Website** | [minicredit.pl](https://www.minicredit.pl) |
 | **Product** | Short-term consumer loan (*chwilówka*), single repayment |
 | **Market** | Poland |
 | **Amount** | 500–9,600 zł |

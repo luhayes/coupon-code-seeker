@@ -36,7 +36,7 @@ verified_on: 2026-09-04
 
 # Vahdam Teas Coupons & Promo Codes
 
-**Best offer right now:** first-time buyers are covered by a [refund guarantee of up to $35](/go/vahdam-teas), so a first order can be tried without risk.
+**Best offer right now:** first-time buyers are covered by a [refund guarantee of up to $35](https://www.vahdam.com), so a first order can be tried without risk.
 
 Vahdam sells single-origin Indian tea direct from the source: Darjeeling first flush, Assam, Nilgiri, masala chai and turmeric blends, shipped from the growing regions rather than through the usual auction-and-blender chain that puts months between picking and packing.
 
@@ -56,7 +56,7 @@ Positioning honestly: Vahdam is the value option among the brands on this site �
 
 | Line | What it is |
 | --- | --- |
-| [Black teas](/go/vahdam-teas?to=/collections/black-tea) | Darjeeling first and second flush, Assam, single-estate lots |
+| [Black teas](https://www.vahdam.com/collections/black-tea) | Darjeeling first and second flush, Assam, single-estate lots |
 | Chai | Masala, cardamom and ginger chai blends |
 | Green & white | Himalayan green, silver needle white |
 | Turmeric & wellness | Turmeric-forward herbal blends |
@@ -95,7 +95,7 @@ A referral program exists, but the reward we could document — a rupee-denomina
 
 ## How to use a Vahdam Teas promo code
 
-1. Make sure you are on the storefront for your country — [vahdam.com](/go/vahdam-teas) serves the US, with separate sites for the UK, Germany and India. Offers do not carry across them.
+1. Make sure you are on the storefront for your country — [vahdam.com](https://www.vahdam.com) serves the US, with separate sites for the UK, Germany and India. Offers do not carry across them.
 2. Add your teas to the cart, choosing the subscription option if you want the 15%.
 3. Enter your code in the discount field at checkout, before payment.
 4. Confirm it applies in the order summary, and check the free-shipping threshold shown for your region.
@@ -108,7 +108,7 @@ A referral program exists, but the reward we could document — a rupee-denomina
 
 | | |
 | --- | --- |
-| **Website** | [vahdam.com](/go/vahdam-teas) |
+| **Website** | [vahdam.com](https://www.vahdam.com) |
 | **Founded** | 2015 |
 | **Founder** | Bala Sarda |
 | **Category** | Single-origin Indian tea, chai, herbal blends |

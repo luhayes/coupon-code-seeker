@@ -31,7 +31,7 @@ verified_on: 2026-09-04
 
 # Feniko — First Loan at 0% RRSO, and What It Costs After
 
-Feniko is a Polish short-term consumer lender (*chwilówka*) operating at [feniko.pl](/go/feniko). Its first loan is genuinely free. Everything after it is among the most expensive credit available.
+Feniko is a Polish short-term consumer lender (*chwilówka*) operating at [feniko.pl](https://feniko.pl). Its first loan is genuinely free. Everything after it is among the most expensive credit available.
 
 *We may earn a commission if you take a product through links on this page. It never changes what you pay or what we tell you about the cost.*
 
@@ -98,7 +98,7 @@ After the free loan, commission and interest apply at roughly **299% RRSO**. Tha
 ## Before you apply
 
 1. Write down the **exact date and source** of your repayment. If you cannot name both, do not borrow.
-2. Confirm on [feniko.pl](/go/feniko) how much you can actually take at 0% — sources disagree.
+2. Confirm on [feniko.pl](https://feniko.pl) how much you can actually take at 0% — sources disagree.
 3. Set a reminder several days before the due date. The whole value of the offer is conditional on repaying on time.
 4. Decide in advance that you will **not refinance this with a second loan**. That is the decision that determines the real cost.
 5. If money is tight enough that this is the option, use Poland's free statutory debt advice first. It costs nothing and it is a better first call than a 299% facility.
@@ -109,7 +109,7 @@ After the free loan, commission and interest apply at roughly **299% RRSO**. Tha
 
 | | |
 | --- | --- |
-| **Website** | [feniko.pl](/go/feniko) |
+| **Website** | [feniko.pl](https://feniko.pl) |
 | **Product** | Short-term consumer loan (*chwilówka*) |
 | **Market** | Poland |
 | **First loan** | 0% RRSO, 30 or 61 days |

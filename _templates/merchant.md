@@ -68,7 +68,7 @@ flagging. One subsection per offer, in the same order as the table.
 
 ## How to use a Merchant Name promo code
 
-1. Add items to the cart at [example.com](/go/merchant-slug).
+1. Add items to the cart at [example.com](https://www.example.com).
 2. Continue to checkout.
 3. Enter the code in the discount field before payment.
 4. Confirm the discount shows in the order summary.

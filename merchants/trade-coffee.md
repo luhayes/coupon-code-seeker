@@ -31,7 +31,7 @@ verified_on: 2026-09-04
 
 # Trade Coffee Coupons & Promo Codes
 
-**Best offer right now:** [up to 30% off your first order](/go/trade-coffee?to=/pages/30-off), then 15% off plus free shipping on an ongoing subscription.
+**Best offer right now:** [up to 30% off your first order](https://www.drinktrade.com/pages/30-off), then 15% off plus free shipping on an ongoing subscription.
 
 Trade is a matchmaking service rather than a roaster. You answer a short quiz about how you brew and what you like, and Trade routes you to bags from independent American roasters, roasted to order and shipped within 48 hours.
 
@@ -51,9 +51,9 @@ Positioning honestly: you are paying specialty prices, and the matching is only 
 
 | Line | What it is |
 | --- | --- |
-| [Coffee subscription](/go/trade-coffee?to=/pages/subscribe) | Personalised bags matched to your brew method and taste, on your chosen cadence |
+| [Coffee subscription](https://www.drinktrade.com/pages/subscribe) | Personalised bags matched to your brew method and taste, on your chosen cadence |
 | One-off bags | Single purchases from the same roaster catalogue |
-| [Drip-ready collection](/go/trade-coffee?to=/products/coffee-maker-collection) | Curated for automatic drip brewers |
+| [Drip-ready collection](https://www.drinktrade.com/products/coffee-maker-collection) | Curated for automatic drip brewers |
 | Fair-trade selections | Certified fair-trade roasts as a filtered category |
 
 > Bag prices vary by roaster and were not captured on this pass.
@@ -89,7 +89,7 @@ If your first delivery is not right, Trade will **replace it free, for any reaso
 
 ## How to use a Trade Coffee promo code
 
-1. Take the quiz at [drinktrade.com](/go/trade-coffee) so the matching has something to work with.
+1. Take the quiz at [drinktrade.com](https://www.drinktrade.com) so the matching has something to work with.
 2. Start a **subscription** rather than a one-off bag — the first-order discount and the 15% ongoing rate both attach to subscriptions.
 3. Enter your code in the discount field at checkout before paying.
 4. Confirm it appears in the order summary, and check whether the cart already clears the **$30** free-shipping line.
@@ -103,7 +103,7 @@ If your first delivery is not right, Trade will **replace it free, for any reaso
 
 | | |
 | --- | --- |
-| **Website** | [drinktrade.com](/go/trade-coffee) |
+| **Website** | [drinktrade.com](https://www.drinktrade.com) |
 | **Category** | Specialty coffee subscription and marketplace |
 | **Model** | Matches you to independent US roasters by quiz and feedback |
 | **Freshness** | Roasted to order, shipped within 48 hours |

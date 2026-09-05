@@ -32,7 +32,7 @@ verified_on: 2026-09-04
 
 # AG1 Coupons & Deals
 
-**Best offer right now:** [subscribing](/go/ag1) drops a 30-day supply from about **$99 to $79**, adds the Welcome Kit, and is backed by a 90-day money-back guarantee.
+**Best offer right now:** [subscribing](https://drinkag1.com) drops a 30-day supply from about **$99 to $79**, adds the Welcome Kit, and is backed by a 90-day money-back guarantee.
 
 AG1 — formerly Athletic Greens — is a single daily greens powder combining vitamins, minerals, pre- and probiotics and plant extracts into one scoop, sold almost entirely on subscription.
 
@@ -54,8 +54,8 @@ The **90-day money-back guarantee** is unusually long and is the right way to se
 
 | Line | What it is | Price (Sept 2026) |
 | --- | --- | --- |
-| [AG1 daily powder](/go/ag1) | 30-serving pouch, one scoop daily | ~$99 one-time / ~$79 subscription |
-| [Membership](/go/ag1?to=/ag1-membership) | The subscription programme, including kit and guarantee | ~$79 / month |
+| [AG1 daily powder](https://drinkag1.com) | 30-serving pouch, one scoop daily | ~$99 one-time / ~$79 subscription |
+| [Membership](https://drinkag1.com/ag1-membership) | The subscription programme, including kit and guarantee | ~$79 / month |
 | Welcome Kit | Metal scoop, shaker and storage canister for new subscribers | Free with first order |
 
 ---
@@ -84,7 +84,7 @@ AG1 will refund an unsatisfied customer **within 90 days**. Three months is long
 
 ## How to buy AG1 for the lowest price
 
-1. Open [drinkag1.com](/go/ag1) and choose the **subscription** rather than the one-time purchase — that alone is the ~$20 monthly difference.
+1. Open [drinkag1.com](https://drinkag1.com) and choose the **subscription** rather than the one-time purchase — that alone is the ~$20 monthly difference.
 2. Confirm the Welcome Kit is attached to the order; it is a first-order benefit and will not appear on later deliveries.
 3. Enter any code in the discount field before paying, and check it in the order summary.
 4. Set a reminder before the 90-day guarantee expires to decide whether to keep it.
@@ -97,7 +97,7 @@ AG1 will refund an unsatisfied customer **within 90 days**. Three months is long
 
 | | |
 | --- | --- |
-| **Website** | [drinkag1.com](/go/ag1) |
+| **Website** | [drinkag1.com](https://drinkag1.com) |
 | **Formerly** | Athletic Greens |
 | **Category** | Daily greens and foundational nutrition powder |
 | **Price** | ~$99 one-time, ~$79 per month on subscription |

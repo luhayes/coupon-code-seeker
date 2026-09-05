@@ -212,14 +212,20 @@ def check(path, affiliates):
         host = re.sub(r"^https?://", "", url).split("/")[0].lower()
         return ".".join(host.split(":")[0].split(".")[-2:])
 
+    # Merchant pages link to the merchant's real URL so the links work when the
+    # page is read on GitHub; the site rewrites them to /go/<slug> using
+    # data/links.json. The risk of that direction is silent: an unrewritten link
+    # still works, it just stops earning. So every monetizable link must at
+    # least have a slug the redirect can be built for.
     storefront = registrable(data.get("website") or "") if data.get("website") else ""
     for url in re.findall(r"\]\((https?://[^)]+)\)", body):
         if is_template or not storefront:
             continue
         if any(marker in url.lower() for marker in SUPPORT):
             continue
-        if registrable(url) == storefront:
-            err(f"raw storefront link {url} — monetized anchors use /go/{slug}")
+        if registrable(url) == storefront and slug not in affiliates:
+            err(f"{url} is a monetizable link, but '{slug}' has no entry in "
+                "affiliates.example.yml — the site cannot build a redirect for it")
 
 
 def load_affiliates():
