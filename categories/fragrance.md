@@ -8,7 +8,7 @@ seo:
   description: "Verified deals from approved perfumery retailers, where authenticity is guaranteed — plus their delivery thresholds and loyalty programmes."
 merchant_count: 1
 offer_count: 5
-generated_on: 2026-09-04
+generated_on: 2026-09-05
 generated_by: scripts/build_categories.py
 ---
 
@@ -20,6 +20,6 @@ Perfumery, including the approved-distributor retailers where authenticity is th
 
 | Store | Best current offer | Offers | Verified |
 | --- | --- | --- | --- |
-| [Beauty Success](/stores/beauty-success) | Free delivery to a Beauty Success store | 5 | 2026-09-04 |
+| [Beauty Success](../merchants/beauty-success.md) | Free delivery to a Beauty Success store | 5 | 2026-09-04 |
 
-[All stores](/stores) · [Beauty](/categories/beauty)
+[All stores](../stores.md) · [Beauty](beauty.md)

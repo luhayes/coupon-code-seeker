@@ -267,6 +267,42 @@ def load_affiliates():
     return merchants
 
 
+def check_internal_links():
+    """Every cross-reference between our own pages must resolve as a file path.
+
+    This repository is public so that people can read the pages in it, which
+    makes GitHub a real reading surface — and links written as site URLs
+    (`/stores/feniko`) 404 there, because the file is `merchants/feniko.md`.
+    Links are therefore repo-relative, and the site rewrites them at build time.
+
+    `/go/` is the exception: it is a redirect endpoint that only exists on the
+    site, with no file behind it.
+    """
+    targets = (glob.glob(os.path.join(ROOT, "merchants", "*.md")) +
+               glob.glob(os.path.join(ROOT, "categories", "*.md")) +
+               [os.path.join(ROOT, "stores.md")])
+    for path in targets:
+        if not os.path.exists(path):
+            continue
+        rel = os.path.relpath(path, ROOT)
+        text = re.sub(r"```.*?```", "", open(path, encoding="utf-8").read(), flags=re.S)
+        for label, target in re.findall(r"\[([^\]]+)\]\(([^)]+)\)", text):
+            if target.startswith(("http://", "https://", "#", "mailto:")):
+                continue
+            if target.startswith("/go/"):
+                continue
+            if target.startswith("/"):
+                errors.append(
+                    f"{rel}: [{label}]({target}) is a site-absolute path — it "
+                    "404s when the file is read on GitHub. Use a repo-relative "
+                    "path and let the site rewrite it.")
+                continue
+            resolved = os.path.normpath(
+                os.path.join(os.path.dirname(path), target.split("#")[0]))
+            if not os.path.exists(resolved):
+                errors.append(f"{rel}: link [{label}]({target}) does not resolve")
+
+
 def check_doc_links():
     """Local links in the docs must resolve.
 
@@ -288,6 +324,7 @@ def check_doc_links():
 
 def main():
     check_doc_links()
+    check_internal_links()
     affiliates = load_affiliates()
 
     paths = sorted(glob.glob(os.path.join(ROOT, "merchants", "*.md")) +

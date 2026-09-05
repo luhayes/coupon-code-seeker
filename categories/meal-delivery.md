@@ -8,7 +8,7 @@ seo:
   description: "Verified deals on prepared-meal and meal-kit delivery services, including the subscription-versus-one-time pricing differences that matter most."
 merchant_count: 1
 offer_count: 2
-generated_on: 2026-09-04
+generated_on: 2026-09-05
 generated_by: scripts/build_categories.py
 ---
 
@@ -20,6 +20,6 @@ Prepared-meal and meal-kit services delivered on a recurring schedule.
 
 | Store | Best current offer | Offers | Verified |
 | --- | --- | --- | --- |
-| [Sakara Life](/stores/sakara-life) | Subscribe and pay 20% less per meal than a one-time order | 2 | 2026-09-04 |
+| [Sakara Life](../merchants/sakara-life.md) | Subscribe and pay 20% less per meal than a one-time order | 2 | 2026-09-04 |
 
-[All stores](/stores) · [Food & Drink](/categories/food-drink)
+[All stores](../stores.md) · [Food & Drink](food-drink.md)

@@ -8,7 +8,7 @@ seo:
   description: "Verified deals on tea, matcha, coffee and coffee-alternative brands. Subscribe & Save rates, free-shipping thresholds and money-back guarantees."
 merchant_count: 5
 offer_count: 19
-generated_on: 2026-09-04
+generated_on: 2026-09-05
 generated_by: scripts/build_categories.py
 ---
 
@@ -20,10 +20,10 @@ Tea, coffee and the coffee-alternative brands that compete with them — matcha,
 
 | Store | Best current offer | Offers | Verified |
 | --- | --- | --- | --- |
-| [Four Sigmatic](/stores/four-sigmatic) | 30% off your first subscription order | 4 | 2026-09-04 |
-| [MUD\WTR](/stores/mudwtr) | Subscribe & Save up to 33% on recurring orders | 4 | 2026-09-04 |
-| [Pique Life](/stores/pique-life) | Subscribe & Save 10–20% on every recurring order | 6 | 2026-09-04 |
-| [Trade Coffee](/stores/trade-coffee) | Up to 30% off your first coffee order | 4 | 2026-09-04 |
-| [Vahdam Teas](/stores/vahdam-teas) | First-time buyer refund guarantee, up to $35 | 1 | 2026-09-04 |
+| [Four Sigmatic](../merchants/four-sigmatic.md) | 30% off your first subscription order | 4 | 2026-09-04 |
+| [MUD\WTR](../merchants/mudwtr.md) | Subscribe & Save up to 33% on recurring orders | 4 | 2026-09-04 |
+| [Pique Life](../merchants/pique-life.md) | Subscribe & Save 10–20% on every recurring order | 6 | 2026-09-04 |
+| [Trade Coffee](../merchants/trade-coffee.md) | Up to 30% off your first coffee order | 4 | 2026-09-04 |
+| [Vahdam Teas](../merchants/vahdam-teas.md) | First-time buyer refund guarantee, up to $35 | 1 | 2026-09-04 |
 
-[All stores](/stores) · [Food & Drink](/categories/food-drink)
+[All stores](../stores.md) · [Food & Drink](food-drink.md)

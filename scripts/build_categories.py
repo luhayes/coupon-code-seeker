@@ -72,12 +72,19 @@ def members(slug, tax, all_merchants):
                   key=lambda m: m["name"].lower())
 
 
-def render(slug, cfg, rows, tax):
+def render(slug, cfg, rows, tax, published):
+    """`published` is the set of slugs that will actually get a page.
+
+    It has to be known before rendering: a suppressed parent still exists in the
+    taxonomy, so linking to it unconditionally produces a breadcrumb pointing at
+    a file that was deliberately never generated.
+    """
     cfg = cfg or {}
     name = cfg.get("name", slug)
     seo = cfg.get("seo") or {}
-    parent = cfg.get("parent")
-    children = sorted(s for s, c in tax.items() if (c or {}).get("parent") == slug)
+    parent = cfg.get("parent") if cfg.get("parent") in published else None
+    children = sorted(s for s, c in tax.items()
+                      if (c or {}).get("parent") == slug and s in published)
     total = sum(r["offers"] for r in rows)
 
     L = ["---", f"slug: {slug}", "layout: category", "type: category-page"]
@@ -106,16 +113,16 @@ def render(slug, cfg, rows, tax):
     L.append("")
     if children:
         L.append("**In this category:** " + ", ".join(
-            f"[{(tax[c] or {}).get('name', c)}](/categories/{c})" for c in children))
+            f"[{(tax[c] or {}).get('name', c)}]({c}.md)" for c in children))
         L.append("")
     L.append("| Store | Best current offer | Offers | Verified |")
     L.append("| --- | --- | --- | --- |")
     for r in rows:
-        L.append(f"| [{r['name']}](/stores/{r['slug']}) | {r['best']} | "
+        L.append(f"| [{r['name']}](../merchants/{r['slug']}.md) | {r['best']} | "
                  f"{r['offers']} | {r['verified']} |")
     L.append("")
-    L.append(f"[All stores](/stores)" + (
-        f" · [{(tax[parent] or {}).get('name', parent)}](/categories/{parent})"
+    L.append("[All stores](../stores.md)" + (
+        f" · [{(tax[parent] or {}).get('name', parent)}]({parent}.md)"
         if parent else ""))
     return "\n".join(L) + "\n"
 
@@ -123,8 +130,10 @@ def render(slug, cfg, rows, tax):
 def main():
     tax, all_m = taxonomy(), merchants()
     os.makedirs(OUT_DIR, exist_ok=True)
-    wanted, stale = {}, []
-    for slug, cfg in tax.items():
+    # Pass one: decide which categories get a page at all, so pass two can link
+    # only to pages that will exist.
+    keep = {}
+    for slug in tax:
         rows = members(slug, tax, all_m)
         if not rows:
             continue  # never publish an empty category page
@@ -136,7 +145,12 @@ def main():
         filled = [c for c in kids if members(c, tax, all_m)]
         if len(filled) == 1 and members(filled[0], tax, all_m) == rows:
             continue
-        wanted[slug] = render(slug, cfg, rows, tax)
+        keep[slug] = rows
+
+    published = set(keep)
+    wanted, stale = {}, []
+    for slug, rows in keep.items():
+        wanted[slug] = render(slug, tax.get(slug), rows, tax, published)
 
     strip = lambda s: re.sub(r"^generated_on: .*$", "", s, flags=re.M)
     if "--check" in sys.argv:

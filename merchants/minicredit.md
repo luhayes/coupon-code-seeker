@@ -62,7 +62,7 @@ MiniCredit operates entirely online: choose an amount on the site, complete a sh
 
 Its range is wider than much of the market, from **500 zł to 9,600 zł**, which makes it usable for larger sums than a typical payday product. That width deserves a caution rather than praise: the cost structure that is merely expensive on 500 zł becomes a substantial liability at 9,600 zł over the same 30-day single repayment. A larger loan on these terms is not a longer loan — the whole balance still falls due at once.
 
-Assessed honestly: MiniCredit is a legitimate, functioning lender and the process does what it says. But with no dependable free-first-loan offer, a new borrower here pays roughly **298% RRSO from the first transaction**, where several competitors — including [Feniko](/stores/feniko) — offer a genuinely free first loan. If you have decided to use this category of credit at all, that difference is worth checking before choosing a lender.
+Assessed honestly: MiniCredit is a legitimate, functioning lender and the process does what it says. But with no dependable free-first-loan offer, a new borrower here pays roughly **298% RRSO from the first transaction**, where several competitors — including [Feniko](feniko.md) — offer a genuinely free first loan. If you have decided to use this category of credit at all, that difference is worth checking before choosing a lender.
 
 ---
 

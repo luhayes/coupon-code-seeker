@@ -80,7 +80,7 @@ One-time US orders ship free at **$50 or more**. Below that, you are paying deli
 
 ### 3. Returns within 30 days
 
-Problems with an order placed on vitalproteins.com must be raised **within 30 days** of receipt. Note that some returns **may attract a restocking fee**, so this is a narrower policy than the no-questions-asked guarantees offered by [Seed](/stores/seed) or [LMNT](/stores/lmnt) — worth knowing before you buy the largest tub on a first order.
+Problems with an order placed on vitalproteins.com must be raised **within 30 days** of receipt. Note that some returns **may attract a restocking fee**, so this is a narrower policy than the no-questions-asked guarantees offered by [Seed](seed.md) or [LMNT](lmnt.md) — worth knowing before you buy the largest tub on a first order.
 
 ---
 

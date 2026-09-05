@@ -129,6 +129,40 @@ Finance pages render `Item | Type` instead of `Offer | Type | Code`, decided
 from the merchant's primary category. A loan is not an offer and its cost is not
 a discount — the distinction is editorial, not cosmetic.
 
+## Internal links, and what the site must rewrite
+
+Cross-references between our own pages are written as **repo-relative file
+paths**, not site URLs:
+
+```markdown
+[Feniko](feniko.md)                     from another merchant page
+[MUD\WTR](merchants/mudwtr.md)          from stores.md
+[Pique Life](../merchants/pique-life.md) from a category page
+[All stores](../stores.md)
+```
+
+This repository is public so people can read the pages in it, which makes GitHub
+a real reading surface. A link written as `/stores/feniko` 404s there, because
+the file is `merchants/feniko.md`. Repo-relative paths work on GitHub today and
+cost the site one rewrite rule at build time:
+
+| In the file | On the site |
+| --- | --- |
+| `merchants/<slug>.md` | `/stores/<slug>` |
+| `categories/<slug>.md` | `/categories/<slug>` |
+| `stores.md` | `/stores` |
+
+**`/go/<slug>` is the one exception** and stays a site-absolute path. It is a
+redirect endpoint with no file behind it, so there is nothing for GitHub to
+resolve — those links only work on the live site. `validate.py` allows `/go/`
+and rejects every other site-absolute path, and it checks that each relative
+link resolves to a file that exists.
+
+That check earned its place immediately: it caught the category generator
+linking a breadcrumb to a parent page that is deliberately never generated,
+because the parent duplicated its only child. The generator now decides which
+pages exist before rendering any of them.
+
 ## Where offers live
 
 Offers go in **`data/offers/<slug>.yml`**, never in the page's frontmatter.

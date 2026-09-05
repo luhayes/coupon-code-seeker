@@ -50,7 +50,7 @@ Bala Sarda founded Vahdam in **2015**, aged 23, into a family that had been in t
 
 It sources from around **175 plantations and smallholders** across all seven of India's tea-growing regions, and now runs separate storefronts for the **USA, Canada, UK and Germany**.
 
-Positioning honestly: Vahdam is the value option among the brands on this site — cartons run well below the price of [Pique](/stores/pique-life)'s crystals — and the range is far deeper for someone who actually wants leaf tea rather than a functional beverage. The trade-off is that its promotions are the least legible of any merchant we track. Discount claims from 20% to 70% circulate constantly, the storefronts run different thresholds by country, and the same offer is described differently on the Indian and US sites. We have marked below what we could not confirm rather than repeating a number we cannot stand behind.
+Positioning honestly: Vahdam is the value option among the brands on this site — cartons run well below the price of [Pique](pique-life.md)'s crystals — and the range is far deeper for someone who actually wants leaf tea rather than a functional beverage. The trade-off is that its promotions are the least legible of any merchant we track. Discount claims from 20% to 70% circulate constantly, the storefronts run different thresholds by country, and the same offer is described differently on the Indian and US sites. We have marked below what we could not confirm rather than repeating a number we cannot stand behind.
 
 ### What Vahdam sells
 
@@ -77,7 +77,7 @@ Positioning honestly: Vahdam is the value option among the brands on this site �
 
 ### 1. First-time buyer refund, up to $35
 
-Vahdam refunds first-time customers **up to $35** on an online store order if they are not happy with it. The important restriction: returns are **not accepted once the packaging has been torn open**, so this covers a change of mind rather than a change of taste — unlike the opened-product guarantees offered by [MUD\WTR](/stores/mudwtr) or [Four Sigmatic](/stores/four-sigmatic).
+Vahdam refunds first-time customers **up to $35** on an online store order if they are not happy with it. The important restriction: returns are **not accepted once the packaging has been torn open**, so this covers a change of mind rather than a change of taste — unlike the opened-product guarantees offered by [MUD\WTR](mudwtr.md) or [Four Sigmatic](four-sigmatic.md).
 
 ### 2. Subscribe & Save — 15%, with a caveat
 

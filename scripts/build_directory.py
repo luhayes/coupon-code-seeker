@@ -113,9 +113,9 @@ def render(ms):
         return (tax.get(slug) or {}).get("name", slug)
     for cat in sorted(by_cat, key=label):
         names = ", ".join(
-            f"[{m['name']}](/stores/{m['slug']})"
+            f"[{m['name']}](merchants/{m['slug']}.md)"
             for m in sorted(by_cat[cat], key=lambda x: x["name"].lower()))
-        L.append(f"**[{label(cat)}](/categories/{cat})** — {names}")
+        L.append(f"**[{label(cat)}](categories/{cat}.md)** — {names}")
         L.append("")
 
     L.append("## All stores A–Z")
@@ -123,7 +123,7 @@ def render(ms):
     L.append("| Store | Best current offer | Offers | Verified |")
     L.append("| --- | --- | --- | --- |")
     for m in sorted(ms, key=lambda x: x["name"].lower()):
-        L.append(f"| [{m['name']}](/stores/{m['slug']}) | {m['best']} | "
+        L.append(f"| [{m['name']}](merchants/{m['slug']}.md) | {m['best']} | "
                  f"{m['offer_count']} | {m['verified']} |")
     L.append("")
     L.append(f"*{len(ms)} {'store' if len(ms) == 1 else 'stores'}, "

@@ -45,7 +45,7 @@ Four Sigmatic put mushroom coffee into the mainstream. Its products blend coffee
 
 Tero Isokauppila launched the Original Mushroom Coffee in **2012**, well before functional mushrooms were a category anyone was competing in. He grew up on a Finnish family farm whose records go back to **1619**, in a country where chaga and other foraged mushrooms have a long domestic history — the brand's origin story is genuinely upstream of the wellness trend it later rode.
 
-The core proposition is that you do not change your habit, only what is in the cup: the coffee still tastes like coffee, with lion's mane for focus or chaga for immune support folded in. That is a lower barrier than [MUD\WTR](/stores/mudwtr) or [Pique](/stores/pique-life), which ask you to give up the coffee flavour entirely, and it is the main reason Four Sigmatic converts sceptical coffee drinkers more easily.
+The core proposition is that you do not change your habit, only what is in the cup: the coffee still tastes like coffee, with lion's mane for focus or chaga for immune support folded in. That is a lower barrier than [MUD\WTR](mudwtr.md) or [Pique](pique-life.md), which ask you to give up the coffee flavour entirely, and it is the main reason Four Sigmatic converts sceptical coffee drinkers more easily.
 
 Where it is weaker: the functional dosing has drawn criticism over the years for being modest in some blends relative to standalone extract supplements, so buy it as a better daily coffee rather than as a clinical dose. Prices sit well above supermarket instant coffee, which is why the subscription rate — not any code — is the number that matters.
 

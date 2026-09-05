@@ -2,13 +2,12 @@
 slug: loans
 layout: category
 type: category-page
-parent: finance
 seo:
   title: "Loan Costs, APR and Terms Compared"
   description: "Short-term and consumer loans with the representative example and APR stated up front, plus the borrowing traps each product creates."
 merchant_count: 2
 offer_count: 5
-generated_on: 2026-09-04
+generated_on: 2026-09-05
 generated_by: scripts/build_categories.py
 ---
 
@@ -20,7 +19,7 @@ Consumer credit, including short-term lenders. Every page here leads with the re
 
 | Store | Best current offer | Offers | Verified |
 | --- | --- | --- | --- |
-| [Feniko](/stores/feniko) | First loan at 0% RRSO — repay exactly what you borrowed | 3 | 2026-09-04 |
-| [MiniCredit](/stores/minicredit) | Representative example: 2,500 zł over 30 days costs 300.34 zł — 297.61% RRSO | 2 | 2026-09-04 |
+| [Feniko](../merchants/feniko.md) | First loan at 0% RRSO — repay exactly what you borrowed | 3 | 2026-09-04 |
+| [MiniCredit](../merchants/minicredit.md) | Representative example: 2,500 zł over 30 days costs 300.34 zł — 297.61% RRSO | 2 | 2026-09-04 |
 
-[All stores](/stores) · [Finance](/categories/finance)
+[All stores](../stores.md)
